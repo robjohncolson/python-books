@@ -1,0 +1,209 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="76(tictactoe)_files/style.css" rel="stylesheet" type="text/css"><link rel="stylesheet" type="text/css" href="76(tictactoe)_files/pygments.css"><title>Tic-Tac-Toe</title></head><body style="background-color: #fffeee;">
+
+<script type="text/javascript" async="" src="76(tictactoe)_files/ga.js"></script><script type="text/javascript">
+//<![CDATA[
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-5459430-3']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+//]]>
+</script>
+
+
+<div style="background-color: #eeeddd; float: right; height: 310px; font-family: sans-serif;" id="otherbooks">
+  <a href="#" onclick="document.getElementById('otherbooks').outerHTML='';" style="vertical-align: top;">(close)</a><br>
+
+  <a target="_blank" href="https://nostarch.com/automatestuff2" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_automate.link');"><img src="76(tictactoe)_files/cover_automate2_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/big-book-small-python-projects" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_bigbookpython.link');"><img src="76(tictactoe)_files/cover_bigbookpython_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/beyond-basic-stuff-python" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_beyond.link');"><img src="76(tictactoe)_files/cover_beyond_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/inventwithpython" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_invent.link');"><img src="76(tictactoe)_files/cover_invent4th_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://www.amazon.com/Making-Games-Python-Pygame-Sweigart/dp/1469901730?ie=UTF8&amp;tag=playwithpyth-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1469901730" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_pygame.link');"><img src="76(tictactoe)_files/cover_makinggames_thumb.webp" style="height: 200px; border: solid black 1px; /"></a>
+  <a target="_blank" href="https://nostarch.com/crackingcodes" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_hacking.link');"><img src="76(tictactoe)_files/cover_crackingcodes_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/scratchplayground"><img src="76(tictactoe)_files/cover_scratchprogrammingplayground_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/codingwithminecraft"><img src="76(tictactoe)_files/cover_codingwithminecraft_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <br>
+  <a href="https://inventwithpython.com/automateudemy">Use this link to get 70% off the Automate the Boring Stuff online video course.</a><br>
+  <a href="https://www.patreon.com/AlSweigart">Support me on Patreon</a>
+</div>
+
+<a href="https://inventwithpython.com/bigbookpython/project75.html">Prev: Three-Card Monte</a> | <a href="https://inventwithpython.com/bigbookpython/project77.html">Next: Tower of Hanoi Puzzle</a>
+
+
+
+
+
+<div type="bodymatter chapter" class="calibre1" id="calibre_link-26">
+<section class="toclist">
+<header class="calibre10">
+<h1 class="chapter">
+<span class="chapternumber">#76</span><br class="calibre14">
+<span class="chaptertitle">Tic-Tac-Toe</span></h1>
+</header>
+<figure class="opener">
+<img src="76(tictactoe)_files/000002.webp" alt="" class="calibre12">
+</figure>
+<p class="chapterintro">Tic-tac-toe is a classic pencil-and-paper game 
+played on a 3 × 3 grid. Players take turns placing their X or O marks, 
+trying to get three in a row. Most games of tic-tac-toe end in a tie, 
+but it is possible to outsmart your opponent if they’re not careful.</p>
+<h2 id="calibre_link-314" class="calibre5">The Program in Action</h2>
+<p class="bodyfirst">When you run <em class="calibre9">tictactoe.py</em>, the output will look like this:</p>
+<pre class="calibre24"><code class="calibre22">Welcome to Tic-Tac-Toe!
+
+       | |   1 2 3
+      -+-+-
+       | |   4 5 6
+      -+-+-
+       | |   7 8 9
+What is X's move? (1-9)
+&gt; <b class="calibre6">1</b>
+
+      X| |   1 2 3
+      -+-+-
+       | |   4 5 6
+      -+-+-
+       | |   7 8 9
+What is O's move? (1-9)
+<var class="calibre27">--snip--</var>
+      X|O|X  1 2 3
+      -+-+-
+      X|O|O  4 5 6
+      -+-+-
+      O|X|X  7 8 9
+The game is a tie!
+Thanks for playing!</code></pre>
+<h2 id="calibre_link-315" class="calibre5">How It Works</h2>
+<p class="bodyfirst">To represent tic-tac-toe boards in this program, we use a dictionary with keys <code class="calibre22">'1'</code> through <code class="calibre22">'9'</code>
+ for the spaces on the board. The numbered spaces are arranged in the 
+same way as a phone’s keypad. The values in this dictionary are the 
+string <code class="calibre22">'X'</code> or <code class="calibre22">'O'</code> for a player’s mark and <code class="calibre22">' '</code> for an empty space.</p>
+<div class="highlight"><pre><span></span>
+<span class="c">  1. </span><span class="sd">"""Tic-Tac-Toe, by Al Sweigart al@inventwithpython.com</span>
+<span class="c">  2. </span><span class="sd">The classic board game.</span>
+<span class="c">  3. </span><span class="sd">This code is available at https://nostarch.com/big-book-small-python-programming</span>
+<span class="c">  4. </span><span class="sd">Tags: short, board game, game, two-player"""</span>
+<span class="c">  5. </span>
+<span class="c">  6. </span><span class="n">ALL_SPACES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'1'</span><span class="p">,</span> <span class="s1">'2'</span><span class="p">,</span> <span class="s1">'3'</span><span class="p">,</span> <span class="s1">'4'</span><span class="p">,</span> <span class="s1">'5'</span><span class="p">,</span> <span class="s1">'6'</span><span class="p">,</span> <span class="s1">'7'</span><span class="p">,</span> <span class="s1">'8'</span><span class="p">,</span> <span class="s1">'9'</span><span class="p">]</span>
+<span class="c">  7. </span><span class="n">X</span><span class="p">,</span> <span class="n">O</span><span class="p">,</span> <span class="n">BLANK</span> <span class="o">=</span> <span class="s1">'X'</span><span class="p">,</span> <span class="s1">'O'</span><span class="p">,</span> <span class="s1">' '</span>  <span class="c1"># Constants for string values.</span>
+<span class="c">  8. </span>
+<span class="c">  9. </span>
+<span class="c"> 10. </span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="c"> 11. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'Welcome to Tic-Tac-Toe!'</span><span class="p">)</span>
+<span class="c"> 12. </span>    <span class="n">gameBoard</span> <span class="o">=</span> <span class="n">getBlankBoard</span><span class="p">()</span>  <span class="c1"># Create a TTT board dictionary.</span>
+<span class="c"> 13. </span>    <span class="n">currentPlayer</span><span class="p">,</span> <span class="n">nextPlayer</span> <span class="o">=</span> <span class="n">X</span><span class="p">,</span> <span class="n">O</span>  <span class="c1"># X goes first, O goes next.</span>
+<span class="c"> 14. </span>
+<span class="c"> 15. </span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>  <span class="c1"># Main game loop.</span>
+<span class="c"> 16. </span>        <span class="c1"># Display the board on the screen:</span>
+<span class="c"> 17. </span>        <span class="nb">print</span><span class="p">(</span><span class="n">getBoardStr</span><span class="p">(</span><span class="n">gameBoard</span><span class="p">))</span>
+<span class="c"> 18. </span>
+<span class="c"> 19. </span>        <span class="c1"># Keep asking the player until they enter a number 1-9:</span>
+<span class="c"> 20. </span>        <span class="n">move</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="c"> 21. </span>        <span class="k">while</span> <span class="ow">not</span> <span class="n">isValidSpace</span><span class="p">(</span><span class="n">gameBoard</span><span class="p">,</span> <span class="n">move</span><span class="p">):</span>
+<span class="c"> 22. </span>            <span class="nb">print</span><span class="p">(</span><span class="s1">'What is </span><span class="si">{}</span><span class="se">\'</span><span class="s1">s move? (1-9)'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">currentPlayer</span><span class="p">))</span>
+<span class="c"> 23. </span>            <span class="n">move</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'&gt; '</span><span class="p">)</span>
+<span class="c"> 24. </span>        <span class="n">updateBoard</span><span class="p">(</span><span class="n">gameBoard</span><span class="p">,</span> <span class="n">move</span><span class="p">,</span> <span class="n">currentPlayer</span><span class="p">)</span>  <span class="c1"># Make the move.</span>
+<span class="c"> 25. </span>
+<span class="c"> 26. </span>        <span class="c1"># Check if the game is over:</span>
+<span class="c"> 27. </span>        <span class="k">if</span> <span class="n">isWinner</span><span class="p">(</span><span class="n">gameBoard</span><span class="p">,</span> <span class="n">currentPlayer</span><span class="p">):</span>  <span class="c1"># Check for a winner.</span>
+<span class="c"> 28. </span>            <span class="nb">print</span><span class="p">(</span><span class="n">getBoardStr</span><span class="p">(</span><span class="n">gameBoard</span><span class="p">))</span>
+<span class="c"> 29. </span>            <span class="nb">print</span><span class="p">(</span><span class="n">currentPlayer</span> <span class="o">+</span> <span class="s1">' has won the game!'</span><span class="p">)</span>
+<span class="c"> 30. </span>            <span class="k">break</span>
+<span class="c"> 31. </span>        <span class="k">elif</span> <span class="n">isBoardFull</span><span class="p">(</span><span class="n">gameBoard</span><span class="p">):</span>  <span class="c1"># Check for a tie.</span>
+<span class="c"> 32. </span>            <span class="nb">print</span><span class="p">(</span><span class="n">getBoardStr</span><span class="p">(</span><span class="n">gameBoard</span><span class="p">))</span>
+<span class="c"> 33. </span>            <span class="nb">print</span><span class="p">(</span><span class="s1">'The game is a tie!'</span><span class="p">)</span>
+<span class="c"> 34. </span>            <span class="k">break</span>
+<span class="c"> 35. </span>        <span class="c1"># Switch turns to the next player:</span>
+<span class="c"> 36. </span>        <span class="n">currentPlayer</span><span class="p">,</span> <span class="n">nextPlayer</span> <span class="o">=</span> <span class="n">nextPlayer</span><span class="p">,</span> <span class="n">currentPlayer</span>
+<span class="c"> 37. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'Thanks for playing!'</span><span class="p">)</span>
+<span class="c"> 38. </span>
+<span class="c"> 39. </span>
+<span class="c"> 40. </span><span class="k">def</span> <span class="nf">getBlankBoard</span><span class="p">():</span>
+<span class="c"> 41. </span>    <span class="sd">"""Create a new, blank tic-tac-toe board."""</span>
+<span class="c"> 42. </span>    <span class="c1"># Map of space numbers: 1|2|3</span>
+<span class="c"> 43. </span>    <span class="c1">#                       -+-+-</span>
+<span class="c"> 44. </span>    <span class="c1">#                       4|5|6</span>
+<span class="c"> 45. </span>    <span class="c1">#                       -+-+-</span>
+<span class="c"> 46. </span>    <span class="c1">#                       7|8|9</span>
+<span class="c"> 47. </span>    <span class="c1"># Keys are 1 through 9, the values are X, O, or BLANK:</span>
+<span class="c"> 48. </span>    <span class="n">board</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="c"> 49. </span>    <span class="k">for</span> <span class="n">space</span> <span class="ow">in</span> <span class="n">ALL_SPACES</span><span class="p">:</span>
+<span class="c"> 50. </span>        <span class="n">board</span><span class="p">[</span><span class="n">space</span><span class="p">]</span> <span class="o">=</span> <span class="n">BLANK</span>  <span class="c1"># All spaces start as blank.</span>
+<span class="c"> 51. </span>    <span class="k">return</span> <span class="n">board</span>
+<span class="c"> 52. </span>
+<span class="c"> 53. </span>
+<span class="c"> 54. </span><span class="k">def</span> <span class="nf">getBoardStr</span><span class="p">(</span><span class="n">board</span><span class="p">):</span>
+<span class="c"> 55. </span>    <span class="sd">"""Return a text-representation of the board."""</span>
+<span class="c"> 56. </span>    <span class="k">return</span> <span class="s1">'''</span>
+<span class="c"> 57. </span><span class="s1">      </span><span class="si">{}</span><span class="s1">|</span><span class="si">{}</span><span class="s1">|</span><span class="si">{}</span><span class="s1">  1 2 3</span>
+<span class="c"> 58. </span><span class="s1">      -+-+-</span>
+<span class="c"> 59. </span><span class="s1">      </span><span class="si">{}</span><span class="s1">|</span><span class="si">{}</span><span class="s1">|</span><span class="si">{}</span><span class="s1">  4 5 6</span>
+<span class="c"> 60. </span><span class="s1">      -+-+-</span>
+<span class="c"> 61. </span><span class="s1">      </span><span class="si">{}</span><span class="s1">|</span><span class="si">{}</span><span class="s1">|</span><span class="si">{}</span><span class="s1">  7 8 9'''</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="s1">'1'</span><span class="p">],</span> <span class="n">board</span><span class="p">[</span><span class="s1">'2'</span><span class="p">],</span> <span class="n">board</span><span class="p">[</span><span class="s1">'3'</span><span class="p">],</span>
+<span class="c"> 62. </span>                                <span class="n">board</span><span class="p">[</span><span class="s1">'4'</span><span class="p">],</span> <span class="n">board</span><span class="p">[</span><span class="s1">'5'</span><span class="p">],</span> <span class="n">board</span><span class="p">[</span><span class="s1">'6'</span><span class="p">],</span>
+<span class="c"> 63. </span>                                <span class="n">board</span><span class="p">[</span><span class="s1">'7'</span><span class="p">],</span> <span class="n">board</span><span class="p">[</span><span class="s1">'8'</span><span class="p">],</span> <span class="n">board</span><span class="p">[</span><span class="s1">'9'</span><span class="p">])</span>
+<span class="c"> 64. </span>
+<span class="c"> 65. </span><span class="k">def</span> <span class="nf">isValidSpace</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">space</span><span class="p">):</span>
+<span class="c"> 66. </span>    <span class="sd">"""Returns True if the space on the board is a valid space number</span>
+<span class="c"> 67. </span><span class="sd">    and the space is blank."""</span>
+<span class="c"> 68. </span>    <span class="k">return</span> <span class="n">space</span> <span class="ow">in</span> <span class="n">ALL_SPACES</span> <span class="ow">and</span> <span class="n">board</span><span class="p">[</span><span class="n">space</span><span class="p">]</span> <span class="o">==</span> <span class="n">BLANK</span>
+<span class="c"> 69. </span>
+<span class="c"> 70. </span>
+<span class="c"> 71. </span><span class="k">def</span> <span class="nf">isWinner</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">player</span><span class="p">):</span>
+<span class="c"> 72. </span>    <span class="sd">"""Return True if player is a winner on this TTTBoard."""</span>
+<span class="c"> 73. </span>    <span class="c1"># Shorter variable names used here for readablility:</span>
+<span class="c"> 74. </span>    <span class="n">b</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">board</span><span class="p">,</span> <span class="n">player</span>
+<span class="c"> 75. </span>    <span class="c1"># Check for 3 marks across 3 rows, 3 columns, and 2 diagonals.</span>
+<span class="c"> 76. </span>    <span class="k">return</span> <span class="p">((</span><span class="n">b</span><span class="p">[</span><span class="s1">'1'</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="s1">'2'</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="s1">'3'</span><span class="p">]</span> <span class="o">==</span> <span class="n">p</span><span class="p">)</span> <span class="ow">or</span>  <span class="c1"># Across top</span>
+<span class="c"> 77. </span>            <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="s1">'4'</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="s1">'5'</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="s1">'6'</span><span class="p">]</span> <span class="o">==</span> <span class="n">p</span><span class="p">)</span> <span class="ow">or</span>  <span class="c1"># Across middle</span>
+<span class="c"> 78. </span>            <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="s1">'7'</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="s1">'8'</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="s1">'9'</span><span class="p">]</span> <span class="o">==</span> <span class="n">p</span><span class="p">)</span> <span class="ow">or</span>  <span class="c1"># Across bottom</span>
+<span class="c"> 79. </span>            <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="s1">'1'</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="s1">'4'</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="s1">'7'</span><span class="p">]</span> <span class="o">==</span> <span class="n">p</span><span class="p">)</span> <span class="ow">or</span>  <span class="c1"># Down left</span>
+<span class="c"> 80. </span>            <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="s1">'2'</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="s1">'5'</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="s1">'8'</span><span class="p">]</span> <span class="o">==</span> <span class="n">p</span><span class="p">)</span> <span class="ow">or</span>  <span class="c1"># Down middle</span>
+<span class="c"> 81. </span>            <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="s1">'3'</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="s1">'6'</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="s1">'9'</span><span class="p">]</span> <span class="o">==</span> <span class="n">p</span><span class="p">)</span> <span class="ow">or</span>  <span class="c1"># Down right</span>
+<span class="c"> 82. </span>            <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="s1">'3'</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="s1">'5'</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="s1">'7'</span><span class="p">]</span> <span class="o">==</span> <span class="n">p</span><span class="p">)</span> <span class="ow">or</span>  <span class="c1"># Diagonal</span>
+<span class="c"> 83. </span>            <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="s1">'1'</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="s1">'5'</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="s1">'9'</span><span class="p">]</span> <span class="o">==</span> <span class="n">p</span><span class="p">))</span>    <span class="c1"># Diagonal</span>
+<span class="c"> 84. </span>
+<span class="c"> 85. </span><span class="k">def</span> <span class="nf">isBoardFull</span><span class="p">(</span><span class="n">board</span><span class="p">):</span>
+<span class="c"> 86. </span>    <span class="sd">"""Return True if every space on the board has been taken."""</span>
+<span class="c"> 87. </span>    <span class="k">for</span> <span class="n">space</span> <span class="ow">in</span> <span class="n">ALL_SPACES</span><span class="p">:</span>
+<span class="c"> 88. </span>        <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="n">space</span><span class="p">]</span> <span class="o">==</span> <span class="n">BLANK</span><span class="p">:</span>
+<span class="c"> 89. </span>            <span class="k">return</span> <span class="kc">False</span>  <span class="c1"># If any space is blank, return False.</span>
+<span class="c"> 90. </span>    <span class="k">return</span> <span class="kc">True</span>  <span class="c1"># No spaces are blank, so return True.</span>
+<span class="c"> 91. </span>
+<span class="c"> 92. </span>
+<span class="c"> 93. </span><span class="k">def</span> <span class="nf">updateBoard</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">space</span><span class="p">,</span> <span class="n">mark</span><span class="p">):</span>
+<span class="c"> 94. </span>    <span class="sd">"""Sets the space on the board to mark."""</span>
+<span class="c"> 95. </span>    <span class="n">board</span><span class="p">[</span><span class="n">space</span><span class="p">]</span> <span class="o">=</span> <span class="n">mark</span>
+<span class="c"> 96. </span>
+<span class="c"> 97. </span>
+<span class="c"> 98. </span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<span class="c"> 99. </span>    <span class="n">main</span><span class="p">()</span>  <span class="c1"># Call main() if this module is run, but not when imported.</span>
+</pre></div>
+
+<h2 id="calibre_link-316" class="calibre5">Exploring the Program</h2>
+<p class="bodyfirst">Try to find the answers to the following questions.
+ Experiment with some modifications to the code and rerun the program to
+ see what effect the changes have.</p>
+<ol class="decimal">
+<li class="calibre8" value="1">What happens if you change <code class="calibre22">X, O, BLANK = 'X', 'O', ' '</code> on line 7 to <code class="calibre22">X, O, BLANK = 'X', 'X', ' '</code>?</li>
+<li class="calibre8" value="2">What happens if you change <code class="calibre22">board[space] = mark</code> on line 95 to <code class="calibre22">board[space] = X</code>?</li>
+<li class="calibre8" value="3">What happens if you change <code class="calibre22">board[space] = BLANK</code> on line 50 to <code class="calibre22">board[space] = X</code>?</li>
+</ol>
+</section>
+</div>
+
+
+
+
+
+
+
+
+<a href="https://inventwithpython.com/bigbookpython/project75.html">Prev: Three-Card Monte</a> | <a href="https://inventwithpython.com/bigbookpython/project77.html">Next: Tower of Hanoi Puzzle</a>
+</body></html>

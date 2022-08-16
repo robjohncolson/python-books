@@ -1,0 +1,224 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="2(birthdayparadox)_files/style.css" rel="stylesheet" type="text/css"><link rel="stylesheet" type="text/css" href="2(birthdayparadox)_files/pygments.css"><title>Birthday Paradox</title></head><body style="background-color: #fffeee;">
+
+<script type="text/javascript" async="" src="2(birthdayparadox)_files/ga.js"></script><script type="text/javascript">
+//<![CDATA[
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-5459430-3']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+//]]>
+</script>
+
+
+<div style="background-color: #eeeddd; float: right; height: 310px; font-family: sans-serif;" id="otherbooks">
+  <a href="#" onclick="document.getElementById('otherbooks').outerHTML='';" style="vertical-align: top;">(close)</a><br>
+
+  <a target="_blank" href="https://nostarch.com/automatestuff2" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_automate.link');"><img src="2(birthdayparadox)_files/cover_automate2_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/big-book-small-python-projects" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_bigbookpython.link');"><img src="2(birthdayparadox)_files/cover_bigbookpython_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/beyond-basic-stuff-python" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_beyond.link');"><img src="2(birthdayparadox)_files/cover_beyond_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/inventwithpython" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_invent.link');"><img src="2(birthdayparadox)_files/cover_invent4th_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://www.amazon.com/Making-Games-Python-Pygame-Sweigart/dp/1469901730?ie=UTF8&amp;tag=playwithpyth-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1469901730" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_pygame.link');"><img src="2(birthdayparadox)_files/cover_makinggames_thumb.webp" style="height: 200px; border: solid black 1px; /"></a>
+  <a target="_blank" href="https://nostarch.com/crackingcodes" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_hacking.link');"><img src="2(birthdayparadox)_files/cover_crackingcodes_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/scratchplayground"><img src="2(birthdayparadox)_files/cover_scratchprogrammingplayground_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/codingwithminecraft"><img src="2(birthdayparadox)_files/cover_codingwithminecraft_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <br>
+  <a href="https://inventwithpython.com/automateudemy">Use this link to get 70% off the Automate the Boring Stuff online video course.</a><br>
+  <a href="https://www.patreon.com/AlSweigart">Support me on Patreon</a>
+</div>
+
+<a href="https://inventwithpython.com/bigbookpython/project1.html">Prev: Bagels</a> | <a href="https://inventwithpython.com/bigbookpython/project3.html">Next: Bitmap Message</a>
+
+
+
+
+<div type="bodymatter chapter" class="calibre1" id="calibre_link-20">
+<section class="toclist">
+<header class="calibre10">
+<h1 class="chapter">
+<span class="chapternumber">#2</span><br class="calibre14">
+<span class="chaptertitle">Birthday Paradox</span></h1>
+</header>
+<figure class="opener">
+<img src="2(birthdayparadox)_files/000002.webp" alt="" class="calibre12">
+</figure>
+<p class="chapterintro">The Birthday Paradox, also called the Birthday 
+Problem, is the surprisingly high probability that two people will have 
+the same birthday even in a small group of people. In a group of 70 
+people, there’s a 99.9 percent chance of two people having a matching 
+birthday. But even in a group as small as 23 people, there’s a 50 
+percent chance of a matching birthday. This program performs several 
+probability experiments to determine the percentages for groups of 
+different sizes. We call these types of experiments, in which we conduct
+ multiple random trials to understand the likely outcomes, Monte Carlo 
+experiments.</p>
+<p class="calibre18">You can find out more about the Birthday Paradox at <a href="https://en.wikipedia.org/wiki/Birthday_problem" class="linkurl">https://en.wikipedia.org/wiki/Birthday_problem</a>.</p>
+<h2 id="calibre_link-41" class="calibre5">The Program in Action</h2>
+<p class="bodyfirst">When you run <em class="calibre9">birthdayparadox.py</em>, the output will look like this:</p>
+<pre class="calibre24"><code class="calibre22">Birthday Paradox, by Al Sweigart al@inventwithpython.com
+<var class="calibre27">--snip--</var>
+How many birthdays shall I generate? (Max 100)
+&gt; <b class="calibre6">23</b>
+Here are 23 birthdays:
+Oct 9, Sep 1, May 28, Jul 29, Feb 17, Jan 8, Aug 18, Feb 19, Dec 1, Jan 22,
+May 16, Sep 25, Oct 6, May 6, May 26, Oct 11, Dec 19, Jun 28, Jul 29, Dec 6,
+Nov 26, Aug 18, Mar 18
+In this simulation, multiple people have a birthday on Jul 29
+Generating 23 random birthdays 100,000 times...
+Press Enter to begin...
+Let's run another 100,000 simulations.
+0 simulations run...
+10000 simulations run...
+<var class="calibre27">--snip--</var>
+90000 simulations run...
+100000 simulations run.
+Out of 100,000 simulations of 23 people, there was a
+matching birthday in that group 50955 times. This means
+that 23 people have a 50.95 % chance of
+having a matching birthday in their group.
+That's probably more than you would think!</code></pre>
+<h2 id="calibre_link-42" class="calibre5">How It Works</h2>
+<p class="bodyfirst">Running 100,000 simulations can take a while, which
+ is why lines 95 and 96 report that another 10,000 simulations have 
+finished. This feedback can assure the user that the program hasn’t 
+frozen. Notice that some of the integers, like <code class="calibre22">10_000</code> on line 95 and <code class="calibre22">100_000</code>
+ on lines 93 and 103, have underscores. These underscores have no 
+special meaning, but Python allows them so that programmers can make 
+integer values easier to read. In other words, it’s easier to read “one 
+hundred thousand” from <code class="calibre22">100_000</code> than from <code class="calibre22">100000</code>.</p>
+<div class="highlight"><pre><span></span>
+<span class="c">  1. </span><span class="sd">"""Birthday Paradox Simulation, by Al Sweigart al@inventwithpython.com</span>
+<span class="c">  2. </span><span class="sd">Explore the surprising probabilities of the "Birthday Paradox".</span>
+<span class="c">  3. </span><span class="sd">More info at https://en.wikipedia.org/wiki/Birthday_problem</span>
+<span class="c">  4. </span><span class="sd">This code is available at https://nostarch.com/big-book-small-python-programming</span>
+<span class="c">  5. </span><span class="sd">Tags: short, math, simulation"""</span>
+<span class="c">  6. </span>
+<span class="c">  7. </span><span class="kn">import</span> <span class="nn">datetime</span><span class="o">,</span> <span class="nn">random</span>
+<span class="c">  8. </span>
+<span class="c">  9. </span>
+<span class="c"> 10. </span><span class="k">def</span> <span class="nf">getBirthdays</span><span class="p">(</span><span class="n">numberOfBirthdays</span><span class="p">):</span>
+<span class="c"> 11. </span>    <span class="sd">"""Returns a list of number random date objects for birthdays."""</span>
+<span class="c"> 12. </span>    <span class="n">birthdays</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c"> 13. </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numberOfBirthdays</span><span class="p">):</span>
+<span class="c"> 14. </span>        <span class="c1"># The year is unimportant for our simulation, as long as all</span>
+<span class="c"> 15. </span>        <span class="c1"># birthdays have the same year.</span>
+<span class="c"> 16. </span>        <span class="n">startOfYear</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2001</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c"> 17. </span>
+<span class="c"> 18. </span>        <span class="c1"># Get a random day into the year:</span>
+<span class="c"> 19. </span>        <span class="n">randomNumberOfDays</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">364</span><span class="p">))</span>
+<span class="c"> 20. </span>        <span class="n">birthday</span> <span class="o">=</span> <span class="n">startOfYear</span> <span class="o">+</span> <span class="n">randomNumberOfDays</span>
+<span class="c"> 21. </span>        <span class="n">birthdays</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">birthday</span><span class="p">)</span>
+<span class="c"> 22. </span>    <span class="k">return</span> <span class="n">birthdays</span>
+<span class="c"> 23. </span>
+<span class="c"> 24. </span>
+<span class="c"> 25. </span><span class="k">def</span> <span class="nf">getMatch</span><span class="p">(</span><span class="n">birthdays</span><span class="p">):</span>
+<span class="c"> 26. </span>    <span class="sd">"""Returns the date object of a birthday that occurs more than once</span>
+<span class="c"> 27. </span><span class="sd">    in the birthdays list."""</span>
+<span class="c"> 28. </span>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">birthdays</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">birthdays</span><span class="p">)):</span>
+<span class="c"> 29. </span>        <span class="k">return</span> <span class="kc">None</span>  <span class="c1"># All birthdays are unique, so return None.</span>
+<span class="c"> 30. </span>
+<span class="c"> 31. </span>    <span class="c1"># Compare each birthday to every other birthday:</span>
+<span class="c"> 32. </span>    <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">birthdayA</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">birthdays</span><span class="p">):</span>
+<span class="c"> 33. </span>        <span class="k">for</span> <span class="n">b</span><span class="p">,</span> <span class="n">birthdayB</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">birthdays</span><span class="p">[</span><span class="n">a</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">:]):</span>
+<span class="c"> 34. </span>            <span class="k">if</span> <span class="n">birthdayA</span> <span class="o">==</span> <span class="n">birthdayB</span><span class="p">:</span>
+<span class="c"> 35. </span>                <span class="k">return</span> <span class="n">birthdayA</span>  <span class="c1"># Return the matching birthday.</span>
+<span class="c"> 36. </span>
+<span class="c"> 37. </span>
+<span class="c"> 38. </span><span class="c1"># Display the intro:</span>
+<span class="c"> 39. </span><span class="nb">print</span><span class="p">(</span><span class="s1">'''Birthday Paradox, by Al Sweigart al@inventwithpython.com</span>
+<span class="c"> 40. </span>
+<span class="c"> 41. </span><span class="s1">The birthday paradox shows us that in a group of N people, the odds</span>
+<span class="c"> 42. </span><span class="s1">that two of them have matching birthdays is surprisingly large.</span>
+<span class="c"> 43. </span><span class="s1">This program does a Monte Carlo simulation (that is, repeated random</span>
+<span class="c"> 44. </span><span class="s1">simulations) to explore this concept.</span>
+<span class="c"> 45. </span>
+<span class="c"> 46. </span><span class="s1">(It's not actually a paradox, it's just a surprising result.)</span>
+<span class="c"> 47. </span><span class="s1">'''</span><span class="p">)</span>
+<span class="c"> 48. </span>
+<span class="c"> 49. </span><span class="c1"># Set up a tuple of month names in order:</span>
+<span class="c"> 50. </span><span class="n">MONTHS</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'Jan'</span><span class="p">,</span> <span class="s1">'Feb'</span><span class="p">,</span> <span class="s1">'Mar'</span><span class="p">,</span> <span class="s1">'Apr'</span><span class="p">,</span> <span class="s1">'May'</span><span class="p">,</span> <span class="s1">'Jun'</span><span class="p">,</span>
+<span class="c"> 51. </span>          <span class="s1">'Jul'</span><span class="p">,</span> <span class="s1">'Aug'</span><span class="p">,</span> <span class="s1">'Sep'</span><span class="p">,</span> <span class="s1">'Oct'</span><span class="p">,</span> <span class="s1">'Nov'</span><span class="p">,</span> <span class="s1">'Dec'</span><span class="p">)</span>
+<span class="c"> 52. </span>
+<span class="c"> 53. </span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>  <span class="c1"># Keep asking until the user enters a valid amount.</span>
+<span class="c"> 54. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'How many birthdays shall I generate? (Max 100)'</span><span class="p">)</span>
+<span class="c"> 55. </span>    <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'&gt; '</span><span class="p">)</span>
+<span class="c"> 56. </span>    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">isdecimal</span><span class="p">()</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;</span> <span class="nb">int</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">):</span>
+<span class="c"> 57. </span>        <span class="n">numBDays</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<span class="c"> 58. </span>        <span class="k">break</span>  <span class="c1"># User has entered a valid amount.</span>
+<span class="c"> 59. </span><span class="nb">print</span><span class="p">()</span>
+<span class="c"> 60. </span>
+<span class="c"> 61. </span><span class="c1"># Generate and display the birthdays:</span>
+<span class="c"> 62. </span><span class="nb">print</span><span class="p">(</span><span class="s1">'Here are'</span><span class="p">,</span> <span class="n">numBDays</span><span class="p">,</span> <span class="s1">'birthdays:'</span><span class="p">)</span>
+<span class="c"> 63. </span><span class="n">birthdays</span> <span class="o">=</span> <span class="n">getBirthdays</span><span class="p">(</span><span class="n">numBDays</span><span class="p">)</span>
+<span class="c"> 64. </span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">birthday</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">birthdays</span><span class="p">):</span>
+<span class="c"> 65. </span>    <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="c"> 66. </span>        <span class="c1"># Display a comma for each birthday after the first birthday.</span>
+<span class="c"> 67. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">', '</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+<span class="c"> 68. </span>    <span class="n">monthName</span> <span class="o">=</span> <span class="n">MONTHS</span><span class="p">[</span><span class="n">birthday</span><span class="o">.</span><span class="n">month</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+<span class="c"> 69. </span>    <span class="n">dateText</span> <span class="o">=</span> <span class="s1">'</span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">monthName</span><span class="p">,</span> <span class="n">birthday</span><span class="o">.</span><span class="n">day</span><span class="p">)</span>
+<span class="c"> 70. </span>    <span class="nb">print</span><span class="p">(</span><span class="n">dateText</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+<span class="c"> 71. </span><span class="nb">print</span><span class="p">()</span>
+<span class="c"> 72. </span><span class="nb">print</span><span class="p">()</span>
+<span class="c"> 73. </span>
+<span class="c"> 74. </span><span class="c1"># Determine if there are two birthdays that match.</span>
+<span class="c"> 75. </span><span class="n">match</span> <span class="o">=</span> <span class="n">getMatch</span><span class="p">(</span><span class="n">birthdays</span><span class="p">)</span>
+<span class="c"> 76. </span>
+<span class="c"> 77. </span><span class="c1"># Display the results:</span>
+<span class="c"> 78. </span><span class="nb">print</span><span class="p">(</span><span class="s1">'In this simulation, '</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+<span class="c"> 79. </span><span class="k">if</span> <span class="n">match</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+<span class="c"> 80. </span>    <span class="n">monthName</span> <span class="o">=</span> <span class="n">MONTHS</span><span class="p">[</span><span class="n">match</span><span class="o">.</span><span class="n">month</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+<span class="c"> 81. </span>    <span class="n">dateText</span> <span class="o">=</span> <span class="s1">'</span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">monthName</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">day</span><span class="p">)</span>
+<span class="c"> 82. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'multiple people have a birthday on'</span><span class="p">,</span> <span class="n">dateText</span><span class="p">)</span>
+<span class="c"> 83. </span><span class="k">else</span><span class="p">:</span>
+<span class="c"> 84. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'there are no matching birthdays.'</span><span class="p">)</span>
+<span class="c"> 85. </span><span class="nb">print</span><span class="p">()</span>
+<span class="c"> 86. </span>
+<span class="c"> 87. </span><span class="c1"># Run through 100,000 simulations:</span>
+<span class="c"> 88. </span><span class="nb">print</span><span class="p">(</span><span class="s1">'Generating'</span><span class="p">,</span> <span class="n">numBDays</span><span class="p">,</span> <span class="s1">'random birthdays 100,000 times...'</span><span class="p">)</span>
+<span class="c"> 89. </span><span class="nb">input</span><span class="p">(</span><span class="s1">'Press Enter to begin...'</span><span class="p">)</span>
+<span class="c"> 90. </span>
+<span class="c"> 91. </span><span class="nb">print</span><span class="p">(</span><span class="s1">'Let</span><span class="se">\'</span><span class="s1">s run another 100,000 simulations.'</span><span class="p">)</span>
+<span class="c"> 92. </span><span class="n">simMatch</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># How many simulations had matching birthdays in them.</span>
+<span class="c"> 93. </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100000</span><span class="p">):</span>
+<span class="c"> 94. </span>    <span class="c1"># Report on the progress every 10,000 simulations:</span>
+<span class="c"> 95. </span>    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">10000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="c"> 96. </span>        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s1">'simulations run...'</span><span class="p">)</span>
+<span class="c"> 97. </span>    <span class="n">birthdays</span> <span class="o">=</span> <span class="n">getBirthdays</span><span class="p">(</span><span class="n">numBDays</span><span class="p">)</span>
+<span class="c"> 98. </span>    <span class="k">if</span> <span class="n">getMatch</span><span class="p">(</span><span class="n">birthdays</span><span class="p">)</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+<span class="c"> 99. </span>        <span class="n">simMatch</span> <span class="o">=</span> <span class="n">simMatch</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="c">100. </span><span class="nb">print</span><span class="p">(</span><span class="s1">'100,000 simulations run.'</span><span class="p">)</span>
+<span class="c">101. </span>
+<span class="c">102. </span><span class="c1"># Display simulation results:</span>
+<span class="c">103. </span><span class="n">probability</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">simMatch</span> <span class="o">/</span> <span class="mi">100000</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c">104. </span><span class="nb">print</span><span class="p">(</span><span class="s1">'Out of 100,000 simulations of'</span><span class="p">,</span> <span class="n">numBDays</span><span class="p">,</span> <span class="s1">'people, there was a'</span><span class="p">)</span>
+<span class="c">105. </span><span class="nb">print</span><span class="p">(</span><span class="s1">'matching birthday in that group'</span><span class="p">,</span> <span class="n">simMatch</span><span class="p">,</span> <span class="s1">'times. This means'</span><span class="p">)</span>
+<span class="c">106. </span><span class="nb">print</span><span class="p">(</span><span class="s1">'that'</span><span class="p">,</span> <span class="n">numBDays</span><span class="p">,</span> <span class="s1">'people have a'</span><span class="p">,</span> <span class="n">probability</span><span class="p">,</span> <span class="s1">'</span><span class="si">% c</span><span class="s1">hance of'</span><span class="p">)</span>
+<span class="c">107. </span><span class="nb">print</span><span class="p">(</span><span class="s1">'having a matching birthday in their group.'</span><span class="p">)</span>
+<span class="c">108. </span><span class="nb">print</span><span class="p">(</span><span class="s1">'That</span><span class="se">\'</span><span class="s1">s probably more than you would think!'</span><span class="p">)</span>
+</pre></div>
+
+<h2 id="calibre_link-43" class="calibre5">Exploring the Program</h2>
+<p class="bodyfirst">Try to find the answers to the following questions.
+ Experiment with some modifications to the code and rerun the program to
+ see what effect the changes have.</p>
+<ol class="decimal">
+<li class="calibre8" value="1">How are birthdays represented in this program? (Hint: look at line 16.)</li>
+<li class="calibre8" value="2">How could you remove the maximum limit of 100 birthdays the program generates?</li>
+<li class="calibre8" value="3">What error message do you get if you delete or comment out <code class="calibre22">numBDays = int(response)</code> on line 57?</li>
+<li class="calibre8" value="4">How can you make the program display full month names, such as <code class="calibre22">'January'</code> instead of <code class="calibre22">'Jan'</code>?</li>
+<li class="calibre8" value="5">How could you make <code class="calibre22">'X simulations run...'</code> appear every 1,000 simulations instead of every 10,000?</li>
+</ol>
+</section>
+</div>
+
+
+
+
+<a href="https://inventwithpython.com/bigbookpython/project1.html">Prev: Bagels</a> | <a href="https://inventwithpython.com/bigbookpython/project3.html">Next: Bitmap Message</a>
+</body></html>

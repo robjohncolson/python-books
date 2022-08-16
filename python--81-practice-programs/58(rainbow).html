@@ -1,0 +1,144 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="58(rainbow)_files/style.css" rel="stylesheet" type="text/css"><link rel="stylesheet" type="text/css" href="58(rainbow)_files/pygments.css"><title>Rainbow</title></head><body style="background-color: #fffeee;">
+
+<script type="text/javascript" async="" src="58(rainbow)_files/ga.js"></script><script type="text/javascript">
+//<![CDATA[
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-5459430-3']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+//]]>
+</script>
+
+
+<div style="background-color: #eeeddd; float: right; height: 310px; font-family: sans-serif;" id="otherbooks">
+  <a href="#" onclick="document.getElementById('otherbooks').outerHTML='';" style="vertical-align: top;">(close)</a><br>
+
+  <a target="_blank" href="https://nostarch.com/automatestuff2" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_automate.link');"><img src="58(rainbow)_files/cover_automate2_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/big-book-small-python-projects" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_bigbookpython.link');"><img src="58(rainbow)_files/cover_bigbookpython_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/beyond-basic-stuff-python" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_beyond.link');"><img src="58(rainbow)_files/cover_beyond_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/inventwithpython" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_invent.link');"><img src="58(rainbow)_files/cover_invent4th_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://www.amazon.com/Making-Games-Python-Pygame-Sweigart/dp/1469901730?ie=UTF8&amp;tag=playwithpyth-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1469901730" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_pygame.link');"><img src="58(rainbow)_files/cover_makinggames_thumb.webp" style="height: 200px; border: solid black 1px; /"></a>
+  <a target="_blank" href="https://nostarch.com/crackingcodes" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_hacking.link');"><img src="58(rainbow)_files/cover_crackingcodes_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/scratchplayground"><img src="58(rainbow)_files/cover_scratchprogrammingplayground_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/codingwithminecraft"><img src="58(rainbow)_files/cover_codingwithminecraft_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <br>
+  <a href="https://inventwithpython.com/automateudemy">Use this link to get 70% off the Automate the Boring Stuff online video course.</a><br>
+  <a href="https://www.patreon.com/AlSweigart">Support me on Patreon</a>
+</div>
+
+<a href="https://inventwithpython.com/bigbookpython/project57.html">Prev: Progress Bar</a> | <a href="https://inventwithpython.com/bigbookpython/project59.html">Next: Rock Paper Scissors</a>
+
+
+
+
+
+<div type="bodymatter chapter" class="calibre1" id="calibre_link-243">
+<section class="toclist">
+<header class="calibre10">
+<h1 class="chapter">
+<span class="chapternumber">#58</span><br class="calibre14">
+<span class="chaptertitle">Rainbow</span></h1>
+</header>
+<figure class="opener">
+<img src="58(rainbow)_files/000002.webp" alt="" class="calibre12">
+</figure>
+<p class="chapterintro">Rainbow is a simple program that shows a 
+colorful rainbow traveling back and forth across the screen. The program
+ makes use of the fact that when new lines of text appear, the existing 
+text scrolls up, causing it to look like it’s moving. This program is 
+good for beginners, and it’s similar to Project 15, “Deep Cave.”</p>
+<h2 id="calibre_link-244" class="calibre5">The Program in Action</h2>
+<p class="bodyfirst"><a href="#calibre_link-346" id="calibre_link-808" class="linkurl">Figure 58-1</a> shows what the output will look like when you run <em class="calibre9">rainbow.py</em>.</p>
+<figure class="calibre28">
+<img src="58(rainbow)_files/000004.webp" alt="f58001" class="calibre12">
+<figcaption class="calibre29"><p class="calibre30"><a id="calibre_link-346" class="linkurl">Figure 58-1</a>: The zigzag output of the rainbow, which is in color on the screen</p></figcaption>
+</figure>
+<h2 id="calibre_link-245" class="calibre5">How It Works</h2>
+<p class="bodyfirst">This program continuously prints the same rainbow 
+pattern. What changes is the number of space characters printed to the 
+left of it. Increasing this number moves the rainbow to the right, and 
+decreasing it moves the rainbow to the left. The <code class="calibre22">indent</code> variable keeps track of the number of spaces. The <code class="calibre22">indentIncreasing</code> variable is set to <code class="calibre22">True</code> to note that <code class="calibre22">indent</code> should increase until it reaches <code class="calibre22">60</code>, at which point it changes to <code class="calibre22">False</code>. The rest of the code decreases the number of spaces. Once it reaches <code class="calibre22">0</code>, it changes back to <code class="calibre22">True</code> again to repeat the zigzag of the rainbow.</p>
+<div class="highlight"><pre><span></span>
+<span class="c"> 1. </span><span class="sd">"""Rainbow, by Al Sweigart al@inventwithpython.com</span>
+<span class="c"> 2. </span><span class="sd">Shows a simple rainbow animation. Press Ctrl-C to stop.</span>
+<span class="c"> 3. </span><span class="sd">This code is available at https://nostarch.com/big-book-small-python-programming</span>
+<span class="c"> 4. </span><span class="sd">Tags: tiny, artistic, bext, beginner, scrolling"""</span>
+<span class="c"> 5. </span>
+<span class="c"> 6. </span><span class="kn">import</span> <span class="nn">time</span><span class="o">,</span> <span class="nn">sys</span>
+<span class="c"> 7. </span>
+<span class="c"> 8. </span><span class="k">try</span><span class="p">:</span>
+<span class="c"> 9. </span>    <span class="kn">import</span> <span class="nn">bext</span>
+<span class="c">10. </span><span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+<span class="c">11. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'This program requires the bext module, which you'</span><span class="p">)</span>
+<span class="c">12. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'can install by following the instructions at'</span><span class="p">)</span>
+<span class="c">13. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'https://pypi.org/project/Bext/'</span><span class="p">)</span>
+<span class="c">14. </span>    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+<span class="c">15. </span>
+<span class="c">16. </span><span class="nb">print</span><span class="p">(</span><span class="s1">'Rainbow, by Al Sweigart al@inventwithpython.com'</span><span class="p">)</span>
+<span class="c">17. </span><span class="nb">print</span><span class="p">(</span><span class="s1">'Press Ctrl-C to stop.'</span><span class="p">)</span>
+<span class="c">18. </span><span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="c">19. </span>
+<span class="c">20. </span><span class="n">indent</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># How many spaces to indent.</span>
+<span class="c">21. </span><span class="n">indentIncreasing</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># Whether the indentation is increasing or not.</span>
+<span class="c">22. </span>
+<span class="c">23. </span><span class="k">try</span><span class="p">:</span>
+<span class="c">24. </span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>  <span class="c1"># Main program loop.</span>
+<span class="c">25. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">' '</span> <span class="o">*</span> <span class="n">indent</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+<span class="c">26. </span>        <span class="n">bext</span><span class="o">.</span><span class="n">fg</span><span class="p">(</span><span class="s1">'red'</span><span class="p">)</span>
+<span class="c">27. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'##'</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+<span class="c">28. </span>        <span class="n">bext</span><span class="o">.</span><span class="n">fg</span><span class="p">(</span><span class="s1">'yellow'</span><span class="p">)</span>
+<span class="c">29. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'##'</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+<span class="c">30. </span>        <span class="n">bext</span><span class="o">.</span><span class="n">fg</span><span class="p">(</span><span class="s1">'green'</span><span class="p">)</span>
+<span class="c">31. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'##'</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+<span class="c">32. </span>        <span class="n">bext</span><span class="o">.</span><span class="n">fg</span><span class="p">(</span><span class="s1">'blue'</span><span class="p">)</span>
+<span class="c">33. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'##'</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+<span class="c">34. </span>        <span class="n">bext</span><span class="o">.</span><span class="n">fg</span><span class="p">(</span><span class="s1">'cyan'</span><span class="p">)</span>
+<span class="c">35. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'##'</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+<span class="c">36. </span>        <span class="n">bext</span><span class="o">.</span><span class="n">fg</span><span class="p">(</span><span class="s1">'purple'</span><span class="p">)</span>
+<span class="c">37. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'##'</span><span class="p">)</span>
+<span class="c">38. </span>
+<span class="c">39. </span>        <span class="k">if</span> <span class="n">indentIncreasing</span><span class="p">:</span>
+<span class="c">40. </span>            <span class="c1"># Increase the number of spaces:</span>
+<span class="c">41. </span>            <span class="n">indent</span> <span class="o">=</span> <span class="n">indent</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="c">42. </span>            <span class="k">if</span> <span class="n">indent</span> <span class="o">==</span> <span class="mi">60</span><span class="p">:</span>  <span class="c1"># (!) Change this to 10 or 30.</span>
+<span class="c">43. </span>                <span class="c1"># Change direction:</span>
+<span class="c">44. </span>                <span class="n">indentIncreasing</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="c">45. </span>        <span class="k">else</span><span class="p">:</span>
+<span class="c">46. </span>            <span class="c1"># Decrease the number of spaces:</span>
+<span class="c">47. </span>            <span class="n">indent</span> <span class="o">=</span> <span class="n">indent</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="c">48. </span>            <span class="k">if</span> <span class="n">indent</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="c">49. </span>                <span class="c1"># Change direction:</span>
+<span class="c">50. </span>                <span class="n">indentIncreasing</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="c">51. </span>
+<span class="c">52. </span>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.02</span><span class="p">)</span>  <span class="c1"># Add a slight pause.</span>
+<span class="c">53. </span><span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+<span class="c">54. </span>    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>  <span class="c1"># When Ctrl-C is pressed, end the program.</span>
+</pre></div>
+
+<h2 id="calibre_link-246" class="calibre5">Exploring the Program</h2>
+<p class="bodyfirst">Try to find the answers to the following questions.
+ Experiment with some modifications to the code and rerun the program to
+ see what effect the changes have.</p>
+<ol class="decimal">
+<li class="calibre8" value="1">What happens if you change <code class="calibre22">False</code> on line 44 to <code class="calibre22">True</code>?</li>
+<li class="calibre8" value="2">What happens if you change the argument to all <code class="calibre22">bext.fg()</code> calls to <code class="calibre22">'random'</code>?</li>
+</ol>
+</section>
+</div>
+
+
+
+
+
+
+
+
+<a href="https://inventwithpython.com/bigbookpython/project57.html">Prev: Progress Bar</a> | <a href="https://inventwithpython.com/bigbookpython/project59.html">Next: Rock Paper Scissors</a>
+</body></html>

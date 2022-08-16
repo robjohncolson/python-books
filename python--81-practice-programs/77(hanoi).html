@@ -1,0 +1,243 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="77(hanoi)_files/style.css" rel="stylesheet" type="text/css"><link rel="stylesheet" type="text/css" href="77(hanoi)_files/pygments.css"><title>Tower of Hanoi Puzzle</title></head><body style="background-color: #fffeee;">
+
+<script type="text/javascript" async="" src="77(hanoi)_files/ga.js"></script><script type="text/javascript">
+//<![CDATA[
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-5459430-3']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+//]]>
+</script>
+
+
+<div style="background-color: #eeeddd; float: right; height: 310px; font-family: sans-serif;" id="otherbooks">
+  <a href="#" onclick="document.getElementById('otherbooks').outerHTML='';" style="vertical-align: top;">(close)</a><br>
+
+  <a target="_blank" href="https://nostarch.com/automatestuff2" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_automate.link');"><img src="77(hanoi)_files/cover_automate2_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/big-book-small-python-projects" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_bigbookpython.link');"><img src="77(hanoi)_files/cover_bigbookpython_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/beyond-basic-stuff-python" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_beyond.link');"><img src="77(hanoi)_files/cover_beyond_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/inventwithpython" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_invent.link');"><img src="77(hanoi)_files/cover_invent4th_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://www.amazon.com/Making-Games-Python-Pygame-Sweigart/dp/1469901730?ie=UTF8&amp;tag=playwithpyth-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1469901730" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_pygame.link');"><img src="77(hanoi)_files/cover_makinggames_thumb.webp" style="height: 200px; border: solid black 1px; /"></a>
+  <a target="_blank" href="https://nostarch.com/crackingcodes" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_hacking.link');"><img src="77(hanoi)_files/cover_crackingcodes_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/scratchplayground"><img src="77(hanoi)_files/cover_scratchprogrammingplayground_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/codingwithminecraft"><img src="77(hanoi)_files/cover_codingwithminecraft_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <br>
+  <a href="https://inventwithpython.com/automateudemy">Use this link to get 70% off the Automate the Boring Stuff online video course.</a><br>
+  <a href="https://www.patreon.com/AlSweigart">Support me on Patreon</a>
+</div>
+
+<a href="https://inventwithpython.com/bigbookpython/project76.html">Prev: Tic-Tac-Toe</a> | <a href="https://inventwithpython.com/bigbookpython/project78.html">Next: Trick Questions</a>
+
+
+
+
+
+<div type="bodymatter chapter" class="calibre1" id="calibre_link-17">
+<section class="toclist">
+<header class="calibre10">
+<h1 class="chapter">
+<span class="chapternumber">#77</span><br class="calibre14">
+<span class="chaptertitle">Tower of Hanoi</span></h1>
+</header>
+<figure class="opener">
+<img src="77(hanoi)_files/000002.webp" alt="" class="calibre12">
+</figure>
+<p class="chapterintro">The Tower of Hanoi is a stack-moving puzzle game
+ that features three poles on which you can stack various-sized disks. 
+The object of the game is to move one tower of disks to another pole. 
+However, only one disk can be moved at a time, and larger disks cannot 
+be placed on top of smaller ones. Figuring out a certain pattern will 
+help you solve this puzzle. Can you discover it? (Hint: Try setting the <code class="calibre17">TOTAL_DISKS</code> variable to <code class="calibre17">3</code> or <code class="calibre17">4</code> to solve an easier version first.)</p>
+<h2 id="calibre_link-317" class="calibre5">The Program in Action</h2>
+<p class="bodyfirst">When you run <em class="calibre9">towerofhanoi.py</em>, the output will look like this:</p>
+<pre class="calibre24"><code class="calibre22">The Tower of Hanoi, by Al Sweigart al@inventwithpython.com
+
+Move the tower of disks, one disk at a time, to another tower. Larger
+disks cannot rest on top of a smaller disk.
+
+More info at https://en.wikipedia.org/wiki/Tower_of_Hanoi
+
+     ||          ||          ||
+    @_1@         ||          ||
+   @@_2@@        ||          ||
+  @@@_3@@@       ||          ||
+ @@@@_4@@@@      ||          ||
+@@@@@_5@@@@@     ||          ||
+      A           B           C
+
+Enter the letters of "from" and "to" towers, or QUIT.
+(e.g. AB to moves a disk from tower A to tower B.)
+&gt; <b class="calibre6">ab</b>
+     ||          ||          ||
+     ||          ||          ||
+   @@_2@@        ||          ||
+  @@@_3@@@       ||          ||
+ @@@@_4@@@@      ||          ||
+@@@@@_5@@@@@    @_1@         ||
+      A           B           C
+
+Enter the letters of "from" and "to" towers, or QUIT.
+(e.g. AB to moves a disk from tower A to tower B.)
+<var class="calibre27">--snip--</var></code></pre>
+<h2 id="calibre_link-318" class="calibre5">How It Works</h2>
+<p class="bodyfirst">The data structure that represents a tower is a 
+list of integers. Each integer is the size of the disk. The first 
+integer in the list represents the bottom disk, and the last integer 
+represents the top disk. For example, <code class="calibre22">[5, 4, 2]</code> would represent the following tower:</p>
+<pre class="calibre24"><code class="calibre22">     ||
+     ||
+   @@_2@@
+ @@@@_4@@@@
+@@@@@_5@@@@@</code></pre>
+<p class="calibre19">Python’s <code class="calibre22">append()</code> and <code class="calibre22">pop()</code> list methods can add and remove values from the end of the list, respectively. Just as <code class="calibre22">someList[0]</code> and <code class="calibre22">someList[1]</code>
+ allow us to access the first and second values in a list, Python lets 
+us use negative indexes to access values from the end of the list using 
+expressions like <code class="calibre22">someList[-1]</code> and <code class="calibre22">someList[-2]</code>,
+ which access the last and second-to-last values in a list, 
+respectively. This is useful for finding the disk currently at the top 
+of the tower.</p>
+<div class="highlight"><pre><span></span>
+<span class="c">  1. </span><span class="sd">"""The Tower of Hanoi, by Al Sweigart al@inventwithpython.com</span>
+<span class="c">  2. </span><span class="sd">A stack-moving puzzle game.</span>
+<span class="c">  3. </span><span class="sd">This code is available at https://nostarch.com/big-book-small-python-programming</span>
+<span class="c">  4. </span><span class="sd">Tags: short, game, puzzle"""</span>
+<span class="c">  5. </span>
+<span class="c">  6. </span><span class="kn">import</span> <span class="nn">copy</span>
+<span class="c">  7. </span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="c">  8. </span>
+<span class="c">  9. </span><span class="n">TOTAL_DISKS</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># More disks means a more difficult puzzle.</span>
+<span class="c"> 10. </span>
+<span class="c"> 11. </span><span class="c1"># Start with all disks on tower A:</span>
+<span class="c"> 12. </span><span class="n">COMPLETE_TOWER</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">TOTAL_DISKS</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="c"> 13. </span>
+<span class="c"> 14. </span>
+<span class="c"> 15. </span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="c"> 16. </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">"""The Tower of Hanoi, by Al Sweigart al@inventwithpython.com</span>
+<span class="c"> 17. </span>
+<span class="c"> 18. </span><span class="s2">Move the tower of disks, one disk at a time, to another tower. Larger</span>
+<span class="c"> 19. </span><span class="s2">disks cannot rest on top of a smaller disk.</span>
+<span class="c"> 20. </span>
+<span class="c"> 21. </span><span class="s2">More info at https://en.wikipedia.org/wiki/Tower_of_Hanoi</span>
+<span class="c"> 22. </span><span class="s2">"""</span>
+<span class="c"> 23. </span>    <span class="p">)</span>
+<span class="c"> 24. </span>
+<span class="c"> 25. </span>    <span class="c1"># Set up the towers. The end of the list is the top of the tower.</span>
+<span class="c"> 26. </span>    <span class="n">towers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'A'</span><span class="p">:</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">COMPLETE_TOWER</span><span class="p">),</span> <span class="s1">'B'</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">'C'</span><span class="p">:</span> <span class="p">[]}</span>
+<span class="c"> 27. </span>
+<span class="c"> 28. </span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>  <span class="c1"># Run a single turn.</span>
+<span class="c"> 29. </span>        <span class="c1"># Display the towers and disks:</span>
+<span class="c"> 30. </span>        <span class="n">displayTowers</span><span class="p">(</span><span class="n">towers</span><span class="p">)</span>
+<span class="c"> 31. </span>
+<span class="c"> 32. </span>        <span class="c1"># Ask the user for a move:</span>
+<span class="c"> 33. </span>        <span class="n">fromTower</span><span class="p">,</span> <span class="n">toTower</span> <span class="o">=</span> <span class="n">askForPlayerMove</span><span class="p">(</span><span class="n">towers</span><span class="p">)</span>
+<span class="c"> 34. </span>
+<span class="c"> 35. </span>        <span class="c1"># Move the top disk from fromTower to toTower:</span>
+<span class="c"> 36. </span>        <span class="n">disk</span> <span class="o">=</span> <span class="n">towers</span><span class="p">[</span><span class="n">fromTower</span><span class="p">]</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="c"> 37. </span>        <span class="n">towers</span><span class="p">[</span><span class="n">toTower</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">disk</span><span class="p">)</span>
+<span class="c"> 38. </span>
+<span class="c"> 39. </span>        <span class="c1"># Check if the user has solved the puzzle:</span>
+<span class="c"> 40. </span>        <span class="k">if</span> <span class="n">COMPLETE_TOWER</span> <span class="ow">in</span> <span class="p">(</span><span class="n">towers</span><span class="p">[</span><span class="s1">'B'</span><span class="p">],</span> <span class="n">towers</span><span class="p">[</span><span class="s1">'C'</span><span class="p">]):</span>
+<span class="c"> 41. </span>            <span class="n">displayTowers</span><span class="p">(</span><span class="n">towers</span><span class="p">)</span>  <span class="c1"># Display the towers one last time.</span>
+<span class="c"> 42. </span>            <span class="nb">print</span><span class="p">(</span><span class="s1">'You have solved the puzzle! Well done!'</span><span class="p">)</span>
+<span class="c"> 43. </span>            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+<span class="c"> 44. </span>
+<span class="c"> 45. </span>
+<span class="c"> 46. </span><span class="k">def</span> <span class="nf">askForPlayerMove</span><span class="p">(</span><span class="n">towers</span><span class="p">):</span>
+<span class="c"> 47. </span>    <span class="sd">"""Asks the player for a move. Returns (fromTower, toTower)."""</span>
+<span class="c"> 48. </span>
+<span class="c"> 49. </span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>  <span class="c1"># Keep asking player until they enter a valid move.</span>
+<span class="c"> 50. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'Enter the letters of "from" and "to" towers, or QUIT.'</span><span class="p">)</span>
+<span class="c"> 51. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'(e.g. AB to moves a disk from tower A to tower B.)'</span><span class="p">)</span>
+<span class="c"> 52. </span>        <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'&gt; '</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="c"> 53. </span>
+<span class="c"> 54. </span>        <span class="k">if</span> <span class="n">response</span> <span class="o">==</span> <span class="s1">'QUIT'</span><span class="p">:</span>
+<span class="c"> 55. </span>            <span class="nb">print</span><span class="p">(</span><span class="s1">'Thanks for playing!'</span><span class="p">)</span>
+<span class="c"> 56. </span>            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+<span class="c"> 57. </span>
+<span class="c"> 58. </span>        <span class="c1"># Make sure the user entered valid tower letters:</span>
+<span class="c"> 59. </span>        <span class="k">if</span> <span class="n">response</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">'AB'</span><span class="p">,</span> <span class="s1">'AC'</span><span class="p">,</span> <span class="s1">'BA'</span><span class="p">,</span> <span class="s1">'BC'</span><span class="p">,</span> <span class="s1">'CA'</span><span class="p">,</span> <span class="s1">'CB'</span><span class="p">):</span>
+<span class="c"> 60. </span>            <span class="nb">print</span><span class="p">(</span><span class="s1">'Enter one of AB, AC, BA, BC, CA, or CB.'</span><span class="p">)</span>
+<span class="c"> 61. </span>            <span class="k">continue</span>  <span class="c1"># Ask player again for their move.</span>
+<span class="c"> 62. </span>
+<span class="c"> 63. </span>        <span class="c1"># Syntactic sugar - Use more descriptive variable names:</span>
+<span class="c"> 64. </span>        <span class="n">fromTower</span><span class="p">,</span> <span class="n">toTower</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">response</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="c"> 65. </span>
+<span class="c"> 66. </span>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">towers</span><span class="p">[</span><span class="n">fromTower</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="c"> 67. </span>            <span class="c1"># The "from" tower cannot be an empty tower:</span>
+<span class="c"> 68. </span>            <span class="nb">print</span><span class="p">(</span><span class="s1">'You selected a tower with no disks.'</span><span class="p">)</span>
+<span class="c"> 69. </span>            <span class="k">continue</span>  <span class="c1"># Ask player again for their move.</span>
+<span class="c"> 70. </span>        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">towers</span><span class="p">[</span><span class="n">toTower</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="c"> 71. </span>            <span class="c1"># Any disk can be moved onto an empty "to" tower:</span>
+<span class="c"> 72. </span>            <span class="k">return</span> <span class="n">fromTower</span><span class="p">,</span> <span class="n">toTower</span>
+<span class="c"> 73. </span>        <span class="k">elif</span> <span class="n">towers</span><span class="p">[</span><span class="n">toTower</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">towers</span><span class="p">[</span><span class="n">fromTower</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+<span class="c"> 74. </span>            <span class="nb">print</span><span class="p">(</span><span class="s1">'Can</span><span class="se">\'</span><span class="s1">t put larger disks on top of smaller ones.'</span><span class="p">)</span>
+<span class="c"> 75. </span>            <span class="k">continue</span>  <span class="c1"># Ask player again for their move.</span>
+<span class="c"> 76. </span>        <span class="k">else</span><span class="p">:</span>
+<span class="c"> 77. </span>            <span class="c1"># This is a valid move, so return the selected towers:</span>
+<span class="c"> 78. </span>            <span class="k">return</span> <span class="n">fromTower</span><span class="p">,</span> <span class="n">toTower</span>
+<span class="c"> 79. </span>
+<span class="c"> 80. </span>
+<span class="c"> 81. </span><span class="k">def</span> <span class="nf">displayTowers</span><span class="p">(</span><span class="n">towers</span><span class="p">):</span>
+<span class="c"> 82. </span>    <span class="sd">"""Display the current state."""</span>
+<span class="c"> 83. </span>
+<span class="c"> 84. </span>    <span class="c1"># Display the three towers:</span>
+<span class="c"> 85. </span>    <span class="k">for</span> <span class="n">level</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">TOTAL_DISKS</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+<span class="c"> 86. </span>        <span class="k">for</span> <span class="n">tower</span> <span class="ow">in</span> <span class="p">(</span><span class="n">towers</span><span class="p">[</span><span class="s1">'A'</span><span class="p">],</span> <span class="n">towers</span><span class="p">[</span><span class="s1">'B'</span><span class="p">],</span> <span class="n">towers</span><span class="p">[</span><span class="s1">'C'</span><span class="p">]):</span>
+<span class="c"> 87. </span>            <span class="k">if</span> <span class="n">level</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tower</span><span class="p">):</span>
+<span class="c"> 88. </span>                <span class="n">displayDisk</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># Display the bare pole with no disk.</span>
+<span class="c"> 89. </span>            <span class="k">else</span><span class="p">:</span>
+<span class="c"> 90. </span>                <span class="n">displayDisk</span><span class="p">(</span><span class="n">tower</span><span class="p">[</span><span class="n">level</span><span class="p">])</span>  <span class="c1"># Display the disk.</span>
+<span class="c"> 91. </span>        <span class="nb">print</span><span class="p">()</span>
+<span class="c"> 92. </span>
+<span class="c"> 93. </span>    <span class="c1"># Display the tower labels A, B, and C.</span>
+<span class="c"> 94. </span>    <span class="n">emptySpace</span> <span class="o">=</span> <span class="s1">' '</span> <span class="o">*</span> <span class="p">(</span><span class="n">TOTAL_DISKS</span><span class="p">)</span>
+<span class="c"> 95. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="si">{0}</span><span class="s1"> A</span><span class="si">{0}{0}</span><span class="s1"> B</span><span class="si">{0}{0}</span><span class="s1"> C</span><span class="se">\n</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">emptySpace</span><span class="p">))</span>
+<span class="c"> 96. </span>
+<span class="c"> 97. </span>
+<span class="c"> 98. </span><span class="k">def</span> <span class="nf">displayDisk</span><span class="p">(</span><span class="n">width</span><span class="p">):</span>
+<span class="c"> 99. </span>    <span class="sd">"""Display a disk of the given width. A width of 0 means no disk."""</span>
+<span class="c">100. </span>    <span class="n">emptySpace</span> <span class="o">=</span> <span class="s1">' '</span> <span class="o">*</span> <span class="p">(</span><span class="n">TOTAL_DISKS</span> <span class="o">-</span> <span class="n">width</span><span class="p">)</span>
+<span class="c">101. </span>
+<span class="c">102. </span>    <span class="k">if</span> <span class="n">width</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="c">103. </span>        <span class="c1"># Display a pole segment without a disk:</span>
+<span class="c">104. </span>        <span class="nb">print</span><span class="p">(</span><span class="n">emptySpace</span> <span class="o">+</span> <span class="s1">'||'</span> <span class="o">+</span> <span class="n">emptySpace</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+<span class="c">105. </span>    <span class="k">else</span><span class="p">:</span>
+<span class="c">106. </span>        <span class="c1"># Display the disk:</span>
+<span class="c">107. </span>        <span class="n">disk</span> <span class="o">=</span> <span class="s1">'@'</span> <span class="o">*</span> <span class="n">width</span>
+<span class="c">108. </span>        <span class="n">numLabel</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">width</span><span class="p">)</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'_'</span><span class="p">)</span>
+<span class="c">109. </span>        <span class="nb">print</span><span class="p">(</span><span class="n">emptySpace</span> <span class="o">+</span> <span class="n">disk</span> <span class="o">+</span> <span class="n">numLabel</span> <span class="o">+</span> <span class="n">disk</span> <span class="o">+</span> <span class="n">emptySpace</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+<span class="c">110. </span>
+<span class="c">111. </span>
+<span class="c">112. </span><span class="c1"># If the program is run (instead of imported), run the game:</span>
+<span class="c">113. </span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<span class="c">114. </span>    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+<h2 id="calibre_link-319" class="calibre5">Exploring the Program</h2>
+<p class="bodyfirst">Try to find the answers to the following questions.
+ Experiment with some modifications to the code and rerun the program to
+ see what effect the changes have.</p>
+<ol class="decimal">
+<li class="calibre8" value="1">What happens if you delete or comment out lines 73, 74, and 75?</li>
+<li class="calibre8" value="2">What happens if you change <code class="calibre22">emptySpace = ' ' * (TOTAL_DISKS - width)</code> on line 100 to <code class="calibre22">emptySpace = ' '</code>?</li>
+<li class="calibre8" value="3">What happens if you change <code class="calibre22">width == 0</code> on line 102 to <code class="calibre22">width != 0</code>?</li>
+</ol>
+</section>
+</div>
+
+
+
+
+
+
+
+
+<a href="https://inventwithpython.com/bigbookpython/project76.html">Prev: Tic-Tac-Toe</a> | <a href="https://inventwithpython.com/bigbookpython/project78.html">Next: Trick Questions</a>
+</body></html>

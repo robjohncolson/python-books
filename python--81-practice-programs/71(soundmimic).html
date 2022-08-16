@@ -1,0 +1,181 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="71(soundmimic)_files/style.css" rel="stylesheet" type="text/css"><link rel="stylesheet" type="text/css" href="71(soundmimic)_files/pygments.css"><title>Sound Mimic</title></head><body style="background-color: #fffeee;">
+
+<script type="text/javascript" async="" src="71(soundmimic)_files/ga.js"></script><script type="text/javascript">
+//<![CDATA[
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-5459430-3']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+//]]>
+</script>
+
+
+<div style="background-color: #eeeddd; float: right; height: 310px; font-family: sans-serif;" id="otherbooks">
+  <a href="#" onclick="document.getElementById('otherbooks').outerHTML='';" style="vertical-align: top;">(close)</a><br>
+
+  <a target="_blank" href="https://nostarch.com/automatestuff2" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_automate.link');"><img src="71(soundmimic)_files/cover_automate2_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/big-book-small-python-projects" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_bigbookpython.link');"><img src="71(soundmimic)_files/cover_bigbookpython_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/beyond-basic-stuff-python" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_beyond.link');"><img src="71(soundmimic)_files/cover_beyond_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/inventwithpython" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_invent.link');"><img src="71(soundmimic)_files/cover_invent4th_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://www.amazon.com/Making-Games-Python-Pygame-Sweigart/dp/1469901730?ie=UTF8&amp;tag=playwithpyth-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1469901730" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_pygame.link');"><img src="71(soundmimic)_files/cover_makinggames_thumb.webp" style="height: 200px; border: solid black 1px; /"></a>
+  <a target="_blank" href="https://nostarch.com/crackingcodes" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_hacking.link');"><img src="71(soundmimic)_files/cover_crackingcodes_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/scratchplayground"><img src="71(soundmimic)_files/cover_scratchprogrammingplayground_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/codingwithminecraft"><img src="71(soundmimic)_files/cover_codingwithminecraft_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <br>
+  <a href="https://inventwithpython.com/automateudemy">Use this link to get 70% off the Automate the Boring Stuff online video course.</a><br>
+  <a href="https://www.patreon.com/AlSweigart">Support me on Patreon</a>
+</div>
+
+<a href="https://inventwithpython.com/bigbookpython/project70.html">Prev: Soroban Japanese Abacus</a> | <a href="https://inventwithpython.com/bigbookpython/project72.html">Next: sPoNgEcAsE</a>
+
+
+
+
+
+<div type="bodymatter chapter" class="calibre1" id="calibre_link-295">
+<section class="toclist">
+<header class="calibre10">
+<h1 class="chapter">
+<span class="chapternumber">#71</span><br class="calibre14">
+<span class="chaptertitle">Sound Mimic</span></h1>
+</header>
+<figure class="opener">
+<img src="71(soundmimic)_files/000002.webp" alt="" class="calibre12">
+</figure>
+<p class="chapterintro">Similar to the Simon electronic toy, this memorization game uses the third-party <code class="calibre17">playsound</code>
+ module to play four different sounds, which correspond to the A, S, D, 
+and F keys on the keyboard. As you successfully repeat the pattern the 
+game gives you, the patterns get longer and longer. How many sounds can 
+you hold in your short-term memory?</p>
+<p class="calibre18">If you look at the code, you’ll see that the <code class="calibre22">playsound.playsound()</code> function is passed the filename of the sound to play. You can download the sound files from these URLs:</p>
+<p class="calibre19"><a href="https://inventwithpython.com/soundA.wav" class="linkurl">https://inventwithpython.com/soundA.wav</a></p>
+<p class="calibre19"><a href="https://inventwithpython.com/soundS.wav" class="linkurl">https://inventwithpython.com/soundS.wav</a></p>
+<p class="calibre19"><a href="https://inventwithpython.com/soundD.wav" class="linkurl">https://inventwithpython.com/soundD.wav</a></p>
+<p class="calibre19"><a href="https://inventwithpython.com/soundF.wav" class="linkurl">https://inventwithpython.com/soundF.wav</a></p>
+<p class="calibre19">Place these files in the same folder as <em class="calibre9">soundmimic.py</em> before running the program. More information about the <code class="calibre22">playsound</code> module can be found at <a href="https://pypi.org/project/playsound/" class="linkurl">https://pypi.org/project/playsound/</a>. Users on macOS must also install the <code class="calibre22">pyobjc</code> module from <a href="https://pypi.org/project/pyobjc/" class="linkurl">https://pypi.org/project/pyobjc/</a> for <code class="calibre22">playsound</code> to work.</p>
+<h2 id="calibre_link-296" class="calibre5">The Program in Action</h2>
+<p class="bodyfirst">When you run <em class="calibre9">soundmimic.py</em>, the output will look like this:</p>
+<pre class="calibre24"><code class="calibre22">Sound Mimic, by Al Sweigart al@inventwithpython.com
+Try to memorize a pattern of A S D F letters (each with its own sound)
+as it gets longer and longer.
+Press Enter to begin...
+<var class="calibre27">&lt;screen clears&gt;</var>
+Pattern: S
+<var class="calibre27">&lt;screen clears&gt;</var>
+Enter the pattern:
+&gt; <b class="calibre6">s</b>
+Correct!
+<var class="calibre27">&lt;screen clears&gt;</var>
+Pattern: S F
+<var class="calibre27">&lt;screen clears&gt;</var>
+Enter the pattern:
+&gt; <b class="calibre6">sf</b>
+Correct!
+<var class="calibre27">&lt;screen clears&gt;</var>
+Pattern: S F F
+<var class="calibre27">&lt;screen clears&gt;</var>
+Enter the pattern:
+&gt; <b class="calibre6">sff</b>
+Correct!
+<var class="calibre27">&lt;screen clears&gt;</var>
+Pattern: S F F D
+<var class="calibre27">--snip--</var></code></pre>
+<h2 id="calibre_link-297" class="calibre5">How It Works</h2>
+<p class="bodyfirst">This program imports the <code class="calibre22">playsound</code> module, which can play sound files. The module has one function, <code class="calibre22">playsound()</code>, to which you can pass the filename of a <em class="calibre9">.wav</em> or <em class="calibre9">.mp3</em> file to play. On each round of the game, the program appends a randomly chosen letter (either A, S, D, or F) to the <code class="calibre22">pattern</code> list and plays the sounds in this list. As the <code class="calibre22">pattern</code> list grows longer, so does the pattern of sound files the player must memorize.</p>
+<div class="highlight"><pre><span></span>
+<span class="c"> 1. </span><span class="sd">"""Sound Mimic, by Al Sweigart al@inventwithpython.com</span>
+<span class="c"> 2. </span><span class="sd">A pattern-matching game with sounds. Try to memorize an increasingly</span>
+<span class="c"> 3. </span><span class="sd">longer and longer pattern of letters. Inspired by the electronic game,</span>
+<span class="c"> 4. </span><span class="sd">Simon.</span>
+<span class="c"> 5. </span><span class="sd">This code is available at https://nostarch.com/big-book-small-python-programming</span>
+<span class="c"> 6. </span><span class="sd">Tags: short, beginner, game"""</span>
+<span class="c"> 7. </span>
+<span class="c"> 8. </span><span class="kn">import</span> <span class="nn">random</span><span class="o">,</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">time</span>
+<span class="c"> 9. </span>
+<span class="c">10. </span><span class="c1"># Download the sound files from these URLs (or use your own):</span>
+<span class="c">11. </span><span class="c1"># https://inventwithpython.com/soundA.wav</span>
+<span class="c">12. </span><span class="c1"># https://inventwithpython.com/soundS.wav</span>
+<span class="c">13. </span><span class="c1"># https://inventwithpython.com/soundD.wav</span>
+<span class="c">14. </span><span class="c1"># https://inventwithpython.com/soundF.wav</span>
+<span class="c">15. </span>
+<span class="c">16. </span><span class="k">try</span><span class="p">:</span>
+<span class="c">17. </span>    <span class="kn">import</span> <span class="nn">playsound</span>
+<span class="c">18. </span><span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+<span class="c">19. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'The playsound module needs to be installed to run this'</span><span class="p">)</span>
+<span class="c">20. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'program. On Windows, open a Command Prompt and run:'</span><span class="p">)</span>
+<span class="c">21. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'pip install playsound'</span><span class="p">)</span>
+<span class="c">22. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'On macOS and Linux, open a Terminal and run:'</span><span class="p">)</span>
+<span class="c">23. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'pip3 install playsound'</span><span class="p">)</span>
+<span class="c">24. </span>    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+<span class="c">25. </span>
+<span class="c">26. </span>
+<span class="c">27. </span><span class="nb">print</span><span class="p">(</span><span class="s1">'''Sound Mimic, by Al Sweigart al@inventwithpython.com</span>
+<span class="c">28. </span><span class="s1">Try to memorize a pattern of A S D F letters (each with its own sound)</span>
+<span class="c">29. </span><span class="s1">as it gets longer and longer.'''</span><span class="p">)</span>
+<span class="c">30. </span>
+<span class="c">31. </span><span class="nb">input</span><span class="p">(</span><span class="s1">'Press Enter to begin...'</span><span class="p">)</span>
+<span class="c">32. </span>
+<span class="c">33. </span><span class="n">pattern</span> <span class="o">=</span> <span class="s1">''</span>
+<span class="c">34. </span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="c">35. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>  <span class="c1"># Clear the screen by printing several newlines.</span>
+<span class="c">36. </span>
+<span class="c">37. </span>    <span class="c1"># Add a random letter to the pattern:</span>
+<span class="c">38. </span>    <span class="n">pattern</span> <span class="o">=</span> <span class="n">pattern</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="s1">'ASDF'</span><span class="p">)</span>
+<span class="c">39. </span>
+<span class="c">40. </span>    <span class="c1"># Display the pattern (and play their sounds):</span>
+<span class="c">41. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'Pattern: '</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+<span class="c">42. </span>    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">pattern</span><span class="p">:</span>
+<span class="c">43. </span>        <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">' '</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c">44. </span>        <span class="n">playsound</span><span class="o">.</span><span class="n">playsound</span><span class="p">(</span><span class="s1">'sound'</span> <span class="o">+</span> <span class="n">letter</span> <span class="o">+</span> <span class="s1">'.wav'</span><span class="p">)</span>
+<span class="c">45. </span>
+<span class="c">46. </span>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Add a slight pause at the end.</span>
+<span class="c">47. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>  <span class="c1"># Clear the screen by printing several newlines.</span>
+<span class="c">48. </span>
+<span class="c">49. </span>    <span class="c1"># Let the player enter the pattern:</span>
+<span class="c">50. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'Enter the pattern:'</span><span class="p">)</span>
+<span class="c">51. </span>    <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'&gt; '</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="c">52. </span>
+<span class="c">53. </span>    <span class="k">if</span> <span class="n">response</span> <span class="o">!=</span> <span class="n">pattern</span><span class="p">:</span>
+<span class="c">54. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'Incorrect!'</span><span class="p">)</span>
+<span class="c">55. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'The pattern was'</span><span class="p">,</span> <span class="n">pattern</span><span class="p">)</span>
+<span class="c">56. </span>    <span class="k">else</span><span class="p">:</span>
+<span class="c">57. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'Correct!'</span><span class="p">)</span>
+<span class="c">58. </span>
+<span class="c">59. </span>    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">pattern</span><span class="p">:</span>
+<span class="c">60. </span>        <span class="n">playsound</span><span class="o">.</span><span class="n">playsound</span><span class="p">(</span><span class="s1">'sound'</span> <span class="o">+</span> <span class="n">letter</span> <span class="o">+</span> <span class="s1">'.wav'</span><span class="p">)</span>
+<span class="c">61. </span>
+<span class="c">62. </span>    <span class="k">if</span> <span class="n">response</span> <span class="o">!=</span> <span class="n">pattern</span><span class="p">:</span>
+<span class="c">63. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'You scored'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'points.'</span><span class="p">)</span>
+<span class="c">64. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'Thanks for playing!'</span><span class="p">)</span>
+<span class="c">65. </span>        <span class="k">break</span>
+<span class="c">66. </span>
+<span class="c">67. </span>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+<h2 id="calibre_link-298" class="calibre5">Exploring the Program</h2>
+<p class="bodyfirst">Try to find the answers to the following questions.
+ Experiment with some modifications to the code and rerun the program to
+ see what effect the changes have.</p>
+<ol class="decimal">
+<li class="calibre8" value="1">What happens if you delete or comment out <code class="calibre22">print('\n' * 60)</code> on line 47?</li>
+<li class="calibre8" value="2">What happens if you change <code class="calibre22">response != pattern</code> on line 62 to <code class="calibre22">False</code>?</li>
+</ol>
+</section>
+</div>
+
+
+
+
+
+
+
+
+<a href="https://inventwithpython.com/bigbookpython/project70.html">Prev: Soroban Japanese Abacus</a> | <a href="https://inventwithpython.com/bigbookpython/project72.html">Next: sPoNgEcAsE</a>
+</body></html>

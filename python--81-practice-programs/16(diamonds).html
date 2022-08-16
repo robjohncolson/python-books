@@ -1,0 +1,189 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="16(diamonds)_files/style.css" rel="stylesheet" type="text/css"><link rel="stylesheet" type="text/css" href="16(diamonds)_files/pygments.css"><title>Diamonds</title></head><body style="background-color: #fffeee;">
+
+<script type="text/javascript" async="" src="16(diamonds)_files/ga.js"></script><script type="text/javascript">
+//<![CDATA[
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-5459430-3']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+//]]>
+</script>
+
+
+<div style="background-color: #eeeddd; float: right; height: 310px; font-family: sans-serif;" id="otherbooks">
+  <a href="#" onclick="document.getElementById('otherbooks').outerHTML='';" style="vertical-align: top;">(close)</a><br>
+
+  <a target="_blank" href="https://nostarch.com/automatestuff2" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_automate.link');"><img src="16(diamonds)_files/cover_automate2_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/big-book-small-python-projects" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_bigbookpython.link');"><img src="16(diamonds)_files/cover_bigbookpython_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/beyond-basic-stuff-python" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_beyond.link');"><img src="16(diamonds)_files/cover_beyond_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/inventwithpython" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_invent.link');"><img src="16(diamonds)_files/cover_invent4th_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://www.amazon.com/Making-Games-Python-Pygame-Sweigart/dp/1469901730?ie=UTF8&amp;tag=playwithpyth-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1469901730" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_pygame.link');"><img src="16(diamonds)_files/cover_makinggames_thumb.webp" style="height: 200px; border: solid black 1px; /"></a>
+  <a target="_blank" href="https://nostarch.com/crackingcodes" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_hacking.link');"><img src="16(diamonds)_files/cover_crackingcodes_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/scratchplayground"><img src="16(diamonds)_files/cover_scratchprogrammingplayground_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/codingwithminecraft"><img src="16(diamonds)_files/cover_codingwithminecraft_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <br>
+  <a href="https://inventwithpython.com/automateudemy">Use this link to get 70% off the Automate the Boring Stuff online video course.</a><br>
+  <a href="https://www.patreon.com/AlSweigart">Support me on Patreon</a>
+</div>
+
+<a href="https://inventwithpython.com/bigbookpython/project15.html">Prev: Deep Cave</a> | <a href="https://inventwithpython.com/bigbookpython/project17.html">Next: Dice Math</a>
+
+
+
+
+
+<div type="bodymatter chapter" class="calibre1" id="calibre_link-15">
+<section class="toclist">
+<header class="calibre10">
+<h1 class="chapter">
+<span class="chapternumber">#16</span><br class="calibre14">
+<span class="chaptertitle">Diamonds</span></h1>
+</header>
+<figure class="opener">
+<img src="16(diamonds)_files/000002.webp" alt="" class="calibre12">
+</figure>
+<p class="chapterintro">This program features a small algorithm for 
+drawing ASCII-art diamonds of various sizes. It contains functions for 
+drawing either an outline or filled-in-style diamond of the size you 
+dictate. These functions are good practice for a beginner; try to 
+understand the pattern behind the diamond drawings as they increase in 
+size.</p>
+<h2 id="calibre_link-91" class="calibre5">The Program in Action</h2>
+<p class="bodyfirst">When you run <em class="calibre9">diamonds.py</em>, the output will look like this:</p>
+<pre class="calibre24"><code class="calibre22">Diamonds, by Al Sweigart al@inventwithpython.com
+
+/\
+\/
+
+/\
+\/
+
+ /\
+/  \
+\  /
+ \/
+
+ /\
+//\\
+\\//
+ \/
+
+  /\
+ /  \
+/    \
+\    /
+ \  /
+  \/
+
+  /\
+ //\\
+///\\\
+\\\///
+ \\//
+  \/
+<var class="calibre27">--snip--</var></code></pre>
+<h2 id="calibre_link-92" class="calibre5">How It Works</h2>
+<p class="bodyfirst">A helpful approach to creating this program 
+yourself is to “draw” diamonds of several sizes in your editor first and
+ then figure out the pattern they follow as the diamond gets bigger. 
+This technique will help you realize that each row of an outline diamond
+ has four parts: the number of leading spaces, the exterior forward 
+slash, the number of interior spaces, and the exterior backslash. Filled
+ diamonds have several interior forward slashes and backslashes rather 
+than interior spaces. Cracking this pattern is how I wrote <em class="calibre9">diamonds.py</em>.</p>
+<div class="highlight"><pre><span></span>
+<span class="c"> 1. </span><span class="sa">r</span><span class="sd">"""Diamonds, by Al Sweigart al@inventwithpython.com</span>
+<span class="c"> 2. </span><span class="sd">Draws diamonds of various sizes.</span>
+<span class="c"> 3. </span><span class="sd">View this code at https://nostarch.com/big-book-small-python-projects</span>
+<span class="c"> 4. </span><span class="sd">                           /\       /\</span>
+<span class="c"> 5. </span><span class="sd">                          /  \     //\\</span>
+<span class="c"> 6. </span><span class="sd">            /\     /\    /    \   ///\\\</span>
+<span class="c"> 7. </span><span class="sd">           /  \   //\\  /      \ ////\\\\</span>
+<span class="c"> 8. </span><span class="sd"> /\   /\  /    \ ///\\\ \      / \\\\////</span>
+<span class="c"> 9. </span><span class="sd">/  \ //\\ \    / \\\///  \    /   \\\///</span>
+<span class="c">10. </span><span class="sd">\  / \\//  \  /   \\//    \  /     \\//</span>
+<span class="c">11. </span><span class="sd"> \/   \/    \/     \/      \/       \/</span>
+<span class="c">12. </span><span class="sd">Tags: tiny, beginner, artistic"""</span>
+<span class="c">13. </span>
+<span class="c">14. </span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="c">15. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'Diamonds, by Al Sweigart al@inventwithpython.com'</span><span class="p">)</span>
+<span class="c">16. </span>
+<span class="c">17. </span>    <span class="c1"># Display diamonds of sizes 0 through 6:</span>
+<span class="c">18. </span>    <span class="k">for</span> <span class="n">diamondSize</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+<span class="c">19. </span>        <span class="n">displayOutlineDiamond</span><span class="p">(</span><span class="n">diamondSize</span><span class="p">)</span>
+<span class="c">20. </span>        <span class="nb">print</span><span class="p">()</span>  <span class="c1"># Print a newline.</span>
+<span class="c">21. </span>        <span class="n">displayFilledDiamond</span><span class="p">(</span><span class="n">diamondSize</span><span class="p">)</span>
+<span class="c">22. </span>        <span class="nb">print</span><span class="p">()</span>  <span class="c1"># Print a newline.</span>
+<span class="c">23. </span>
+<span class="c">24. </span>
+<span class="c">25. </span><span class="k">def</span> <span class="nf">displayOutlineDiamond</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+<span class="c">26. </span>    <span class="c1"># Display the top half of the diamond:</span>
+<span class="c">27. </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+<span class="c">28. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">' '</span> <span class="o">*</span> <span class="p">(</span><span class="n">size</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>  <span class="c1"># Left side space.</span>
+<span class="c">29. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>  <span class="c1"># Left side of diamond.</span>
+<span class="c">30. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">' '</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>  <span class="c1"># Interior of diamond.</span>
+<span class="c">31. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\\</span><span class="s1">'</span><span class="p">)</span>  <span class="c1"># Right side of diamond.</span>
+<span class="c">32. </span>
+<span class="c">33. </span>    <span class="c1"># Display the bottom half of the diamond:</span>
+<span class="c">34. </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+<span class="c">35. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">' '</span> <span class="o">*</span> <span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>  <span class="c1"># Left side space.</span>
+<span class="c">36. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\\</span><span class="s1">'</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>  <span class="c1"># Left side of diamond.</span>
+<span class="c">37. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">' '</span> <span class="o">*</span> <span class="p">((</span><span class="n">size</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>  <span class="c1"># Interior of diamond.</span>
+<span class="c">38. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>  <span class="c1"># Right side of diamond.</span>
+<span class="c">39. </span>
+<span class="c">40. </span>
+<span class="c">41. </span><span class="k">def</span> <span class="nf">displayFilledDiamond</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+<span class="c">42. </span>    <span class="c1"># Display the top half of the diamond:</span>
+<span class="c">43. </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+<span class="c">44. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">' '</span> <span class="o">*</span> <span class="p">(</span><span class="n">size</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>  <span class="c1"># Left side space.</span>
+<span class="c">45. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'/'</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>  <span class="c1"># Left half of diamond.</span>
+<span class="c">46. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\\</span><span class="s1">'</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>  <span class="c1"># Right half of diamond.</span>
+<span class="c">47. </span>
+<span class="c">48. </span>    <span class="c1"># Display the bottom half of the diamond:</span>
+<span class="c">49. </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+<span class="c">50. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">' '</span> <span class="o">*</span> <span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>  <span class="c1"># Left side space.</span>
+<span class="c">51. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\\</span><span class="s1">'</span> <span class="o">*</span> <span class="p">(</span><span class="n">size</span> <span class="o">-</span> <span class="n">i</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>  <span class="c1"># Left side of diamond.</span>
+<span class="c">52. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'/'</span> <span class="o">*</span> <span class="p">(</span><span class="n">size</span> <span class="o">-</span> <span class="n">i</span><span class="p">))</span>  <span class="c1"># Right side of diamond.</span>
+<span class="c">53. </span>
+<span class="c">54. </span>
+<span class="c">55. </span><span class="c1"># If this program was run (instead of imported), run the game:</span>
+<span class="c">56. </span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<span class="c">57. </span>    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+<p class="calibre19">After entering the source code and running it a few
+ times, try making experimental changes to it. On your own, you can also
+ try to figure out how to do the following:</p>
+<ul class="calibre25">
+<li class="calibre8">Create other shapes: triangles, rectangles, and rhombuses.</li>
+<li class="calibre8">Output the shapes to a text file instead of the screen.</li>
+</ul>
+<h2 id="calibre_link-93" class="calibre5">Exploring the Program</h2>
+<p class="bodyfirst">Try to find the answers to the following questions.
+ Experiment with some modifications to the code and rerun the program to
+ see what effect the changes have.</p>
+<ol class="decimal">
+<li class="calibre8" value="1">What happens when you change <code class="calibre22">print('\\')</code> on line 31 to <code class="calibre22">print('@')</code>?</li>
+<li class="calibre8" value="2">What happens when you change <code class="calibre22">print(' ' * (i * 2), end='')</code> on line 30 to <code class="calibre22">print('@' * (i * 2), end='')</code>?</li>
+<li class="calibre8" value="3">What happens when you change <code class="calibre22">range(0, 6)</code> on line 18 to <code class="calibre22">range(0, 30)</code>?</li>
+<li class="calibre8" value="4">What happens when you delete or comment out <code class="calibre22">for i in range(size):</code> on line 34 or on line 49?</li>
+</ol>
+</section>
+</div>
+
+
+
+
+
+
+
+
+<a href="https://inventwithpython.com/bigbookpython/project15.html">Prev: Deep Cave</a> | <a href="https://inventwithpython.com/bigbookpython/project17.html">Next: Dice Math</a>
+</body></html>

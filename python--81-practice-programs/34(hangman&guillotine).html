@@ -1,0 +1,317 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="34(hangman&amp;guillotine)_files/style.css" rel="stylesheet" type="text/css"><link rel="stylesheet" type="text/css" href="34(hangman&amp;guillotine)_files/pygments.css"><title>Hangman &amp; Guillotine</title></head><body style="background-color: #fffeee;">
+
+<script type="text/javascript" async="" src="34(hangman&amp;guillotine)_files/ga.js"></script><script type="text/javascript">
+//<![CDATA[
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-5459430-3']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+//]]>
+</script>
+
+
+<div style="background-color: #eeeddd; float: right; height: 310px; font-family: sans-serif;" id="otherbooks">
+  <a href="#" onclick="document.getElementById('otherbooks').outerHTML='';" style="vertical-align: top;">(close)</a><br>
+
+  <a target="_blank" href="https://nostarch.com/automatestuff2" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_automate.link');"><img src="34(hangman&amp;guillotine)_files/cover_automate2_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/big-book-small-python-projects" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_bigbookpython.link');"><img src="34(hangman&amp;guillotine)_files/cover_bigbookpython_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/beyond-basic-stuff-python" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_beyond.link');"><img src="34(hangman&amp;guillotine)_files/cover_beyond_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/inventwithpython" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_invent.link');"><img src="34(hangman&amp;guillotine)_files/cover_invent4th_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://www.amazon.com/Making-Games-Python-Pygame-Sweigart/dp/1469901730?ie=UTF8&amp;tag=playwithpyth-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1469901730" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_pygame.link');"><img src="34(hangman&amp;guillotine)_files/cover_makinggames_thumb.webp" style="height: 200px; border: solid black 1px; /"></a>
+  <a target="_blank" href="https://nostarch.com/crackingcodes" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_hacking.link');"><img src="34(hangman&amp;guillotine)_files/cover_crackingcodes_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/scratchplayground"><img src="34(hangman&amp;guillotine)_files/cover_scratchprogrammingplayground_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/codingwithminecraft"><img src="34(hangman&amp;guillotine)_files/cover_codingwithminecraft_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <br>
+  <a href="https://inventwithpython.com/automateudemy">Use this link to get 70% off the Automate the Boring Stuff online video course.</a><br>
+  <a href="https://www.patreon.com/AlSweigart">Support me on Patreon</a>
+</div>
+
+<a href="https://inventwithpython.com/bigbookpython/project33.html">Prev: Hacking Minigame</a> | <a href="https://inventwithpython.com/bigbookpython/project35.html">Next: Hex Grid</a>
+
+
+
+
+
+<div type="bodymatter chapter" class="calibre1" id="calibre_link-18">
+<section class="toclist">
+<header class="calibre10">
+<h1 class="chapter">
+<span class="chapternumber">#34</span><br class="calibre14">
+<span class="chaptertitle">Hangman and Guillotine</span></h1>
+</header>
+<figure class="opener">
+<img src="34(hangman&amp;guillotine)_files/000002.webp" alt="" class="calibre12">
+</figure>
+<p class="chapterintro">This classic word game has the player guess the 
+letters to a secret word. For each incorrect letter, another part of the
+ hangman is drawn. Try to guess the complete word before the hangman 
+completes. The secret words in this version are all animals like RABBIT 
+and PIGEON, but you can replace these with your own set of words.</p>
+<p class="calibre18">The <code class="calibre22">HANGMAN_PICS</code> variable contains ASCII-art strings of each step of the hangman’s noose:</p>
+<pre class="calibre24"><code class="calibre22"> +--+     +--+     +--+     +--+     +--+     +--+     +--+
+ |  |     |  |     |  |     |  |     |  |     |  |     |  |
+    |     O  |     O  |     O  |     O  |     O  |     O  |
+    |        |     |  |    /|  |    /|\ |    /|\ |    /|\ |
+    |        |        |        |        |    /   |    / \ |
+    |        |        |        |        |        |        |
+=====    =====    =====    =====    =====    =====    =====</code></pre>
+<p class="calibre19">For a French twist on the game, you can replace the strings in the <code class="calibre22">HANGMAN_PICS</code> variable with the following strings depicting a guillotine:</p>
+<pre class="calibre24"><code class="calibre22">|        |   |    |===|    |===|    |===|    |===|    |===|
+|        |   |    |   |    |   |    |   |    || /|    || /|
+|        |   |    |   |    |   |    |   |    ||/ |    ||/ |
+|        |   |    |   |    |   |    |   |    |   |    |   |
+|        |   |    |   |    |   |    |   |    |   |    |   |
+|        |   |    |   |    |   |    |/-\|    |/-\|    |/-\|
+|        |   |    |   |    |\ /|    |\ /|    |\ /|    |\O/|
+|===     |===|    |===|    |===|    |===|    |===|    |===|</code></pre>
+<h2 id="calibre_link-160" class="calibre5">The Program in Action</h2>
+<p class="bodyfirst">When you run <em class="calibre9">hangman.py</em>, the output will look like this:</p>
+<pre class="calibre24"><code class="calibre22">Hangman, by Al Sweigart al@inventwithpython.com
+
+ +--+
+ |  |
+    |
+    |
+    |
+    |
+=====
+The category is: Animals
+
+Missed letters: No missed letters yet.
+
+_ _ _ _ _
+Guess a letter.
+&gt; <b class="calibre6">e</b>
+<var class="calibre27">--snip--</var>
+ +--+
+ |  |
+ O  |
+/|  |
+    |
+    |
+=====
+The category is: Animals
+
+Missed letters: A I S
+O T T E _
+Guess a letter.
+&gt; <b class="calibre6">r</b>
+Yes! The secret word is: OTTER
+You have won!</code></pre>
+<h2 id="calibre_link-161" class="calibre5">How It Works</h2>
+<p class="bodyfirst">Hangman and Guillotine share the same game 
+mechanics but have different presentations. This makes it easy to swap 
+out the ASCII-art noose graphics with the ASCII-art guillotine graphics 
+without having to change the main logic that the program follows. This 
+separation of the presentation and logic parts of the program makes it 
+easier to update with new features or different designs. In professional
+ software development, this strategy is an example of a <em class="calibre9">software design pattern</em> or <em class="calibre9">software architecture</em>,
+ which concerns itself with how to structure your programs for easy 
+understanding and modification. This is mainly useful in large software 
+applications, but you can also apply these principles to smaller 
+projects.</p>
+<div class="highlight"><pre><span></span>
+<span class="c">  1. </span><span class="sd">"""Hangman, by Al Sweigart al@inventwithpython.com</span>
+<span class="c">  2. </span><span class="sd">Guess the letters to a secret word before the hangman is drawn.</span>
+<span class="c">  3. </span><span class="sd">This code is available at https://nostarch.com/big-book-small-python-programming</span>
+<span class="c">  4. </span><span class="sd">Tags: large, game, word, puzzle"""</span>
+<span class="c">  5. </span>
+<span class="c">  6. </span><span class="c1"># A version of this game is featured in the book "Invent Your Own</span>
+<span class="c">  7. </span><span class="c1"># Computer Games with Python" https://nostarch.com/inventwithpython</span>
+<span class="c">  8. </span>
+<span class="c">  9. </span><span class="kn">import</span> <span class="nn">random</span><span class="o">,</span> <span class="nn">sys</span>
+<span class="c"> 10. </span>
+<span class="c"> 11. </span><span class="c1"># Set up the constants:</span>
+<span class="c"> 12. </span><span class="c1"># (!) Try adding or changing the strings in HANGMAN_PICS to make a</span>
+<span class="c"> 13. </span><span class="c1"># guillotine instead of a gallows.</span>
+<span class="c"> 14. </span><span class="n">HANGMAN_PICS</span> <span class="o">=</span> <span class="p">[</span><span class="sa">r</span><span class="s2">"""</span>
+<span class="c"> 15. </span><span class="s2"> +--+</span>
+<span class="c"> 16. </span><span class="s2"> |  |</span>
+<span class="c"> 17. </span><span class="s2">    |</span>
+<span class="c"> 18. </span><span class="s2">    |</span>
+<span class="c"> 19. </span><span class="s2">    |</span>
+<span class="c"> 20. </span><span class="s2">    |</span>
+<span class="c"> 21. </span><span class="s2">====="""</span><span class="p">,</span>
+<span class="c"> 22. </span><span class="sa">r</span><span class="sd">"""</span>
+<span class="c"> 23. </span><span class="sd"> +--+</span>
+<span class="c"> 24. </span><span class="sd"> |  |</span>
+<span class="c"> 25. </span><span class="sd"> O  |</span>
+<span class="c"> 26. </span><span class="sd">    |</span>
+<span class="c"> 27. </span><span class="sd">    |</span>
+<span class="c"> 28. </span><span class="sd">    |</span>
+<span class="c"> 29. </span><span class="sd">====="""</span><span class="p">,</span>
+<span class="c"> 30. </span><span class="sa">r</span><span class="sd">"""</span>
+<span class="c"> 31. </span><span class="sd"> +--+</span>
+<span class="c"> 32. </span><span class="sd"> |  |</span>
+<span class="c"> 33. </span><span class="sd"> O  |</span>
+<span class="c"> 34. </span><span class="sd"> |  |</span>
+<span class="c"> 35. </span><span class="sd">    |</span>
+<span class="c"> 36. </span><span class="sd">    |</span>
+<span class="c"> 37. </span><span class="sd">====="""</span><span class="p">,</span>
+<span class="c"> 38. </span><span class="sa">r</span><span class="sd">"""</span>
+<span class="c"> 39. </span><span class="sd"> +--+</span>
+<span class="c"> 40. </span><span class="sd"> |  |</span>
+<span class="c"> 41. </span><span class="sd"> O  |</span>
+<span class="c"> 42. </span><span class="sd">/|  |</span>
+<span class="c"> 43. </span><span class="sd">    |</span>
+<span class="c"> 44. </span><span class="sd">    |</span>
+<span class="c"> 45. </span><span class="sd">====="""</span><span class="p">,</span>
+<span class="c"> 46. </span><span class="sa">r</span><span class="sd">"""</span>
+<span class="c"> 47. </span><span class="sd"> +--+</span>
+<span class="c"> 48. </span><span class="sd"> |  |</span>
+<span class="c"> 49. </span><span class="sd"> O  |</span>
+<span class="c"> 50. </span><span class="sd">/|\ |</span>
+<span class="c"> 51. </span><span class="sd">    |</span>
+<span class="c"> 52. </span><span class="sd">    |</span>
+<span class="c"> 53. </span><span class="sd">====="""</span><span class="p">,</span>
+<span class="c"> 54. </span><span class="sa">r</span><span class="sd">"""</span>
+<span class="c"> 55. </span><span class="sd"> +--+</span>
+<span class="c"> 56. </span><span class="sd"> |  |</span>
+<span class="c"> 57. </span><span class="sd"> O  |</span>
+<span class="c"> 58. </span><span class="sd">/|\ |</span>
+<span class="c"> 59. </span><span class="sd">/   |</span>
+<span class="c"> 60. </span><span class="sd">    |</span>
+<span class="c"> 61. </span><span class="sd">====="""</span><span class="p">,</span>
+<span class="c"> 62. </span><span class="sa">r</span><span class="sd">"""</span>
+<span class="c"> 63. </span><span class="sd"> +--+</span>
+<span class="c"> 64. </span><span class="sd"> |  |</span>
+<span class="c"> 65. </span><span class="sd"> O  |</span>
+<span class="c"> 66. </span><span class="sd">/|\ |</span>
+<span class="c"> 67. </span><span class="sd">/ \ |</span>
+<span class="c"> 68. </span><span class="sd">    |</span>
+<span class="c"> 69. </span><span class="sd">====="""</span><span class="p">]</span>
+<span class="c"> 70. </span>
+<span class="c"> 71. </span><span class="c1"># (!) Try replacing CATEGORY and WORDS with new strings.</span>
+<span class="c"> 72. </span><span class="n">CATEGORY</span> <span class="o">=</span> <span class="s1">'Animals'</span>
+<span class="c"> 73. </span><span class="n">WORDS</span> <span class="o">=</span> <span class="s1">'ANT BABOON BADGER BAT BEAR BEAVER CAMEL CAT CLAM COBRA COUGAR COYOTE CROW DEER DOG DONKEY DUCK EAGLE FERRET FOX FROG GOAT GOOSE HAWK LION LIZARD LLAMA MOLE MONKEY MOOSE MOUSE MULE NEWT OTTER OWL PANDA PARROT PIGEON PYTHON RABBIT RAM RAT RAVEN RHINO SALMON SEAL SHARK SHEEP SKUNK SLOTH SNAKE SPIDER STORK SWAN TIGER TOAD TROUT TURKEY TURTLE WEASEL WHALE WOLF WOMBAT ZEBRA'</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="c"> 74. </span>
+<span class="c"> 75. </span>
+<span class="c"> 76. </span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="c"> 77. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'Hangman, by Al Sweigart al@inventwithpython.com'</span><span class="p">)</span>
+<span class="c"> 78. </span>
+<span class="c"> 79. </span>    <span class="c1"># Setup variables for a new game:</span>
+<span class="c"> 80. </span>    <span class="n">missedLetters</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># List of incorrect letter guesses.</span>
+<span class="c"> 81. </span>    <span class="n">correctLetters</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># List of correct letter guesses.</span>
+<span class="c"> 82. </span>    <span class="n">secretWord</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">WORDS</span><span class="p">)</span>  <span class="c1"># The word the player must guess.</span>
+<span class="c"> 83. </span>
+<span class="c"> 84. </span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>  <span class="c1"># Main game loop.</span>
+<span class="c"> 85. </span>        <span class="n">drawHangman</span><span class="p">(</span><span class="n">missedLetters</span><span class="p">,</span> <span class="n">correctLetters</span><span class="p">,</span> <span class="n">secretWord</span><span class="p">)</span>
+<span class="c"> 86. </span>
+<span class="c"> 87. </span>        <span class="c1"># Let the player enter their letter guess:</span>
+<span class="c"> 88. </span>        <span class="n">guess</span> <span class="o">=</span> <span class="n">getPlayerGuess</span><span class="p">(</span><span class="n">missedLetters</span> <span class="o">+</span> <span class="n">correctLetters</span><span class="p">)</span>
+<span class="c"> 89. </span>
+<span class="c"> 90. </span>        <span class="k">if</span> <span class="n">guess</span> <span class="ow">in</span> <span class="n">secretWord</span><span class="p">:</span>
+<span class="c"> 91. </span>            <span class="c1"># Add the correct guess to correctLetters:</span>
+<span class="c"> 92. </span>            <span class="n">correctLetters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">guess</span><span class="p">)</span>
+<span class="c"> 93. </span>
+<span class="c"> 94. </span>            <span class="c1"># Check if the player has won:</span>
+<span class="c"> 95. </span>            <span class="n">foundAllLetters</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># Start off assuming they've won.</span>
+<span class="c"> 96. </span>            <span class="k">for</span> <span class="n">secretWordLetter</span> <span class="ow">in</span> <span class="n">secretWord</span><span class="p">:</span>
+<span class="c"> 97. </span>                <span class="k">if</span> <span class="n">secretWordLetter</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">correctLetters</span><span class="p">:</span>
+<span class="c"> 98. </span>                    <span class="c1"># There's a letter in the secret word that isn't</span>
+<span class="c"> 99. </span>                    <span class="c1"># yet in correctLetters, so the player hasn't won:</span>
+<span class="c">100. </span>                    <span class="n">foundAllLetters</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="c">101. </span>                    <span class="k">break</span>
+<span class="c">102. </span>            <span class="k">if</span> <span class="n">foundAllLetters</span><span class="p">:</span>
+<span class="c">103. </span>                <span class="nb">print</span><span class="p">(</span><span class="s1">'Yes! The secret word is:'</span><span class="p">,</span> <span class="n">secretWord</span><span class="p">)</span>
+<span class="c">104. </span>                <span class="nb">print</span><span class="p">(</span><span class="s1">'You have won!'</span><span class="p">)</span>
+<span class="c">105. </span>                <span class="k">break</span>  <span class="c1"># Break out of the main game loop.</span>
+<span class="c">106. </span>        <span class="k">else</span><span class="p">:</span>
+<span class="c">107. </span>            <span class="c1"># The player has guessed incorrectly:</span>
+<span class="c">108. </span>            <span class="n">missedLetters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">guess</span><span class="p">)</span>
+<span class="c">109. </span>
+<span class="c">110. </span>            <span class="c1"># Check if player has guessed too many times and lost. (The</span>
+<span class="c">111. </span>            <span class="c1"># "- 1" is because we don't count the empty gallows in</span>
+<span class="c">112. </span>            <span class="c1"># HANGMAN_PICS.)</span>
+<span class="c">113. </span>            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">missedLetters</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">HANGMAN_PICS</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+<span class="c">114. </span>                <span class="n">drawHangman</span><span class="p">(</span><span class="n">missedLetters</span><span class="p">,</span> <span class="n">correctLetters</span><span class="p">,</span> <span class="n">secretWord</span><span class="p">)</span>
+<span class="c">115. </span>                <span class="nb">print</span><span class="p">(</span><span class="s1">'You have run out of guesses!'</span><span class="p">)</span>
+<span class="c">116. </span>                <span class="nb">print</span><span class="p">(</span><span class="s1">'The word was "</span><span class="si">{}</span><span class="s1">"'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">secretWord</span><span class="p">))</span>
+<span class="c">117. </span>                <span class="k">break</span>
+<span class="c">118. </span>
+<span class="c">119. </span>
+<span class="c">120. </span><span class="k">def</span> <span class="nf">drawHangman</span><span class="p">(</span><span class="n">missedLetters</span><span class="p">,</span> <span class="n">correctLetters</span><span class="p">,</span> <span class="n">secretWord</span><span class="p">):</span>
+<span class="c">121. </span>    <span class="sd">"""Draw the current state of the hangman, along with the missed and</span>
+<span class="c">122. </span><span class="sd">    correctly-guessed letters of the secret word."""</span>
+<span class="c">123. </span>    <span class="nb">print</span><span class="p">(</span><span class="n">HANGMAN_PICS</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">missedLetters</span><span class="p">)])</span>
+<span class="c">124. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'The category is:'</span><span class="p">,</span> <span class="n">CATEGORY</span><span class="p">)</span>
+<span class="c">125. </span>    <span class="nb">print</span><span class="p">()</span>
+<span class="c">126. </span>
+<span class="c">127. </span>    <span class="c1"># Show the incorrectly guessed letters:</span>
+<span class="c">128. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'Missed letters: '</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+<span class="c">129. </span>    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">missedLetters</span><span class="p">:</span>
+<span class="c">130. </span>        <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">' '</span><span class="p">)</span>
+<span class="c">131. </span>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">missedLetters</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="c">132. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'No missed letters yet.'</span><span class="p">)</span>
+<span class="c">133. </span>    <span class="nb">print</span><span class="p">()</span>
+<span class="c">134. </span>
+<span class="c">135. </span>    <span class="c1"># Display the blanks for the secret word (one blank per letter):</span>
+<span class="c">136. </span>    <span class="n">blanks</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'_'</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">secretWord</span><span class="p">)</span>
+<span class="c">137. </span>
+<span class="c">138. </span>    <span class="c1"># Replace blanks with correctly guessed letters:</span>
+<span class="c">139. </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">secretWord</span><span class="p">)):</span>
+<span class="c">140. </span>        <span class="k">if</span> <span class="n">secretWord</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">in</span> <span class="n">correctLetters</span><span class="p">:</span>
+<span class="c">141. </span>            <span class="n">blanks</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">secretWord</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="c">142. </span>
+<span class="c">143. </span>    <span class="c1"># Show the secret word with spaces in between each letter:</span>
+<span class="c">144. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">blanks</span><span class="p">))</span>
+<span class="c">145. </span>
+<span class="c">146. </span>
+<span class="c">147. </span><span class="k">def</span> <span class="nf">getPlayerGuess</span><span class="p">(</span><span class="n">alreadyGuessed</span><span class="p">):</span>
+<span class="c">148. </span>    <span class="sd">"""Returns the letter the player entered. This function makes sure</span>
+<span class="c">149. </span><span class="sd">    the player entered a single letter they haven't guessed before."""</span>
+<span class="c">150. </span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>  <span class="c1"># Keep asking until the player enters a valid letter.</span>
+<span class="c">151. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'Guess a letter.'</span><span class="p">)</span>
+<span class="c">152. </span>        <span class="n">guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'&gt; '</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="c">153. </span>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">guess</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+<span class="c">154. </span>            <span class="nb">print</span><span class="p">(</span><span class="s1">'Please enter a single letter.'</span><span class="p">)</span>
+<span class="c">155. </span>        <span class="k">elif</span> <span class="n">guess</span> <span class="ow">in</span> <span class="n">alreadyGuessed</span><span class="p">:</span>
+<span class="c">156. </span>            <span class="nb">print</span><span class="p">(</span><span class="s1">'You have already guessed that letter. Choose again.'</span><span class="p">)</span>
+<span class="c">157. </span>        <span class="k">elif</span> <span class="ow">not</span> <span class="n">guess</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
+<span class="c">158. </span>            <span class="nb">print</span><span class="p">(</span><span class="s1">'Please enter a LETTER.'</span><span class="p">)</span>
+<span class="c">159. </span>        <span class="k">else</span><span class="p">:</span>
+<span class="c">160. </span>            <span class="k">return</span> <span class="n">guess</span>
+<span class="c">161. </span>
+<span class="c">162. </span>
+<span class="c">163. </span><span class="c1"># If this program was run (instead of imported), run the game:</span>
+<span class="c">164. </span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<span class="c">165. </span>    <span class="k">try</span><span class="p">:</span>
+<span class="c">166. </span>        <span class="n">main</span><span class="p">()</span>
+<span class="c">167. </span>    <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+<span class="c">168. </span>        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>  <span class="c1"># When Ctrl-C is pressed, end the program.</span>
+</pre></div>
+
+<p class="calibre19">After entering the source code and running it a few times, try making experimental changes to it. The comments marked with <code class="calibre22">(!)</code> have suggestions for small changes you can make. On your own, you can also try to figure out how to do the following:</p>
+<ul class="calibre25">
+<li class="calibre8">Add a “category select” feature and let the player choose what category of words they want to play.</li>
+<li class="calibre8">Add a selection feature so the player can choose between the hangman and guillotine versions of the game.</li>
+</ul>
+<h2 id="calibre_link-162" class="calibre5">Exploring the Program</h2>
+<p class="bodyfirst">Try to find the answers to the following questions.
+ Experiment with some modifications to the code and rerun the program to
+ see what effect the changes have.</p>
+<ol class="decimal">
+<li class="calibre8" value="1">What happens if you delete or comment out <code class="calibre22">missedLetters.append(guess)</code> on line 108?</li>
+<li class="calibre8" value="2">What happens if you change <code class="calibre22">drawHangman(missedLetters, correctLetters, secretWord)</code> on line 85 to <code class="calibre22">drawHangman(correctLetters, missedLetters, secretWord)</code>?</li>
+<li class="calibre8" value="3">What happens if you change <code class="calibre22">['_']</code> on line 136 to <code class="calibre22">['*']</code>?</li>
+<li class="calibre8" value="4">What happens if you change <code class="calibre22">print(' '.join(blanks))</code> on line 144 to <code class="calibre22">print(secretWord)</code>?</li>
+</ol>
+</section>
+</div>
+
+
+
+
+
+
+
+
+<a href="https://inventwithpython.com/bigbookpython/project33.html">Prev: Hacking Minigame</a> | <a href="https://inventwithpython.com/bigbookpython/project35.html">Next: Hex Grid</a>
+</body></html>

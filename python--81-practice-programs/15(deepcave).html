@@ -1,0 +1,154 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="15(deepcave)_files/style.css" rel="stylesheet" type="text/css"><link rel="stylesheet" type="text/css" href="15(deepcave)_files/pygments.css"><title>Deep Cave</title></head><body style="background-color: #fffeee;">
+
+<script type="text/javascript" async="" src="15(deepcave)_files/ga.js"></script><script type="text/javascript">
+//<![CDATA[
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-5459430-3']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+//]]>
+</script>
+
+
+<div style="background-color: #eeeddd; float: right; height: 310px; font-family: sans-serif;" id="otherbooks">
+  <a href="#" onclick="document.getElementById('otherbooks').outerHTML='';" style="vertical-align: top;">(close)</a><br>
+
+  <a target="_blank" href="https://nostarch.com/automatestuff2" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_automate.link');"><img src="15(deepcave)_files/cover_automate2_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/big-book-small-python-projects" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_bigbookpython.link');"><img src="15(deepcave)_files/cover_bigbookpython_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/beyond-basic-stuff-python" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_beyond.link');"><img src="15(deepcave)_files/cover_beyond_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/inventwithpython" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_invent.link');"><img src="15(deepcave)_files/cover_invent4th_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://www.amazon.com/Making-Games-Python-Pygame-Sweigart/dp/1469901730?ie=UTF8&amp;tag=playwithpyth-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1469901730" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_pygame.link');"><img src="15(deepcave)_files/cover_makinggames_thumb.webp" style="height: 200px; border: solid black 1px; /"></a>
+  <a target="_blank" href="https://nostarch.com/crackingcodes" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_hacking.link');"><img src="15(deepcave)_files/cover_crackingcodes_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/scratchplayground"><img src="15(deepcave)_files/cover_scratchprogrammingplayground_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/codingwithminecraft"><img src="15(deepcave)_files/cover_codingwithminecraft_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <br>
+  <a href="https://inventwithpython.com/automateudemy">Use this link to get 70% off the Automate the Boring Stuff online video course.</a><br>
+  <a href="https://www.patreon.com/AlSweigart">Support me on Patreon</a>
+</div>
+
+<a href="https://inventwithpython.com/bigbookpython/project14.html">Prev: Countdown</a> | <a href="https://inventwithpython.com/bigbookpython/project16.html">Next: Diamonds</a>
+
+
+
+
+
+<div type="bodymatter chapter" class="calibre1" id="calibre_link-19">
+<section class="toclist">
+<header class="calibre10">
+<h1 class="chapter">
+<span class="chapternumber">#15</span><br class="calibre14">
+<span class="chaptertitle">Deep Cave</span></h1>
+</header>
+<figure class="opener">
+<img src="15(deepcave)_files/000002.webp" alt="" class="calibre12">
+</figure>
+<p class="chapterintro">This program is an animation of a deep cave that
+ descends forever into the earth. Although short, this program takes 
+advantage of the scrolling nature of the computer screen to produce an 
+interesting and unending visualization, proof that it doesn’t take much 
+code to produce something fun to watch. This program is similar to 
+Project 58, “Rainbow.”</p>
+<h2 id="calibre_link-88" class="calibre5">The Program in Action</h2>
+<p class="bodyfirst">When you run <em class="calibre9">deepcave.py</em>, the output will look like this:</p>
+<pre class="calibre24"><code class="calibre22">Deep Cave, by Al Sweigart al@inventwithpython.com
+Press Ctrl-C to stop.
+####################          ########################################
+####################         #########################################
+####################          ########################################
+####################          ########################################
+#####################          #######################################
+######################          ######################################
+#####################          #######################################
+####################          ########################################
+###################          #########################################
+<var class="calibre27">--snip--</var></code></pre>
+<h2 id="calibre_link-89" class="calibre5">How It Works</h2>
+<p class="bodyfirst">This program takes advantage of the fact that 
+printing new lines eventually causes the previous lines to move up the 
+screen. By printing a slightly different gap on each line, the program 
+creates a scrolling animation that looks like the viewer is moving 
+downward.</p>
+<p class="calibre19">The number of hashtag characters on the left side is tracked by the <code class="calibre22">leftWidth</code> variable. The number of spaces in the middle is tracked by the <code class="calibre22">gapWidth</code> variable. The number of hashtag characters on the right side is calculated from <code class="calibre22">WIDTH - gapWidth - leftWidth</code>. This ensures that each line is always the same width.</p>
+<div class="highlight"><pre><span></span>
+<span class="c"> 1. </span><span class="sd">"""Deep Cave, by Al Sweigart al@inventwithpython.com</span>
+<span class="c"> 2. </span><span class="sd">An animation of a deep cave that goes forever into the earth.</span>
+<span class="c"> 3. </span><span class="sd">This code is available at https://nostarch.com/big-book-small-python-programming</span>
+<span class="c"> 4. </span><span class="sd">Tags: tiny, beginner, scrolling, artistic"""</span>
+<span class="c"> 5. </span>
+<span class="c"> 6. </span>
+<span class="c"> 7. </span><span class="kn">import</span> <span class="nn">random</span><span class="o">,</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">time</span>
+<span class="c"> 8. </span>
+<span class="c"> 9. </span><span class="c1"># Set up the constants:</span>
+<span class="c">10. </span><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">70</span>  <span class="c1"># (!) Try changing this to 10 or 30.</span>
+<span class="c">11. </span><span class="n">PAUSE_AMOUNT</span> <span class="o">=</span> <span class="mf">0.05</span>  <span class="c1"># (!) Try changing this to 0 or 1.0.</span>
+<span class="c">12. </span>
+<span class="c">13. </span><span class="nb">print</span><span class="p">(</span><span class="s1">'Deep Cave, by Al Sweigart al@inventwithpython.com'</span><span class="p">)</span>
+<span class="c">14. </span><span class="nb">print</span><span class="p">(</span><span class="s1">'Press Ctrl-C to stop.'</span><span class="p">)</span>
+<span class="c">15. </span><span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="c">16. </span>
+<span class="c">17. </span><span class="n">leftWidth</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="c">18. </span><span class="n">gapWidth</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="c">19. </span>
+<span class="c">20. </span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="c">21. </span>    <span class="c1"># Display the tunnel segment:</span>
+<span class="c">22. </span>    <span class="n">rightWidth</span> <span class="o">=</span> <span class="n">WIDTH</span> <span class="o">-</span> <span class="n">gapWidth</span> <span class="o">-</span> <span class="n">leftWidth</span>
+<span class="c">23. </span>    <span class="nb">print</span><span class="p">((</span><span class="s1">'#'</span> <span class="o">*</span> <span class="n">leftWidth</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="s1">' '</span> <span class="o">*</span> <span class="n">gapWidth</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="s1">'#'</span> <span class="o">*</span> <span class="n">rightWidth</span><span class="p">))</span>
+<span class="c">24. </span>
+<span class="c">25. </span>    <span class="c1"># Check for Ctrl-C press during the brief pause:</span>
+<span class="c">26. </span>    <span class="k">try</span><span class="p">:</span>
+<span class="c">27. </span>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">PAUSE_AMOUNT</span><span class="p">)</span>
+<span class="c">28. </span>    <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+<span class="c">29. </span>        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>  <span class="c1"># When Ctrl-C is pressed, end the program.</span>
+<span class="c">30. </span>
+<span class="c">31. </span>    <span class="c1"># Adjust the left side width:</span>
+<span class="c">32. </span>    <span class="n">diceRoll</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="c">33. </span>    <span class="k">if</span> <span class="n">diceRoll</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">leftWidth</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+<span class="c">34. </span>        <span class="n">leftWidth</span> <span class="o">=</span> <span class="n">leftWidth</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1"># Decrease left side width.</span>
+<span class="c">35. </span>    <span class="k">elif</span> <span class="n">diceRoll</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">leftWidth</span> <span class="o">+</span> <span class="n">gapWidth</span> <span class="o">&lt;</span> <span class="n">WIDTH</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+<span class="c">36. </span>        <span class="n">leftWidth</span> <span class="o">=</span> <span class="n">leftWidth</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># Increase left side width.</span>
+<span class="c">37. </span>    <span class="k">else</span><span class="p">:</span>
+<span class="c">38. </span>        <span class="k">pass</span>  <span class="c1"># Do nothing; no change in left side width.</span>
+<span class="c">39. </span>
+<span class="c">40. </span>    <span class="c1"># Adjust the gap width:</span>
+<span class="c">41. </span>    <span class="c1"># (!) Try uncommenting out all of the following code:</span>
+<span class="c">42. </span>    <span class="c1">#diceRoll = random.randint(1, 6)</span>
+<span class="c">43. </span>    <span class="c1">#if diceRoll == 1 and gapWidth &gt; 1:</span>
+<span class="c">44. </span>    <span class="c1">#    gapWidth = gapWidth - 1  # Decrease gap width.</span>
+<span class="c">45. </span>    <span class="c1">#elif diceRoll == 2 and leftWidth + gapWidth &lt; WIDTH - 1:</span>
+<span class="c">46. </span>    <span class="c1">#    gapWidth = gapWidth + 1  # Increase gap width.</span>
+<span class="c">47. </span>    <span class="c1">#else:</span>
+<span class="c">48. </span>    <span class="c1">#    pass  # Do nothing; no change in gap width.</span>
+</pre></div>
+
+<p class="calibre19">After entering the source code and running it a few times, try making experimental changes to it. The comments marked with <code class="calibre22">(!)</code> have suggestions for small changes you can make.</p>
+<h2 id="calibre_link-90" class="calibre5">Exploring the Program</h2>
+<p class="bodyfirst">Try to find the answers to the following questions.
+ Experiment with some modifications to the code and rerun the program to
+ see what effect the changes have.</p>
+<ol class="decimal">
+<li class="calibre8" value="1">What happens if you change <code class="calibre22">(' ' * gapWidth)</code> on line 23 to <code class="calibre22">('.' * gapWidth)</code>?</li>
+<li class="calibre8" value="2">What happens if you change <code class="calibre22">random.randint(1, 6)</code> on line 32 to <code class="calibre22">random.randint(1, 1)</code>?</li>
+<li class="calibre8" value="3">What happens if you change <code class="calibre22">random.randint(1, 6)</code> on line 32 to <code class="calibre22">random.randint(2, 2)</code>?</li>
+<li class="calibre8" value="4">What error message do you get if you delete or comment out <code class="calibre22">leftWidth = 20</code> on line 17?</li>
+<li class="calibre8" value="5">What happens if you change <code class="calibre22">WIDTH = 70</code> on line 10 to <code class="calibre22">WIDTH = -70</code>?</li>
+<li class="calibre8" value="6">What error message do you get if you change <code class="calibre22">PAUSE_AMOUNT = 0.05</code> on line 11 to <code class="calibre22">PAUSE_AMOUNT = -0.05</code>?</li>
+</ol>
+</section>
+</div>
+
+
+
+
+
+
+
+
+<a href="https://inventwithpython.com/bigbookpython/project14.html">Prev: Countdown</a> | <a href="https://inventwithpython.com/bigbookpython/project16.html">Next: Diamonds</a>
+</body></html>

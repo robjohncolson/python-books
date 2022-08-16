@@ -1,0 +1,300 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="44(mazerunner)_files/style.css" rel="stylesheet" type="text/css"><link rel="stylesheet" type="text/css" href="44(mazerunner)_files/pygments.css"><title>Maze Runner 2D</title></head><body style="background-color: #fffeee;">
+
+<script type="text/javascript" async="" src="44(mazerunner)_files/ga.js"></script><script type="text/javascript">
+//<![CDATA[
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-5459430-3']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+//]]>
+</script>
+
+
+<div style="background-color: #eeeddd; float: right; height: 310px; font-family: sans-serif;" id="otherbooks">
+  <a href="#" onclick="document.getElementById('otherbooks').outerHTML='';" style="vertical-align: top;">(close)</a><br>
+
+  <a target="_blank" href="https://nostarch.com/automatestuff2" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_automate.link');"><img src="44(mazerunner)_files/cover_automate2_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/big-book-small-python-projects" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_bigbookpython.link');"><img src="44(mazerunner)_files/cover_bigbookpython_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/beyond-basic-stuff-python" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_beyond.link');"><img src="44(mazerunner)_files/cover_beyond_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/inventwithpython" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_invent.link');"><img src="44(mazerunner)_files/cover_invent4th_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://www.amazon.com/Making-Games-Python-Pygame-Sweigart/dp/1469901730?ie=UTF8&amp;tag=playwithpyth-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1469901730" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_pygame.link');"><img src="44(mazerunner)_files/cover_makinggames_thumb.webp" style="height: 200px; border: solid black 1px; /"></a>
+  <a target="_blank" href="https://nostarch.com/crackingcodes" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_hacking.link');"><img src="44(mazerunner)_files/cover_crackingcodes_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/scratchplayground"><img src="44(mazerunner)_files/cover_scratchprogrammingplayground_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/codingwithminecraft"><img src="44(mazerunner)_files/cover_codingwithminecraft_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <br>
+  <a href="https://inventwithpython.com/automateudemy">Use this link to get 70% off the Automate the Boring Stuff online video course.</a><br>
+  <a href="https://www.patreon.com/AlSweigart">Support me on Patreon</a>
+</div>
+
+<a href="https://inventwithpython.com/bigbookpython/project43.html">Prev: Mancala</a> | <a href="https://inventwithpython.com/bigbookpython/project45.html">Next: Maze Runner 3D</a>
+
+
+
+
+
+<div type="bodymatter chapter" class="calibre1" id="calibre_link-194">
+<section class="toclist">
+<header class="calibre10">
+<h1 class="chapter">
+<span class="chapternumber">#44</span><br class="calibre14">
+<span class="chaptertitle">Maze Runner 2D</span></h1>
+</header>
+<figure class="opener">
+<img src="44(mazerunner)_files/000002.webp" alt="" class="calibre12">
+</figure>
+<p class="chapterintro">This two-dimensional maze runner shows the 
+player a top-down, bird’s-eye view of a maze file you create in a text 
+editor, such as the IDE you use to write your <em class="calibre9">.py</em> files. Using the WASD keys, the player can move up, left, down, and right, respectively, to navigate the <code class="calibre17">@</code> symbol toward the exit marked by the <code class="calibre17">X</code> character.</p>
+<p class="calibre18">To make a maze file, open a text editor and create 
+the following pattern. Don’t type the numbers along the top and left 
+side; they are only there for reference:</p>
+<pre class="calibre24"><code class="calibre22"> 123456789
+1#########
+2#S# # # #
+3##<b class="calibre6">#</b>#<b class="calibre6">#</b>#<b class="calibre6">#</b>##
+4# # # # #
+5##<b class="calibre6">#</b>#<b class="calibre6">#</b>#<b class="calibre6">#</b>##
+6# # # # #
+7##<b class="calibre6">#</b>#<b class="calibre6">#</b>#<b class="calibre6">#</b>##
+8# # # #E#
+9#########</code></pre>
+<p class="calibre19">The # characters represent walls, the <code class="calibre22">S</code> marks the start, and the <code class="calibre22">E</code>
+ marks the exit. The # characters in bold represent walls that you can 
+remove to form your maze. Don’t remove the walls at odd-numbered columns
+ and odd-numbered rows, and don’t remove the borders of the maze. When 
+you’re done, save the maze as a <em class="calibre9">.txt</em> (text) file. It could look something like this:</p>
+<pre class="calibre24"><code class="calibre22">#########
+#S    # #
+# ### # #
+# #   # #
+# ##### #
+#   #   #
+### # # #
+#     #E#
+#########</code></pre>
+<p class="calibre19">Of course, this is a simple maze. You can make maze
+ files of any size as long as they have an odd number of rows and 
+columns. Be sure it’ll still fit on the screen, though! You can also 
+download maze files from <a href="https://invpy.com/mazes/" class="linkurl">https://invpy.com/mazes/</a>.</p>
+<h2 id="calibre_link-195" class="calibre5">The Program in Action</h2>
+<p class="bodyfirst">When you run <em class="calibre9">mazerunner2d.py</em>, the output will look like this:</p>
+<pre class="calibre24"><code class="calibre22">Maze Runner 2D, by Al Sweigart al@inventwithpython.com
+
+(Maze files are generated by mazemakerrec.py)
+Enter the filename of the maze (or LIST or QUIT):
+&gt; <b class="calibre6">maze65x11s1.txt</b>
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+░@░     ░       ░               ░                       ░   ░   ░
+░ ░░░░░ ░ ░░░ ░ ░ ░░░░░░░ ░░░░░ ░░░░░░░░░░░░░░░░░░░░░ ░░░ ░ ░ ░ ░
+░ ░   ░     ░ ░ ░   ░   ░     ░   ░           ░     ░   ░ ░   ░ ░
+░ ░ ░ ░░░░░ ░ ░ ░░░░░ ░ ░░░░░ ░░░ ░ ░░░░░░░░░ ░ ░░░ ░░░ ░ ░░░░░ ░
+░   ░     ░ ░ ░   ░   ░       ░ ░   ░       ░ ░ ░ ░   ░   ░     ░
+░░░░░░░░░ ░░░ ░░░ ░ ░░░░░░░░░░░ ░░░░░ ░ ░░░░░ ░ ░ ░░░ ░░░░░ ░░░░░
+░ ░     ░ ░   ░ ░ ░ ░           ░     ░       ░ ░     ░   ░     ░
+░ ░ ░ ░░░ ░ ░░░ ░ ░ ░ ░░░░░░░░░░░ ░░░░░░░░░░░░░ ░ ░░░░░ ░ ░░░░░ ░
+░   ░       ░       ░                           ░       ░      X░
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+                           W
+Enter direction, or QUIT: ASD
+<var class="calibre27">--snip--</var></code></pre>
+<h2 id="calibre_link-196" class="calibre5">How It Works</h2>
+<p class="bodyfirst">The program loads the data for the maze’s walls from a text file and into a dictionary stored in the <code class="calibre22">maze</code> variable. This dictionary has <code class="calibre22">(x, y)</code> tuples for keys and the string in the <code class="calibre22">WALL</code>, <code class="calibre22">EMPTY</code>, <code class="calibre22">START</code>, or <code class="calibre22">EXIT</code>
+ constants for values. Project 45, “Maze Runner 3D,” uses a similar 
+dictionary representation of the maze. The difference between the 
+projects is in the code that renders that maze on the screen. Since Maze
+ Runner 2D is simpler, I recommend becoming familiar with this program 
+first before moving on to Maze Runner 3D.</p>
+<div class="highlight"><pre><span></span>
+<span class="c">  1. </span><span class="sd">"""Maze Runner 2D, by Al Sweigart al@inventwithpython.com</span>
+<span class="c">  2. </span><span class="sd">Move around a maze and try to escape. Maze files are generated by</span>
+<span class="c">  3. </span><span class="sd">mazemakerrec.py.</span>
+<span class="c">  4. </span><span class="sd">This code is available at https://nostarch.com/big-book-small-python-programming</span>
+<span class="c">  5. </span><span class="sd">Tags: large, game, maze"""</span>
+<span class="c">  6. </span>
+<span class="c">  7. </span><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
+<span class="c">  8. </span>
+<span class="c">  9. </span><span class="c1"># Maze file constants:</span>
+<span class="c"> 10. </span><span class="n">WALL</span> <span class="o">=</span> <span class="s1">'#'</span>
+<span class="c"> 11. </span><span class="n">EMPTY</span> <span class="o">=</span> <span class="s1">' '</span>
+<span class="c"> 12. </span><span class="n">START</span> <span class="o">=</span> <span class="s1">'S'</span>
+<span class="c"> 13. </span><span class="n">EXIT</span> <span class="o">=</span> <span class="s1">'E'</span>
+<span class="c"> 14. </span>
+<span class="c"> 15. </span><span class="n">PLAYER</span> <span class="o">=</span> <span class="s1">'@'</span>  <span class="c1"># (!) Try changing this to '+' or 'o'.</span>
+<span class="c"> 16. </span><span class="n">BLOCK</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="mi">9617</span><span class="p">)</span>  <span class="c1"># Character 9617 is '░'</span>
+<span class="c"> 17. </span>
+<span class="c"> 18. </span>
+<span class="c"> 19. </span><span class="k">def</span> <span class="nf">displayMaze</span><span class="p">(</span><span class="n">maze</span><span class="p">):</span>
+<span class="c"> 20. </span>    <span class="c1"># Display the maze:</span>
+<span class="c"> 21. </span>    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">HEIGHT</span><span class="p">):</span>
+<span class="c"> 22. </span>        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">WIDTH</span><span class="p">):</span>
+<span class="c"> 23. </span>            <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="n">playerx</span><span class="p">,</span> <span class="n">playery</span><span class="p">):</span>
+<span class="c"> 24. </span>                <span class="nb">print</span><span class="p">(</span><span class="n">PLAYER</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+<span class="c"> 25. </span>            <span class="k">elif</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="n">exitx</span><span class="p">,</span> <span class="n">exity</span><span class="p">):</span>
+<span class="c"> 26. </span>                <span class="nb">print</span><span class="p">(</span><span class="s1">'X'</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+<span class="c"> 27. </span>            <span class="k">elif</span> <span class="n">maze</span><span class="p">[(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)]</span> <span class="o">==</span> <span class="n">WALL</span><span class="p">:</span>
+<span class="c"> 28. </span>                <span class="nb">print</span><span class="p">(</span><span class="n">BLOCK</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+<span class="c"> 29. </span>            <span class="k">else</span><span class="p">:</span>
+<span class="c"> 30. </span>                <span class="nb">print</span><span class="p">(</span><span class="n">maze</span><span class="p">[(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)],</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+<span class="c"> 31. </span>        <span class="nb">print</span><span class="p">()</span>  <span class="c1"># Print a newline after printing the row.</span>
+<span class="c"> 32. </span>
+<span class="c"> 33. </span>
+<span class="c"> 34. </span><span class="nb">print</span><span class="p">(</span><span class="s1">'''Maze Runner 2D, by Al Sweigart al@inventwithpython.com</span>
+<span class="c"> 35. </span>
+<span class="c"> 36. </span><span class="s1">(Maze files are generated by mazemakerrec.py)'''</span><span class="p">)</span>
+<span class="c"> 37. </span>
+<span class="c"> 38. </span><span class="c1"># Get the maze file's filename from the user:</span>
+<span class="c"> 39. </span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="c"> 40. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'Enter the filename of the maze (or LIST or QUIT):'</span><span class="p">)</span>
+<span class="c"> 41. </span>    <span class="n">filename</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'&gt; '</span><span class="p">)</span>
+<span class="c"> 42. </span>
+<span class="c"> 43. </span>    <span class="c1"># List all the maze files in the current folder:</span>
+<span class="c"> 44. </span>    <span class="k">if</span> <span class="n">filename</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s1">'LIST'</span><span class="p">:</span>
+<span class="c"> 45. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'Maze files found in'</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+<span class="c"> 46. </span>        <span class="k">for</span> <span class="n">fileInCurrentFolder</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">():</span>
+<span class="c"> 47. </span>            <span class="k">if</span> <span class="p">(</span><span class="n">fileInCurrentFolder</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'maze'</span><span class="p">)</span> <span class="ow">and</span>
+<span class="c"> 48. </span>            <span class="n">fileInCurrentFolder</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.txt'</span><span class="p">)):</span>
+<span class="c"> 49. </span>                <span class="nb">print</span><span class="p">(</span><span class="s1">'  '</span><span class="p">,</span> <span class="n">fileInCurrentFolder</span><span class="p">)</span>
+<span class="c"> 50. </span>        <span class="k">continue</span>
+<span class="c"> 51. </span>
+<span class="c"> 52. </span>    <span class="k">if</span> <span class="n">filename</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s1">'QUIT'</span><span class="p">:</span>
+<span class="c"> 53. </span>        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+<span class="c"> 54. </span>
+<span class="c"> 55. </span>    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+<span class="c"> 56. </span>        <span class="k">break</span>
+<span class="c"> 57. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'There is no file named'</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+<span class="c"> 58. </span>
+<span class="c"> 59. </span><span class="c1"># Load the maze from a file:</span>
+<span class="c"> 60. </span><span class="n">mazeFile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="c"> 61. </span><span class="n">maze</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="c"> 62. </span><span class="n">lines</span> <span class="o">=</span> <span class="n">mazeFile</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="c"> 63. </span><span class="n">playerx</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="c"> 64. </span><span class="n">playery</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="c"> 65. </span><span class="n">exitx</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="c"> 66. </span><span class="n">exity</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="c"> 67. </span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c"> 68. </span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+<span class="c"> 69. </span>    <span class="n">WIDTH</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
+<span class="c"> 70. </span>    <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">character</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()):</span>
+<span class="c"> 71. </span>        <span class="k">assert</span> <span class="n">character</span> <span class="ow">in</span> <span class="p">(</span><span class="n">WALL</span><span class="p">,</span> <span class="n">EMPTY</span><span class="p">,</span> <span class="n">START</span><span class="p">,</span> <span class="n">EXIT</span><span class="p">),</span> <span class="s1">'Invalid character at column </span><span class="si">{}</span><span class="s1">, line </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c"> 72. </span>        <span class="k">if</span> <span class="n">character</span> <span class="ow">in</span> <span class="p">(</span><span class="n">WALL</span><span class="p">,</span> <span class="n">EMPTY</span><span class="p">):</span>
+<span class="c"> 73. </span>            <span class="n">maze</span><span class="p">[(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)]</span> <span class="o">=</span> <span class="n">character</span>
+<span class="c"> 74. </span>        <span class="k">elif</span> <span class="n">character</span> <span class="o">==</span> <span class="n">START</span><span class="p">:</span>
+<span class="c"> 75. </span>            <span class="n">playerx</span><span class="p">,</span> <span class="n">playery</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+<span class="c"> 76. </span>            <span class="n">maze</span><span class="p">[(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)]</span> <span class="o">=</span> <span class="n">EMPTY</span>
+<span class="c"> 77. </span>        <span class="k">elif</span> <span class="n">character</span> <span class="o">==</span> <span class="n">EXIT</span><span class="p">:</span>
+<span class="c"> 78. </span>            <span class="n">exitx</span><span class="p">,</span> <span class="n">exity</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+<span class="c"> 79. </span>            <span class="n">maze</span><span class="p">[(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)]</span> <span class="o">=</span> <span class="n">EMPTY</span>
+<span class="c"> 80. </span>    <span class="n">y</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="c"> 81. </span><span class="n">HEIGHT</span> <span class="o">=</span> <span class="n">y</span>
+<span class="c"> 82. </span>
+<span class="c"> 83. </span><span class="k">assert</span> <span class="n">playerx</span> <span class="o">!=</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">playery</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">'No start in maze file.'</span>
+<span class="c"> 84. </span><span class="k">assert</span> <span class="n">exitx</span> <span class="o">!=</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">exity</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">'No exit in maze file.'</span>
+<span class="c"> 85. </span>
+<span class="c"> 86. </span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>  <span class="c1"># Main game loop.</span>
+<span class="c"> 87. </span>    <span class="n">displayMaze</span><span class="p">(</span><span class="n">maze</span><span class="p">)</span>
+<span class="c"> 88. </span>
+<span class="c"> 89. </span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>  <span class="c1"># Get user move.</span>
+<span class="c"> 90. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'                           W'</span><span class="p">)</span>
+<span class="c"> 91. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'Enter direction, or QUIT: ASD'</span><span class="p">)</span>
+<span class="c"> 92. </span>        <span class="n">move</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'&gt; '</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="c"> 93. </span>
+<span class="c"> 94. </span>        <span class="k">if</span> <span class="n">move</span> <span class="o">==</span> <span class="s1">'QUIT'</span><span class="p">:</span>
+<span class="c"> 95. </span>            <span class="nb">print</span><span class="p">(</span><span class="s1">'Thanks for playing!'</span><span class="p">)</span>
+<span class="c"> 96. </span>            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+<span class="c"> 97. </span>
+<span class="c"> 98. </span>        <span class="k">if</span> <span class="n">move</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'W'</span><span class="p">,</span> <span class="s1">'A'</span><span class="p">,</span> <span class="s1">'S'</span><span class="p">,</span> <span class="s1">'D'</span><span class="p">]:</span>
+<span class="c"> 99. </span>            <span class="nb">print</span><span class="p">(</span><span class="s1">'Invalid direction. Enter one of W, A, S, or D.'</span><span class="p">)</span>
+<span class="c">100. </span>            <span class="k">continue</span>
+<span class="c">101. </span>
+<span class="c">102. </span>        <span class="c1"># Check if the player can move in that direction:</span>
+<span class="c">103. </span>        <span class="k">if</span> <span class="n">move</span> <span class="o">==</span> <span class="s1">'W'</span> <span class="ow">and</span> <span class="n">maze</span><span class="p">[(</span><span class="n">playerx</span><span class="p">,</span> <span class="n">playery</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">==</span> <span class="n">EMPTY</span><span class="p">:</span>
+<span class="c">104. </span>            <span class="k">break</span>
+<span class="c">105. </span>        <span class="k">elif</span> <span class="n">move</span> <span class="o">==</span> <span class="s1">'S'</span> <span class="ow">and</span> <span class="n">maze</span><span class="p">[(</span><span class="n">playerx</span><span class="p">,</span> <span class="n">playery</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">==</span> <span class="n">EMPTY</span><span class="p">:</span>
+<span class="c">106. </span>            <span class="k">break</span>
+<span class="c">107. </span>        <span class="k">elif</span> <span class="n">move</span> <span class="o">==</span> <span class="s1">'A'</span> <span class="ow">and</span> <span class="n">maze</span><span class="p">[(</span><span class="n">playerx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">playery</span><span class="p">)]</span> <span class="o">==</span> <span class="n">EMPTY</span><span class="p">:</span>
+<span class="c">108. </span>            <span class="k">break</span>
+<span class="c">109. </span>        <span class="k">elif</span> <span class="n">move</span> <span class="o">==</span> <span class="s1">'D'</span> <span class="ow">and</span> <span class="n">maze</span><span class="p">[(</span><span class="n">playerx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">playery</span><span class="p">)]</span> <span class="o">==</span> <span class="n">EMPTY</span><span class="p">:</span>
+<span class="c">110. </span>            <span class="k">break</span>
+<span class="c">111. </span>
+<span class="c">112. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'You cannot move in that direction.'</span><span class="p">)</span>
+<span class="c">113. </span>
+<span class="c">114. </span>    <span class="c1"># Keep moving in this direction until you encounter a branch point.</span>
+<span class="c">115. </span>    <span class="k">if</span> <span class="n">move</span> <span class="o">==</span> <span class="s1">'W'</span><span class="p">:</span>
+<span class="c">116. </span>        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="c">117. </span>            <span class="n">playery</span> <span class="o">-=</span> <span class="mi">1</span>
+<span class="c">118. </span>            <span class="k">if</span> <span class="p">(</span><span class="n">playerx</span><span class="p">,</span> <span class="n">playery</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="n">exitx</span><span class="p">,</span> <span class="n">exity</span><span class="p">):</span>
+<span class="c">119. </span>                <span class="k">break</span>
+<span class="c">120. </span>            <span class="k">if</span> <span class="n">maze</span><span class="p">[(</span><span class="n">playerx</span><span class="p">,</span> <span class="n">playery</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">==</span> <span class="n">WALL</span><span class="p">:</span>
+<span class="c">121. </span>                <span class="k">break</span>  <span class="c1"># Break if we've hit a wall.</span>
+<span class="c">122. </span>            <span class="k">if</span> <span class="p">(</span><span class="n">maze</span><span class="p">[(</span><span class="n">playerx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">playery</span><span class="p">)]</span> <span class="o">==</span> <span class="n">EMPTY</span>
+<span class="c">123. </span>                <span class="ow">or</span> <span class="n">maze</span><span class="p">[(</span><span class="n">playerx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">playery</span><span class="p">)]</span> <span class="o">==</span> <span class="n">EMPTY</span><span class="p">):</span>
+<span class="c">124. </span>                <span class="k">break</span>  <span class="c1"># Break if we've reached a branch point.</span>
+<span class="c">125. </span>    <span class="k">elif</span> <span class="n">move</span> <span class="o">==</span> <span class="s1">'S'</span><span class="p">:</span>
+<span class="c">126. </span>        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="c">127. </span>            <span class="n">playery</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="c">128. </span>            <span class="k">if</span> <span class="p">(</span><span class="n">playerx</span><span class="p">,</span> <span class="n">playery</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="n">exitx</span><span class="p">,</span> <span class="n">exity</span><span class="p">):</span>
+<span class="c">129. </span>                <span class="k">break</span>
+<span class="c">130. </span>            <span class="k">if</span> <span class="n">maze</span><span class="p">[(</span><span class="n">playerx</span><span class="p">,</span> <span class="n">playery</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">==</span> <span class="n">WALL</span><span class="p">:</span>
+<span class="c">131. </span>                <span class="k">break</span>  <span class="c1"># Break if we've hit a wall.</span>
+<span class="c">132. </span>            <span class="k">if</span> <span class="p">(</span><span class="n">maze</span><span class="p">[(</span><span class="n">playerx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">playery</span><span class="p">)]</span> <span class="o">==</span> <span class="n">EMPTY</span>
+<span class="c">133. </span>                <span class="ow">or</span> <span class="n">maze</span><span class="p">[(</span><span class="n">playerx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">playery</span><span class="p">)]</span> <span class="o">==</span> <span class="n">EMPTY</span><span class="p">):</span>
+<span class="c">134. </span>                <span class="k">break</span>  <span class="c1"># Break if we've reached a branch point.</span>
+<span class="c">135. </span>    <span class="k">elif</span> <span class="n">move</span> <span class="o">==</span> <span class="s1">'A'</span><span class="p">:</span>
+<span class="c">136. </span>        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="c">137. </span>            <span class="n">playerx</span> <span class="o">-=</span> <span class="mi">1</span>
+<span class="c">138. </span>            <span class="k">if</span> <span class="p">(</span><span class="n">playerx</span><span class="p">,</span> <span class="n">playery</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="n">exitx</span><span class="p">,</span> <span class="n">exity</span><span class="p">):</span>
+<span class="c">139. </span>                <span class="k">break</span>
+<span class="c">140. </span>            <span class="k">if</span> <span class="n">maze</span><span class="p">[(</span><span class="n">playerx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">playery</span><span class="p">)]</span> <span class="o">==</span> <span class="n">WALL</span><span class="p">:</span>
+<span class="c">141. </span>                <span class="k">break</span>  <span class="c1"># Break if we've hit a wall.</span>
+<span class="c">142. </span>            <span class="k">if</span> <span class="p">(</span><span class="n">maze</span><span class="p">[(</span><span class="n">playerx</span><span class="p">,</span> <span class="n">playery</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">==</span> <span class="n">EMPTY</span>
+<span class="c">143. </span>                <span class="ow">or</span> <span class="n">maze</span><span class="p">[(</span><span class="n">playerx</span><span class="p">,</span> <span class="n">playery</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">==</span> <span class="n">EMPTY</span><span class="p">):</span>
+<span class="c">144. </span>                <span class="k">break</span>  <span class="c1"># Break if we've reached a branch point.</span>
+<span class="c">145. </span>    <span class="k">elif</span> <span class="n">move</span> <span class="o">==</span> <span class="s1">'D'</span><span class="p">:</span>
+<span class="c">146. </span>        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="c">147. </span>            <span class="n">playerx</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="c">148. </span>            <span class="k">if</span> <span class="p">(</span><span class="n">playerx</span><span class="p">,</span> <span class="n">playery</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="n">exitx</span><span class="p">,</span> <span class="n">exity</span><span class="p">):</span>
+<span class="c">149. </span>                <span class="k">break</span>
+<span class="c">150. </span>            <span class="k">if</span> <span class="n">maze</span><span class="p">[(</span><span class="n">playerx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">playery</span><span class="p">)]</span> <span class="o">==</span> <span class="n">WALL</span><span class="p">:</span>
+<span class="c">151. </span>                <span class="k">break</span>  <span class="c1"># Break if we've hit a wall.</span>
+<span class="c">152. </span>            <span class="k">if</span> <span class="p">(</span><span class="n">maze</span><span class="p">[(</span><span class="n">playerx</span><span class="p">,</span> <span class="n">playery</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">==</span> <span class="n">EMPTY</span>
+<span class="c">153. </span>                <span class="ow">or</span> <span class="n">maze</span><span class="p">[(</span><span class="n">playerx</span><span class="p">,</span> <span class="n">playery</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">==</span> <span class="n">EMPTY</span><span class="p">):</span>
+<span class="c">154. </span>                <span class="k">break</span>  <span class="c1"># Break if we've reached a branch point.</span>
+<span class="c">155. </span>
+<span class="c">156. </span>    <span class="k">if</span> <span class="p">(</span><span class="n">playerx</span><span class="p">,</span> <span class="n">playery</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="n">exitx</span><span class="p">,</span> <span class="n">exity</span><span class="p">):</span>
+<span class="c">157. </span>        <span class="n">displayMaze</span><span class="p">(</span><span class="n">maze</span><span class="p">)</span>
+<span class="c">158. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'You have reached the exit! Good job!'</span><span class="p">)</span>
+<span class="c">159. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'Thanks for playing!'</span><span class="p">)</span>
+<span class="c">160. </span>        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+</pre></div>
+
+<h2 id="calibre_link-197" class="calibre5">Exploring the Program</h2>
+<p class="bodyfirst">Try to find the answers to the following questions.
+ Experiment with some modifications to the code and rerun the program to
+ see what effect the changes have.</p>
+<ol class="decimal">
+<li class="calibre8" value="1">What error message do you get if you change <code class="calibre22">character == START</code> on line 74 to <code class="calibre22">character == EXIT</code>?</li>
+<li class="calibre8" value="2">What happens if you change <code class="calibre22">playery + 1</code> on line 105 to <code class="calibre22">playery – 1</code>?</li>
+<li class="calibre8" value="3">What happens if you change <code class="calibre22">(exitx, exity)</code> on line 156 to <code class="calibre22">(None, None)</code>?</li>
+<li class="calibre8" value="4">What error message do you get if you change <code class="calibre22">while True:</code> on line 89 to <code class="calibre22">while False:</code>?</li>
+<li class="calibre8" value="5">What happens if you change <code class="calibre22">break</code> on line 104 to <code class="calibre22">continue</code>?</li>
+<li class="calibre8" value="6">What error message do you get if you change <code class="calibre22">break</code> on line 121 to <code class="calibre22">continue</code>?</li>
+</ol>
+</section>
+</div>
+
+
+
+
+
+
+
+
+<a href="https://inventwithpython.com/bigbookpython/project43.html">Prev: Mancala</a> | <a href="https://inventwithpython.com/bigbookpython/project45.html">Next: Maze Runner 3D</a>
+</body></html>

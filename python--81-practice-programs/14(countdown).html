@@ -1,0 +1,161 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="14(countdown)_files/style.css" rel="stylesheet" type="text/css"><link rel="stylesheet" type="text/css" href="14(countdown)_files/pygments.css"><title>Countdown</title></head><body style="background-color: #fffeee;">
+
+<script type="text/javascript" async="" src="14(countdown)_files/ga.js"></script><script type="text/javascript">
+//<![CDATA[
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-5459430-3']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+//]]>
+</script>
+
+
+<div style="background-color: #eeeddd; float: right; height: 310px; font-family: sans-serif;" id="otherbooks">
+  <a href="#" onclick="document.getElementById('otherbooks').outerHTML='';" style="vertical-align: top;">(close)</a><br>
+
+  <a target="_blank" href="https://nostarch.com/automatestuff2" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_automate.link');"><img src="14(countdown)_files/cover_automate2_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/big-book-small-python-projects" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_bigbookpython.link');"><img src="14(countdown)_files/cover_bigbookpython_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/beyond-basic-stuff-python" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_beyond.link');"><img src="14(countdown)_files/cover_beyond_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/inventwithpython" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_invent.link');"><img src="14(countdown)_files/cover_invent4th_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://www.amazon.com/Making-Games-Python-Pygame-Sweigart/dp/1469901730?ie=UTF8&amp;tag=playwithpyth-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1469901730" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_pygame.link');"><img src="14(countdown)_files/cover_makinggames_thumb.webp" style="height: 200px; border: solid black 1px; /"></a>
+  <a target="_blank" href="https://nostarch.com/crackingcodes" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_hacking.link');"><img src="14(countdown)_files/cover_crackingcodes_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/scratchplayground"><img src="14(countdown)_files/cover_scratchprogrammingplayground_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/codingwithminecraft"><img src="14(countdown)_files/cover_codingwithminecraft_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <br>
+  <a href="https://inventwithpython.com/automateudemy">Use this link to get 70% off the Automate the Boring Stuff online video course.</a><br>
+  <a href="https://www.patreon.com/AlSweigart">Support me on Patreon</a>
+</div>
+
+<a href="https://inventwithpython.com/bigbookpython/project13.html">Prev: Conway's Game of Life</a> | <a href="https://inventwithpython.com/bigbookpython/project15.html">Next: Deep Cave</a>
+
+
+
+
+
+<div type="bodymatter chapter" class="calibre1" id="calibre_link-24">
+<section class="toclist">
+<header class="calibre10">
+<h1 class="chapter">
+<span class="chapternumber">#14</span><br class="calibre14">
+<span class="chaptertitle">Countdown</span></h1>
+</header>
+<figure class="opener">
+<img src="14(countdown)_files/000002.webp" alt="" class="calibre12">
+</figure>
+<p class="chapterintro">This program displays a digital timer that counts down to zero. Rather than render numeric characters directly, the <em class="calibre9">sevseg.py</em>
+ module from Project 64, “Seven-Segment Display Module,” generates the 
+drawings for each digit. You must create this file before the Countdown 
+program can work. Then, set the countdown timer to any number of 
+seconds, minutes, and hours you like. This program is similar to Project
+ 19, “Digital Clock.”</p>
+<h2 id="calibre_link-85" class="calibre5">The Program in Action</h2>
+<p class="bodyfirst">When you run <em class="calibre9">countdown.py</em>, the output will look like this:</p>
+<pre class="calibre24"><code class="calibre22"> __   __       __   __       __   __
+|  | |  |  *  |  | |  |  *   __| |__|
+|__| |__|  *  |__| |__|  *  |__   __|
+
+Press Ctrl-C to quit.</code></pre>
+<h2 id="calibre_link-86" class="calibre5">How It Works</h2>
+<p class="bodyfirst">After running <code class="calibre22">import sevseg</code>, you can call the <code class="calibre22">sevseg.getSevSegStr()</code>
+ function to get a multiline string of the seven segment digits. 
+However, the Countdown program needs to display a colon made out of 
+asterisks in between the hours, minutes, and seconds. This requires 
+splitting up the three lines of the multiline strings for these digits 
+into three separate strings with the <code class="calibre22">splitlines()</code> method.</p>
+<div class="highlight"><pre><span></span>
+<span class="c"> 1. </span><span class="sd">"""Countdown, by Al Sweigart al@inventwithpython.com</span>
+<span class="c"> 2. </span><span class="sd">Show a countdown timer animation using a seven-segment display.</span>
+<span class="c"> 3. </span><span class="sd">Press Ctrl-C to stop.</span>
+<span class="c"> 4. </span><span class="sd">More info at https://en.wikipedia.org/wiki/Seven-segment_display</span>
+<span class="c"> 5. </span><span class="sd">Requires sevseg.py to be in the same folder.</span>
+<span class="c"> 6. </span><span class="sd">This code is available at https://nostarch.com/big-book-small-python-programming</span>
+<span class="c"> 7. </span><span class="sd">Tags: tiny, artistic"""</span>
+<span class="c"> 8. </span>
+<span class="c"> 9. </span><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">time</span>
+<span class="c">10. </span><span class="kn">import</span> <span class="nn">sevseg</span>  <span class="c1"># Imports our sevseg.py program.</span>
+<span class="c">11. </span>
+<span class="c">12. </span><span class="c1"># (!) Change this to any number of seconds:</span>
+<span class="c">13. </span><span class="n">secondsLeft</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="c">14. </span>
+<span class="c">15. </span><span class="k">try</span><span class="p">:</span>
+<span class="c">16. </span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>  <span class="c1"># Main program loop.</span>
+<span class="c">17. </span>        <span class="c1"># Clear the screen by printing several newlines:</span>
+<span class="c">18. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+<span class="c">19. </span>
+<span class="c">20. </span>        <span class="c1"># Get the hours/minutes/seconds from secondsLeft:</span>
+<span class="c">21. </span>        <span class="c1"># For example: 7265 is 2 hours, 1 minute, 5 seconds.</span>
+<span class="c">22. </span>        <span class="c1"># So 7265 // 3600 is 2 hours:</span>
+<span class="c">23. </span>        <span class="n">hours</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">secondsLeft</span> <span class="o">//</span> <span class="mi">3600</span><span class="p">)</span>
+<span class="c">24. </span>        <span class="c1"># And 7265 % 3600 is 65, and 65 // 60 is 1 minute:</span>
+<span class="c">25. </span>        <span class="n">minutes</span> <span class="o">=</span> <span class="nb">str</span><span class="p">((</span><span class="n">secondsLeft</span> <span class="o">%</span> <span class="mi">3600</span><span class="p">)</span> <span class="o">//</span> <span class="mi">60</span><span class="p">)</span>
+<span class="c">26. </span>        <span class="c1"># And 7265 % 60 is 5 seconds:</span>
+<span class="c">27. </span>        <span class="n">seconds</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">secondsLeft</span> <span class="o">%</span> <span class="mi">60</span><span class="p">)</span>
+<span class="c">28. </span>
+<span class="c">29. </span>        <span class="c1"># Get the digit strings from the sevseg module:</span>
+<span class="c">30. </span>        <span class="n">hDigits</span> <span class="o">=</span> <span class="n">sevseg</span><span class="o">.</span><span class="n">getSevSegStr</span><span class="p">(</span><span class="n">hours</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c">31. </span>        <span class="n">hTopRow</span><span class="p">,</span> <span class="n">hMiddleRow</span><span class="p">,</span> <span class="n">hBottomRow</span> <span class="o">=</span> <span class="n">hDigits</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+<span class="c">32. </span>
+<span class="c">33. </span>        <span class="n">mDigits</span> <span class="o">=</span> <span class="n">sevseg</span><span class="o">.</span><span class="n">getSevSegStr</span><span class="p">(</span><span class="n">minutes</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c">34. </span>        <span class="n">mTopRow</span><span class="p">,</span> <span class="n">mMiddleRow</span><span class="p">,</span> <span class="n">mBottomRow</span> <span class="o">=</span> <span class="n">mDigits</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+<span class="c">35. </span>
+<span class="c">36. </span>        <span class="n">sDigits</span> <span class="o">=</span> <span class="n">sevseg</span><span class="o">.</span><span class="n">getSevSegStr</span><span class="p">(</span><span class="n">seconds</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c">37. </span>        <span class="n">sTopRow</span><span class="p">,</span> <span class="n">sMiddleRow</span><span class="p">,</span> <span class="n">sBottomRow</span> <span class="o">=</span> <span class="n">sDigits</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+<span class="c">38. </span>
+<span class="c">39. </span>        <span class="c1"># Display the digits:</span>
+<span class="c">40. </span>        <span class="nb">print</span><span class="p">(</span><span class="n">hTopRow</span>    <span class="o">+</span> <span class="s1">'     '</span> <span class="o">+</span> <span class="n">mTopRow</span>    <span class="o">+</span> <span class="s1">'     '</span> <span class="o">+</span> <span class="n">sTopRow</span><span class="p">)</span>
+<span class="c">41. </span>        <span class="nb">print</span><span class="p">(</span><span class="n">hMiddleRow</span> <span class="o">+</span> <span class="s1">'  *  '</span> <span class="o">+</span> <span class="n">mMiddleRow</span> <span class="o">+</span> <span class="s1">'  *  '</span> <span class="o">+</span> <span class="n">sMiddleRow</span><span class="p">)</span>
+<span class="c">42. </span>        <span class="nb">print</span><span class="p">(</span><span class="n">hBottomRow</span> <span class="o">+</span> <span class="s1">'  *  '</span> <span class="o">+</span> <span class="n">mBottomRow</span> <span class="o">+</span> <span class="s1">'  *  '</span> <span class="o">+</span> <span class="n">sBottomRow</span><span class="p">)</span>
+<span class="c">43. </span>
+<span class="c">44. </span>        <span class="k">if</span> <span class="n">secondsLeft</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="c">45. </span>            <span class="nb">print</span><span class="p">()</span>
+<span class="c">46. </span>            <span class="nb">print</span><span class="p">(</span><span class="s1">'    * * * * BOOM * * * *'</span><span class="p">)</span>
+<span class="c">47. </span>            <span class="k">break</span>
+<span class="c">48. </span>
+<span class="c">49. </span>        <span class="nb">print</span><span class="p">()</span>
+<span class="c">50. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'Press Ctrl-C to quit.'</span><span class="p">)</span>
+<span class="c">51. </span>
+<span class="c">52. </span>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Insert a one-second pause.</span>
+<span class="c">53. </span>        <span class="n">secondsLeft</span> <span class="o">-=</span> <span class="mi">1</span>
+<span class="c">54. </span><span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+<span class="c">55. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'Countdown, by Al Sweigart al@inventwithpython.com'</span><span class="p">)</span>
+<span class="c">56. </span>    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>  <span class="c1"># When Ctrl-C is pressed, end the program.)</span>
+</pre></div>
+
+<p class="calibre19">After entering the source code and running it a few
+ times, try making experimental changes to it. On your own, you can also
+ try to figure out how to do the following:</p>
+<ul class="calibre25">
+<li class="calibre8">Prompt the user to enter the starting countdown time.</li>
+<li class="calibre8">Let the user enter a message to display at the end of the countdown.</li>
+</ul>
+<h2 id="calibre_link-87" class="calibre5">Exploring the Program</h2>
+<p class="bodyfirst">Try to find the answers to the following questions.
+ Experiment with some modifications to the code and rerun the program to
+ see what effect the changes have.</p>
+<ol class="decimal">
+<li class="calibre8" value="1">What happens if you change <code class="calibre22">secondsLeft = 30</code> on line 13 to <code class="calibre22">secondsLeft = 30.5</code>?</li>
+<li class="calibre8" value="2">What happens if you change the <code class="calibre22">2</code> on lines 30, 33, and 36 to <code class="calibre22">1</code>?</li>
+<li class="calibre8" value="3">What happens if you change <code class="calibre22">time.sleep(1)</code> on line 52 to <code class="calibre22">time.sleep(0.1)</code>?</li>
+<li class="calibre8" value="4">What happens if you change <code class="calibre22">secondsLeft -= 1</code> on line 53 to <code class="calibre22">secondsLeft -= 2</code>?</li>
+<li class="calibre8" value="5">What happens if you delete or comment out <code class="calibre22">print('\n' * 60)</code> on line 18?</li>
+<li class="calibre8" value="6">What error message do you get if you delete or comment out <code class="calibre22">import sevseg</code> on line 10?</li>
+</ol>
+</section>
+</div>
+
+
+
+
+
+
+
+
+<a href="https://inventwithpython.com/bigbookpython/project13.html">Prev: Conway's Game of Life</a> | <a href="https://inventwithpython.com/bigbookpython/project15.html">Next: Deep Cave</a>
+</body></html>

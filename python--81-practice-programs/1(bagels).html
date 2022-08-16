@@ -1,0 +1,218 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="1(bagels)_files/style.css" rel="stylesheet" type="text/css"><link rel="stylesheet" type="text/css" href="1(bagels)_files/pygments.css"><title>Bagels</title></head><body style="background-color: #fffeee;">
+
+<script type="text/javascript" async="" src="1(bagels)_files/ga.js"></script><script type="text/javascript">
+//<![CDATA[
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-5459430-3']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+//]]>
+</script>
+
+
+<div style="background-color: #eeeddd; float: right; height: 310px; font-family: sans-serif;" id="otherbooks">
+  <a href="#" onclick="document.getElementById('otherbooks').outerHTML='';" style="vertical-align: top;">(close)</a><br>
+
+  <a target="_blank" href="https://nostarch.com/automatestuff2" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_automate.link');"><img src="1(bagels)_files/cover_automate2_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/big-book-small-python-projects" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_bigbookpython.link');"><img src="1(bagels)_files/cover_bigbookpython_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/beyond-basic-stuff-python" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_beyond.link');"><img src="1(bagels)_files/cover_beyond_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/inventwithpython" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_invent.link');"><img src="1(bagels)_files/cover_invent4th_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://www.amazon.com/Making-Games-Python-Pygame-Sweigart/dp/1469901730?ie=UTF8&amp;tag=playwithpyth-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1469901730" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_pygame.link');"><img src="1(bagels)_files/cover_makinggames_thumb.webp" style="height: 200px; border: solid black 1px; /"></a>
+  <a target="_blank" href="https://nostarch.com/crackingcodes" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_hacking.link');"><img src="1(bagels)_files/cover_crackingcodes_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/scratchplayground"><img src="1(bagels)_files/cover_scratchprogrammingplayground_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/codingwithminecraft"><img src="1(bagels)_files/cover_codingwithminecraft_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <br>
+  <a href="https://inventwithpython.com/automateudemy">Use this link to get 70% off the Automate the Boring Stuff online video course.</a><br>
+  <a href="https://www.patreon.com/AlSweigart">Support me on Patreon</a>
+</div>
+
+<a href="https://inventwithpython.com/bigbookpython/introduction.html">Prev: Introduction</a> | <a href="https://inventwithpython.com/bigbookpython/project2.html">Next: Birthday Paradox</a>
+
+
+
+
+<div type="bodymatter chapter" class="calibre1" id="calibre_link-37">
+<section class="toclist">
+<header class="calibre10">
+<h1 class="chapter">
+<span class="chapternumber">#1</span><br class="calibre14">
+<span class="chaptertitle">Bagels</span></h1>
+</header>
+<figure class="opener">
+<img src="1(bagels)_files/000002.webp" alt="" class="calibre12">
+</figure>
+<p class="chapterintro">In Bagels, a deductive logic game, you must 
+guess a secret three-digit number based on clues. The game offers one of
+ the following hints in response to your guess: “Pico” when your guess 
+has a correct digit in the wrong place, “Fermi” when your guess has a 
+correct digit in the correct place, and “Bagels” if your guess has no 
+correct digits. You have 10 tries to guess the secret number.</p>
+<h2 id="calibre_link-38" class="calibre5">The Program in Action</h2>
+<p class="bodyfirst">When you run <em class="calibre9">bagels.py</em>, the output will look like this:</p>
+<pre class="calibre24"><code class="calibre22">Bagels, a deductive logic game.
+By Al Sweigart al@inventwithpython.com
+I am thinking of a 3-digit number. Try to guess what it is.
+Here are some clues:
+When I say:    That means:
+  Pico         One digit is correct but in the wrong position.
+  Fermi        One digit is correct and in the right position.
+  Bagels       No digit is correct.
+I have thought up a number.
+ You have 10 guesses to get it.
+Guess #1:
+&gt; <b class="calibre6">123</b>
+Pico
+Guess #2:
+&gt; <b class="calibre6">456</b>
+Bagels
+Guess #3:
+&gt; <b class="calibre6">178</b>
+Pico Pico
+<var class="calibre27">--snip--</var>
+Guess #7:
+&gt; <b class="calibre6">791</b>
+Fermi Fermi
+Guess #8:
+&gt; <b class="calibre6">701</b>
+You got it!
+Do you want to play again? (yes or no)
+&gt; <b class="calibre6">no</b>
+Thanks for playing!</code></pre>
+<h2 id="calibre_link-39" class="calibre5">How It Works</h2>
+<p class="bodyfirst">Keep in mind that this program uses not integer values but rather string values that contain numeric digits. For example, <code class="calibre22">'426'</code> is a different value than <code class="calibre22">426</code>. We need to do this because we are performing string comparisons with the secret number, not math operations. Remember that <code class="calibre22">'0'</code> can be a leading digit: the string <code class="calibre22">'026'</code> is different from <code class="calibre22">'26'</code>, but the integer <code class="calibre22">026</code> is the same as <code class="calibre22">26</code>.</p>
+<div class="highlight"><pre><span></span>
+<span class="c">  1. </span><span class="sd">"""Bagels, by Al Sweigart al@inventwithpython.com</span>
+<span class="c">  2. </span><span class="sd">A deductive logic game where you must guess a number based on clues.</span>
+<span class="c">  3. </span><span class="sd">This code is available at https://nostarch.com/big-book-small-python-programming</span>
+<span class="c">  4. </span><span class="sd">A version of this game is featured in the book, "Invent Your Own</span>
+<span class="c">  5. </span><span class="sd">Computer Games with Python" https://nostarch.com/inventwithpython</span>
+<span class="c">  6. </span><span class="sd">Tags: short, game, puzzle"""</span>
+<span class="c">  7. </span>
+<span class="c">  8. </span><span class="kn">import</span> <span class="nn">random</span>
+<span class="c">  9. </span>
+<span class="c"> 10. </span><span class="n">NUM_DIGITS</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1"># (!) Try setting this to 1 or 10.</span>
+<span class="c"> 11. </span><span class="n">MAX_GUESSES</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># (!) Try setting this to 1 or 100.</span>
+<span class="c"> 12. </span>
+<span class="c"> 13. </span>
+<span class="c"> 14. </span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="c"> 15. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'''Bagels, a deductive logic game.</span>
+<span class="c"> 16. </span><span class="s1">By Al Sweigart al@inventwithpython.com</span>
+<span class="c"> 17. </span>
+<span class="c"> 18. </span><span class="s1">I am thinking of a </span><span class="si">{}</span><span class="s1">-digit number with no repeated digits.</span>
+<span class="c"> 19. </span><span class="s1">Try to guess what it is. Here are some clues:</span>
+<span class="c"> 20. </span><span class="s1">When I say:    That means:</span>
+<span class="c"> 21. </span><span class="s1">  Pico         One digit is correct but in the wrong position.</span>
+<span class="c"> 22. </span><span class="s1">  Fermi        One digit is correct and in the right position.</span>
+<span class="c"> 23. </span><span class="s1">  Bagels       No digit is correct.</span>
+<span class="c"> 24. </span>
+<span class="c"> 25. </span><span class="s1">For example, if the secret number was 248 and your guess was 843, the</span>
+<span class="c"> 26. </span><span class="s1">clues would be Fermi Pico.'''</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">NUM_DIGITS</span><span class="p">))</span>
+<span class="c"> 27. </span>
+<span class="c"> 28. </span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>  <span class="c1"># Main game loop.</span>
+<span class="c"> 29. </span>        <span class="c1"># This stores the secret number the player needs to guess:</span>
+<span class="c"> 30. </span>        <span class="n">secretNum</span> <span class="o">=</span> <span class="n">getSecretNum</span><span class="p">()</span>
+<span class="c"> 31. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'I have thought up a number.'</span><span class="p">)</span>
+<span class="c"> 32. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">' You have </span><span class="si">{}</span><span class="s1"> guesses to get it.'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">MAX_GUESSES</span><span class="p">))</span>
+<span class="c"> 33. </span>
+<span class="c"> 34. </span>        <span class="n">numGuesses</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c"> 35. </span>        <span class="k">while</span> <span class="n">numGuesses</span> <span class="o">&lt;=</span> <span class="n">MAX_GUESSES</span><span class="p">:</span>
+<span class="c"> 36. </span>            <span class="n">guess</span> <span class="o">=</span> <span class="s1">''</span>
+<span class="c"> 37. </span>            <span class="c1"># Keep looping until they enter a valid guess:</span>
+<span class="c"> 38. </span>            <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">guess</span><span class="p">)</span> <span class="o">!=</span> <span class="n">NUM_DIGITS</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">guess</span><span class="o">.</span><span class="n">isdecimal</span><span class="p">():</span>
+<span class="c"> 39. </span>                <span class="nb">print</span><span class="p">(</span><span class="s1">'Guess #</span><span class="si">{}</span><span class="s1">: '</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">numGuesses</span><span class="p">))</span>
+<span class="c"> 40. </span>                <span class="n">guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'&gt; '</span><span class="p">)</span>
+<span class="c"> 41. </span>
+<span class="c"> 42. </span>            <span class="n">clues</span> <span class="o">=</span> <span class="n">getClues</span><span class="p">(</span><span class="n">guess</span><span class="p">,</span> <span class="n">secretNum</span><span class="p">)</span>
+<span class="c"> 43. </span>            <span class="nb">print</span><span class="p">(</span><span class="n">clues</span><span class="p">)</span>
+<span class="c"> 44. </span>            <span class="n">numGuesses</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="c"> 45. </span>
+<span class="c"> 46. </span>            <span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">secretNum</span><span class="p">:</span>
+<span class="c"> 47. </span>                <span class="k">break</span>  <span class="c1"># They're correct, so break out of this loop.</span>
+<span class="c"> 48. </span>            <span class="k">if</span> <span class="n">numGuesses</span> <span class="o">&gt;</span> <span class="n">MAX_GUESSES</span><span class="p">:</span>
+<span class="c"> 49. </span>                <span class="nb">print</span><span class="p">(</span><span class="s1">'You ran out of guesses.'</span><span class="p">)</span>
+<span class="c"> 50. </span>                <span class="nb">print</span><span class="p">(</span><span class="s1">'The answer was </span><span class="si">{}</span><span class="s1">.'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">secretNum</span><span class="p">))</span>
+<span class="c"> 51. </span>
+<span class="c"> 52. </span>        <span class="c1"># Ask player if they want to play again.</span>
+<span class="c"> 53. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'Do you want to play again? (yes or no)'</span><span class="p">)</span>
+<span class="c"> 54. </span>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'&gt; '</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'y'</span><span class="p">):</span>
+<span class="c"> 55. </span>            <span class="k">break</span>
+<span class="c"> 56. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'Thanks for playing!'</span><span class="p">)</span>
+<span class="c"> 57. </span>
+<span class="c"> 58. </span>
+<span class="c"> 59. </span><span class="k">def</span> <span class="nf">getSecretNum</span><span class="p">():</span>
+<span class="c"> 60. </span>    <span class="sd">"""Returns a string made up of NUM_DIGITS unique random digits."""</span>
+<span class="c"> 61. </span>    <span class="n">numbers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s1">'0123456789'</span><span class="p">)</span>  <span class="c1"># Create a list of digits 0 to 9.</span>
+<span class="c"> 62. </span>    <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>  <span class="c1"># Shuffle them into random order.</span>
+<span class="c"> 63. </span>
+<span class="c"> 64. </span>    <span class="c1"># Get the first NUM_DIGITS digits in the list for the secret number:</span>
+<span class="c"> 65. </span>    <span class="n">secretNum</span> <span class="o">=</span> <span class="s1">''</span>
+<span class="c"> 66. </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NUM_DIGITS</span><span class="p">):</span>
+<span class="c"> 67. </span>        <span class="n">secretNum</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="c"> 68. </span>    <span class="k">return</span> <span class="n">secretNum</span>
+<span class="c"> 69. </span>
+<span class="c"> 70. </span>
+<span class="c"> 71. </span><span class="k">def</span> <span class="nf">getClues</span><span class="p">(</span><span class="n">guess</span><span class="p">,</span> <span class="n">secretNum</span><span class="p">):</span>
+<span class="c"> 72. </span>    <span class="sd">"""Returns a string with the pico, fermi, bagels clues for a guess</span>
+<span class="c"> 73. </span><span class="sd">    and secret number pair."""</span>
+<span class="c"> 74. </span>    <span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">secretNum</span><span class="p">:</span>
+<span class="c"> 75. </span>        <span class="k">return</span> <span class="s1">'You got it!'</span>
+<span class="c"> 76. </span>
+<span class="c"> 77. </span>    <span class="n">clues</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c"> 78. </span>
+<span class="c"> 79. </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">guess</span><span class="p">)):</span>
+<span class="c"> 80. </span>        <span class="k">if</span> <span class="n">guess</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">secretNum</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+<span class="c"> 81. </span>            <span class="c1"># A correct digit is in the correct place.</span>
+<span class="c"> 82. </span>            <span class="n">clues</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'Fermi'</span><span class="p">)</span>
+<span class="c"> 83. </span>        <span class="k">elif</span> <span class="n">guess</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">in</span> <span class="n">secretNum</span><span class="p">:</span>
+<span class="c"> 84. </span>            <span class="c1"># A correct digit is in the incorrect place.</span>
+<span class="c"> 85. </span>            <span class="n">clues</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'Pico'</span><span class="p">)</span>
+<span class="c"> 86. </span>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">clues</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="c"> 87. </span>        <span class="k">return</span> <span class="s1">'Bagels'</span>  <span class="c1"># There are no correct digits at all.</span>
+<span class="c"> 88. </span>    <span class="k">else</span><span class="p">:</span>
+<span class="c"> 89. </span>        <span class="c1"># Sort the clues into alphabetical order so their original order</span>
+<span class="c"> 90. </span>        <span class="c1"># doesn't give information away.</span>
+<span class="c"> 91. </span>        <span class="n">clues</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="c"> 92. </span>        <span class="c1"># Make a single string from the list of string clues.</span>
+<span class="c"> 93. </span>        <span class="k">return</span> <span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">clues</span><span class="p">)</span>
+<span class="c"> 94. </span>
+<span class="c"> 95. </span>
+<span class="c"> 96. </span><span class="c1"># If the program is run (instead of imported), run the game:</span>
+<span class="c"> 97. </span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<span class="c"> 98. </span>    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+<p class="calibre19">After entering the source code and running it a few times, try making experimental changes to it. The comments marked with <code class="calibre22">(!)</code> have suggestions for small changes you can make. On your own, you can also try to figure out how to do the following:</p>
+<ul class="calibre25">
+<li class="calibre8">Change the number of digits for the secret number by changing <code class="calibre22">NUM_DIGITS</code>.</li>
+<li class="calibre8">Change the number of guesses the player gets by changing <code class="calibre22">MAX_GUESSES</code>.</li>
+<li class="calibre8">Try to create a version with letters as well as digits in the secret number.</li>
+</ul>
+<h2 id="calibre_link-40" class="calibre5">Exploring the Program</h2>
+<p class="bodyfirst">Try to find the answers to the following questions.
+ Experiment with some modifications to the code and rerun the program to
+ see what effect the changes have.</p>
+<ol class="decimal">
+<li class="calibre8" value="1">What happens when you change the <code class="calibre22">NUM_DIGITS</code> constant?</li>
+<li class="calibre8" value="2">What happens when you change the <code class="calibre22">MAX_GUESSES</code> constant?</li>
+<li class="calibre8" value="3">What happens if you set <code class="calibre22">NUM_DIGITS</code> to a number larger than <code class="calibre22">10</code>?</li>
+<li class="calibre8" value="4">What happens if you replace <code class="calibre22">secretNum = getSecretNum()</code> on line 30 with <code class="calibre22">secretNum = '123'</code>?</li>
+<li class="calibre8" value="5">What error message do you get if you delete or comment out <code class="calibre22">numGuesses = 1</code> on line 34?</li>
+<li class="calibre8" value="6">What happens if you delete or comment out <code class="calibre22">random.shuffle(numbers)</code> on line 62?</li>
+<li class="calibre8" value="7">What happens if you delete or comment out <code class="calibre22">if</code> <code class="calibre22">guess == secretNum:</code> on line 74 and <code class="calibre22">return 'You got it!'</code> on line 75?</li>
+<li class="calibre8" value="8">What happens if you comment out <code class="calibre22">numGuesses += 1</code> on line 44?</li>
+</ol>
+</section>
+</div>
+
+
+
+
+<a href="https://inventwithpython.com/bigbookpython/introduction.html">Prev: Introduction</a> | <a href="https://inventwithpython.com/bigbookpython/project2.html">Next: Birthday Paradox</a>
+</body></html>

@@ -1,0 +1,175 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="57(progbar)_files/style.css" rel="stylesheet" type="text/css"><link rel="stylesheet" type="text/css" href="57(progbar)_files/pygments.css"><title>Progress Bar</title></head><body style="background-color: #fffeee;">
+
+<script type="text/javascript" async="" src="57(progbar)_files/ga.js"></script><script type="text/javascript">
+//<![CDATA[
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-5459430-3']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+//]]>
+</script>
+
+
+<div style="background-color: #eeeddd; float: right; height: 310px; font-family: sans-serif;" id="otherbooks">
+  <a href="#" onclick="document.getElementById('otherbooks').outerHTML='';" style="vertical-align: top;">(close)</a><br>
+
+  <a target="_blank" href="https://nostarch.com/automatestuff2" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_automate.link');"><img src="57(progbar)_files/cover_automate2_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/big-book-small-python-projects" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_bigbookpython.link');"><img src="57(progbar)_files/cover_bigbookpython_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/beyond-basic-stuff-python" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_beyond.link');"><img src="57(progbar)_files/cover_beyond_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/inventwithpython" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_invent.link');"><img src="57(progbar)_files/cover_invent4th_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://www.amazon.com/Making-Games-Python-Pygame-Sweigart/dp/1469901730?ie=UTF8&amp;tag=playwithpyth-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1469901730" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_pygame.link');"><img src="57(progbar)_files/cover_makinggames_thumb.webp" style="height: 200px; border: solid black 1px; /"></a>
+  <a target="_blank" href="https://nostarch.com/crackingcodes" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_hacking.link');"><img src="57(progbar)_files/cover_crackingcodes_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/scratchplayground"><img src="57(progbar)_files/cover_scratchprogrammingplayground_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/codingwithminecraft"><img src="57(progbar)_files/cover_codingwithminecraft_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <br>
+  <a href="https://inventwithpython.com/automateudemy">Use this link to get 70% off the Automate the Boring Stuff online video course.</a><br>
+  <a href="https://www.patreon.com/AlSweigart">Support me on Patreon</a>
+</div>
+
+<a href="https://inventwithpython.com/bigbookpython/project56.html">Prev: Prime Numbers</a> | <a href="https://inventwithpython.com/bigbookpython/project58.html">Next: Rainbow</a>
+
+
+
+
+
+<div type="bodymatter chapter" class="calibre1" id="calibre_link-25">
+<section class="toclist">
+<header class="calibre10">
+<h1 class="chapter">
+<span class="chapternumber">#57</span><br class="calibre14">
+<span class="chaptertitle">Progress Bar</span></h1>
+</header>
+<figure class="opener">
+<img src="57(progbar)_files/000002.webp" alt="" class="calibre12">
+</figure>
+<p class="chapterintro">A <em class="calibre9">progress bar</em> is a 
+visual element that shows how much of a task has been completed. 
+Progress bars are often used alongside downloading files or software 
+installations. This project creates a <code class="calibre17">getProgressBar()</code>
+ function that returns a progress bar string based on the arguments 
+passed to it. It simulates a downloading file, but you can reuse the 
+progress bar code in your own projects.</p>
+<h2 id="calibre_link-240" class="calibre5">The Program in Action</h2>
+<p class="bodyfirst">When you run <em class="calibre9">progressbar.py</em>, the output will look like this:</p>
+<pre class="calibre24"><code class="calibre22">Progress Bar Simulation, by Al Sweigart
+[█████████                               ] 24.6% 1007/4098</code></pre>
+<h2 id="calibre_link-241" class="calibre5">How It Works</h2>
+<p class="bodyfirst">The progress bar relies on a certain trick that programs running in terminal windows can perform. Just as <code class="calibre22">'\n'</code> and <code class="calibre22">'\t'</code> are escape characters for newline and tab characters, respectively, <code class="calibre22">'\b'</code>
+ is an escape character for backspace characters. If you “print” a 
+backspace character, the text cursor will move to the left and erase the
+ previously printed character. This only works for the current line the 
+text cursor is on. If you run the code <code class="calibre22">print('Hello\b\b\b\b\bHowdy')</code>,
+ Python will print the text “Hello,” move the text cursor back five 
+spaces, and then print the text “Howdy.” The “Howdy” text will overwrite
+ “Hello,” making it look as though you called “Howdy.”</p>
+<p class="calibre19">We can use this technique to create an animated 
+progress bar on a single line by printing one version of the bar, moving
+ the text cursor back to the start, then printing an updated progress 
+bar. This effect can generate any text animation without requiring a 
+module such as <code class="calibre22">bext</code>, though it will be limited to taking up a single line in the terminal window.</p>
+<p class="calibre19">Once you’ve created this program, you can display progress bars in your other Python programs by running <code class="calibre22">import progressbar</code> and printing the string returned from <code class="calibre22">progressbar.getProgressBar()</code>.</p>
+<div class="highlight"><pre><span></span>
+<span class="c"> 1. </span><span class="sd">"""Progress Bar Simulation, by Al Sweigart al@inventwithpython.com</span>
+<span class="c"> 2. </span><span class="sd">A sample progress bar animation that can be used in other programs.</span>
+<span class="c"> 3. </span><span class="sd">This code is available at https://nostarch.com/big-book-small-python-programming</span>
+<span class="c"> 4. </span><span class="sd">Tags: tiny, module"""</span>
+<span class="c"> 5. </span>
+<span class="c"> 6. </span><span class="kn">import</span> <span class="nn">random</span><span class="o">,</span> <span class="nn">time</span>
+<span class="c"> 7. </span>
+<span class="c"> 8. </span><span class="n">BAR</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="mi">9608</span><span class="p">)</span> <span class="c1"># Character 9608 is '█'</span>
+<span class="c"> 9. </span>
+<span class="c">10. </span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="c">11. </span>    <span class="c1"># Simulate a download:</span>
+<span class="c">12. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'Progress Bar Simulation, by Al Sweigart'</span><span class="p">)</span>
+<span class="c">13. </span>    <span class="n">bytesDownloaded</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c">14. </span>    <span class="n">downloadSize</span> <span class="o">=</span> <span class="mi">4096</span>
+<span class="c">15. </span>    <span class="k">while</span> <span class="n">bytesDownloaded</span> <span class="o">&lt;</span> <span class="n">downloadSize</span><span class="p">:</span>
+<span class="c">16. </span>        <span class="c1"># "Download" a random amount of "bytes":</span>
+<span class="c">17. </span>        <span class="n">bytesDownloaded</span> <span class="o">+=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="c">18. </span>
+<span class="c">19. </span>        <span class="c1"># Get the progress bar string for this amount of progress:</span>
+<span class="c">20. </span>        <span class="n">barStr</span> <span class="o">=</span> <span class="n">getProgressBar</span><span class="p">(</span><span class="n">bytesDownloaded</span><span class="p">,</span> <span class="n">downloadSize</span><span class="p">)</span>
+<span class="c">21. </span>
+<span class="c">22. </span>        <span class="c1"># Don't print a newline at the end, and immediately flush the</span>
+<span class="c">23. </span>        <span class="c1"># printed string to the screen:</span>
+<span class="c">24. </span>        <span class="nb">print</span><span class="p">(</span><span class="n">barStr</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c">25. </span>
+<span class="c">26. </span>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>  <span class="c1"># Pause for a little bit:</span>
+<span class="c">27. </span>
+<span class="c">28. </span>        <span class="c1"># Print backspaces to move the text cursor to the line's start:</span>
+<span class="c">29. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\b</span><span class="s1">'</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">barStr</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c">30. </span>
+<span class="c">31. </span>
+<span class="c">32. </span><span class="k">def</span> <span class="nf">getProgressBar</span><span class="p">(</span><span class="n">progress</span><span class="p">,</span> <span class="n">total</span><span class="p">,</span> <span class="n">barWidth</span><span class="o">=</span><span class="mi">40</span><span class="p">):</span>
+<span class="c">33. </span>    <span class="sd">"""Returns a string that represents a progress bar that has barWidth</span>
+<span class="c">34. </span><span class="sd">    bars and has progressed progress amount out of a total amount."""</span>
+<span class="c">35. </span>
+<span class="c">36. </span>    <span class="n">progressBar</span> <span class="o">=</span> <span class="s1">''</span>  <span class="c1"># The progress bar will be a string value.</span>
+<span class="c">37. </span>    <span class="n">progressBar</span> <span class="o">+=</span> <span class="s1">'['</span>  <span class="c1"># Create the left end of the progress bar.</span>
+<span class="c">38. </span>
+<span class="c">39. </span>    <span class="c1"># Make sure that the amount of progress is between 0 and total:</span>
+<span class="c">40. </span>    <span class="k">if</span> <span class="n">progress</span> <span class="o">&gt;</span> <span class="n">total</span><span class="p">:</span>
+<span class="c">41. </span>        <span class="n">progress</span> <span class="o">=</span> <span class="n">total</span>
+<span class="c">42. </span>    <span class="k">if</span> <span class="n">progress</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="c">43. </span>        <span class="n">progress</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c">44. </span>
+<span class="c">45. </span>    <span class="c1"># Calculate the number of "bars" to display:</span>
+<span class="c">46. </span>    <span class="n">numberOfBars</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">progress</span> <span class="o">/</span> <span class="n">total</span><span class="p">)</span> <span class="o">*</span> <span class="n">barWidth</span><span class="p">)</span>
+<span class="c">47. </span>
+<span class="c">48. </span>    <span class="n">progressBar</span> <span class="o">+=</span> <span class="n">BAR</span> <span class="o">*</span> <span class="n">numberOfBars</span>  <span class="c1"># Add the progress bar.</span>
+<span class="c">49. </span>    <span class="n">progressBar</span> <span class="o">+=</span> <span class="s1">' '</span> <span class="o">*</span> <span class="p">(</span><span class="n">barWidth</span> <span class="o">-</span> <span class="n">numberOfBars</span><span class="p">)</span>  <span class="c1"># Add empty space.</span>
+<span class="c">50. </span>    <span class="n">progressBar</span> <span class="o">+=</span> <span class="s1">']'</span>  <span class="c1"># Add the right end of the progress bar.</span>
+<span class="c">51. </span>
+<span class="c">52. </span>    <span class="c1"># Calculate the percentage complete:</span>
+<span class="c">53. </span>    <span class="n">percentComplete</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">progress</span> <span class="o">/</span> <span class="n">total</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c">54. </span>    <span class="n">progressBar</span> <span class="o">+=</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">percentComplete</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'%'</span>  <span class="c1"># Add percentage.</span>
+<span class="c">55. </span>
+<span class="c">56. </span>    <span class="c1"># Add the numbers:</span>
+<span class="c">57. </span>    <span class="n">progressBar</span> <span class="o">+=</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">progress</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'/'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+<span class="c">58. </span>
+<span class="c">59. </span>    <span class="k">return</span> <span class="n">progressBar</span>  <span class="c1"># Return the progress bar string.</span>
+<span class="c">60. </span>
+<span class="c">61. </span>
+<span class="c">62. </span><span class="c1"># If the program is run (instead of imported), run the game:</span>
+<span class="c">63. </span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<span class="c">64. </span>    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+<p class="calibre19">After entering the source code and running it a few
+ times, try making experimental changes to it. On your own, you can also
+ try to figure out how to do the following:</p>
+<ul class="calibre25">
+<li class="calibre8">Create a one-line animation of a spinner that alternates between the characters <code class="calibre22">|</code>, <code class="calibre22">/</code>, <code class="calibre22">-</code>, and <code class="calibre22">\</code> to produce a rotating effect.</li>
+<li class="calibre8">Create a program that can display a scrolling marquee of text moving from left to right.</li>
+<li class="calibre8">Create a one-line animation that displays a set of 
+four equal signs moving back and forth as a single unit, similar to the 
+red scanning light on the robot car from the TV show <em class="calibre9">Knight Rider</em> or the Cylon robot face from the TV show <em class="calibre9">Battlestar Galactica</em>.</li>
+</ul>
+<h2 id="calibre_link-242" class="calibre5">Exploring the Program</h2>
+<p class="bodyfirst">Try to find the answers to the following questions.
+ Experiment with some modifications to the code and rerun the program to
+ see what effect the changes have.</p>
+<ol class="decimal">
+<li class="calibre8" value="1">What happens if you delete or comment out <code class="calibre22">print('\b' * len(barStr), end='', flush=True)</code> on line 29?</li>
+<li class="calibre8" value="2">What happens if you switch the order of lines 48 and 49?</li>
+<li class="calibre8" value="3">What happens if you change <code class="calibre22">round(progress / total * 100, 1)</code> on line 53 to <code class="calibre22">round(progress / total * 100)</code>?</li>
+</ol>
+</section>
+</div>
+
+
+
+
+
+
+
+
+<a href="https://inventwithpython.com/bigbookpython/project56.html">Prev: Prime Numbers</a> | <a href="https://inventwithpython.com/bigbookpython/project58.html">Next: Rainbow</a>
+</body></html>

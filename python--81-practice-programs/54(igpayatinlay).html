@@ -1,0 +1,172 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="54(igpayatinlay)_files/style.css" rel="stylesheet" type="text/css"><link rel="stylesheet" type="text/css" href="54(igpayatinlay)_files/pygments.css"><title>Pig Latin</title></head><body style="background-color: #fffeee;">
+
+<script type="text/javascript" async="" src="54(igpayatinlay)_files/ga.js"></script><script type="text/javascript">
+//<![CDATA[
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-5459430-3']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+//]]>
+</script>
+
+
+<div style="background-color: #eeeddd; float: right; height: 310px; font-family: sans-serif;" id="otherbooks">
+  <a href="#" onclick="document.getElementById('otherbooks').outerHTML='';" style="vertical-align: top;">(close)</a><br>
+
+  <a target="_blank" href="https://nostarch.com/automatestuff2" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_automate.link');"><img src="54(igpayatinlay)_files/cover_automate2_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/big-book-small-python-projects" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_bigbookpython.link');"><img src="54(igpayatinlay)_files/cover_bigbookpython_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/beyond-basic-stuff-python" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_beyond.link');"><img src="54(igpayatinlay)_files/cover_beyond_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/inventwithpython" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_invent.link');"><img src="54(igpayatinlay)_files/cover_invent4th_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://www.amazon.com/Making-Games-Python-Pygame-Sweigart/dp/1469901730?ie=UTF8&amp;tag=playwithpyth-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1469901730" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_pygame.link');"><img src="54(igpayatinlay)_files/cover_makinggames_thumb.webp" style="height: 200px; border: solid black 1px; /"></a>
+  <a target="_blank" href="https://nostarch.com/crackingcodes" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_hacking.link');"><img src="54(igpayatinlay)_files/cover_crackingcodes_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/scratchplayground"><img src="54(igpayatinlay)_files/cover_scratchprogrammingplayground_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/codingwithminecraft"><img src="54(igpayatinlay)_files/cover_codingwithminecraft_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <br>
+  <a href="https://inventwithpython.com/automateudemy">Use this link to get 70% off the Automate the Boring Stuff online video course.</a><br>
+  <a href="https://www.patreon.com/AlSweigart">Support me on Patreon</a>
+</div>
+
+<a href="https://inventwithpython.com/bigbookpython/project53.html">Prev: Periodic Table of the Elements</a> | <a href="https://inventwithpython.com/bigbookpython/project55.html">Next: Powerball Lottery</a>
+
+
+
+
+
+<div type="bodymatter chapter" class="calibre1" id="calibre_link-16">
+<section class="toclist">
+<header class="calibre10">
+<h1 class="chapter">
+<span class="chapternumber">#54</span><br class="calibre14">
+<span class="chaptertitle">Pig Latin</span></h1>
+</header>
+<figure class="opener">
+<img src="54(igpayatinlay)_files/000002.webp" alt="" class="calibre12">
+</figure>
+<p class="chapterintro">Pig Latin is a word game that transforms English
+ words into a parody of Latin. In Pig Latin, if a word begins with a 
+consonant, the speaker removes this letter and puts it at the end, 
+followed by “ay.” For example, “pig” becomes “igpay” and “latin” becomes
+ “atinlay.” Otherwise, if the word begins with a vowel, the speaker 
+simply adds “yay” to the end of it. For example, “elephant” becomes 
+“elephantyay” and “umbrella” becomes “umbrellayay.”</p>
+<h2 id="calibre_link-231" class="calibre5">The Program in Action</h2>
+<p class="bodyfirst">When you run <em class="calibre9">piglatin.py</em>, the output will look like this:</p>
+<pre class="calibre24"><code class="calibre22">Igpay Atinlay (Pig Latin)
+By Al Sweigart al@inventwithpython.com
+
+Enter your message:
+&gt; <b class="calibre6">This is a very serious message.</b>
+Isthay isyay ayay eryvay erioussay essagemay.
+(Copied pig latin to clipboard.)</code></pre>
+<h2 id="calibre_link-232" class="calibre5">How It Works</h2>
+<p class="bodyfirst">The <code class="calibre22">englishToPigLatin()</code> function takes a string of English text and returns a string of its Pig Latin equivalent. The <code class="calibre22">main()</code> function only gets called if a user runs the program directly. You could also write your own Python programs, import <em class="calibre9">piglatin.py</em> with an <code class="calibre22">import piglatin</code> statement, then call <code class="calibre22">piglatin.englishToPigLatin()</code> to make use of the <code class="calibre22">englishToPigLatin()</code> function. This reuse technique can save you the time and effort required to reinvent this code yourself.</p>
+<div class="highlight"><pre><span></span>
+<span class="c"> 1. </span><span class="sd">"""Pig Latin, by Al Sweigart al@inventwithpython.com</span>
+<span class="c"> 2. </span><span class="sd">Translates English messages into Igpay Atinlay.</span>
+<span class="c"> 3. </span><span class="sd">This code is available at https://nostarch.com/big-book-small-python-programming</span>
+<span class="c"> 4. </span><span class="sd">Tags: short, word"""</span>
+<span class="c"> 5. </span>
+<span class="c"> 6. </span><span class="k">try</span><span class="p">:</span>
+<span class="c"> 7. </span>    <span class="kn">import</span> <span class="nn">pyperclip</span>  <span class="c1"># pyperclip copies text to the clipboard.</span>
+<span class="c"> 8. </span><span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+<span class="c"> 9. </span>    <span class="k">pass</span>  <span class="c1"># If pyperclip is not installed, do nothing. It's no big deal.</span>
+<span class="c">10. </span>
+<span class="c">11. </span><span class="n">VOWELS</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'e'</span><span class="p">,</span> <span class="s1">'i'</span><span class="p">,</span> <span class="s1">'o'</span><span class="p">,</span> <span class="s1">'u'</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">)</span>
+<span class="c">12. </span>
+<span class="c">13. </span>
+<span class="c">14. </span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="c">15. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'''Igpay Atinlay (Pig Latin)</span>
+<span class="c">16. </span><span class="s1">By Al Sweigart al@inventwithpython.com</span>
+<span class="c">17. </span>
+<span class="c">18. </span><span class="s1">Enter your message:'''</span><span class="p">)</span>
+<span class="c">19. </span>    <span class="n">pigLatin</span> <span class="o">=</span> <span class="n">englishToPigLatin</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">'&gt; '</span><span class="p">))</span>
+<span class="c">20. </span>
+<span class="c">21. </span>    <span class="c1"># Join all the words back together into a single string:</span>
+<span class="c">22. </span>    <span class="nb">print</span><span class="p">(</span><span class="n">pigLatin</span><span class="p">)</span>
+<span class="c">23. </span>
+<span class="c">24. </span>    <span class="k">try</span><span class="p">:</span>
+<span class="c">25. </span>        <span class="n">pyperclip</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">pigLatin</span><span class="p">)</span>
+<span class="c">26. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'(Copied pig latin to clipboard.)'</span><span class="p">)</span>
+<span class="c">27. </span>    <span class="k">except</span> <span class="ne">NameError</span><span class="p">:</span>
+<span class="c">28. </span>        <span class="k">pass</span>  <span class="c1"># Do nothing if pyperclip wasn't installed.</span>
+<span class="c">29. </span>
+<span class="c">30. </span>
+<span class="c">31. </span><span class="k">def</span> <span class="nf">englishToPigLatin</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+<span class="c">32. </span>    <span class="n">pigLatin</span> <span class="o">=</span> <span class="s1">''</span>  <span class="c1"># A string of the pig latin translation.</span>
+<span class="c">33. </span>    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">message</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+<span class="c">34. </span>        <span class="c1"># Separate the non-letters at the start of this word:</span>
+<span class="c">35. </span>        <span class="n">prefixNonLetters</span> <span class="o">=</span> <span class="s1">''</span>
+<span class="c">36. </span>        <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
+<span class="c">37. </span>            <span class="n">prefixNonLetters</span> <span class="o">+=</span> <span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="c">38. </span>            <span class="n">word</span> <span class="o">=</span> <span class="n">word</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="c">39. </span>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="c">40. </span>            <span class="n">pigLatin</span> <span class="o">=</span> <span class="n">pigLatin</span> <span class="o">+</span> <span class="n">prefixNonLetters</span> <span class="o">+</span> <span class="s1">' '</span>
+<span class="c">41. </span>            <span class="k">continue</span>
+<span class="c">42. </span>
+<span class="c">43. </span>        <span class="c1"># Separate the non-letters at the end of this word:</span>
+<span class="c">44. </span>        <span class="n">suffixNonLetters</span> <span class="o">=</span> <span class="s1">''</span>
+<span class="c">45. </span>        <span class="k">while</span> <span class="ow">not</span> <span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
+<span class="c">46. </span>            <span class="n">suffixNonLetters</span> <span class="o">=</span> <span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">suffixNonLetters</span>
+<span class="c">47. </span>            <span class="n">word</span> <span class="o">=</span> <span class="n">word</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="c">48. </span>
+<span class="c">49. </span>        <span class="c1"># Remember if the word was in uppercase or titlecase.</span>
+<span class="c">50. </span>        <span class="n">wasUpper</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">isupper</span><span class="p">()</span>
+<span class="c">51. </span>        <span class="n">wasTitle</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">istitle</span><span class="p">()</span>
+<span class="c">52. </span>
+<span class="c">53. </span>        <span class="n">word</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>  <span class="c1"># Make the word lowercase for translation.</span>
+<span class="c">54. </span>
+<span class="c">55. </span>        <span class="c1"># Separate the consonants at the start of this word:</span>
+<span class="c">56. </span>        <span class="n">prefixConsonants</span> <span class="o">=</span> <span class="s1">''</span>
+<span class="c">57. </span>        <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="n">VOWELS</span><span class="p">:</span>
+<span class="c">58. </span>            <span class="n">prefixConsonants</span> <span class="o">+=</span> <span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="c">59. </span>            <span class="n">word</span> <span class="o">=</span> <span class="n">word</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="c">60. </span>
+<span class="c">61. </span>        <span class="c1"># Add the pig latin ending to the word:</span>
+<span class="c">62. </span>        <span class="k">if</span> <span class="n">prefixConsonants</span> <span class="o">!=</span> <span class="s1">''</span><span class="p">:</span>
+<span class="c">63. </span>            <span class="n">word</span> <span class="o">+=</span> <span class="n">prefixConsonants</span> <span class="o">+</span> <span class="s1">'ay'</span>
+<span class="c">64. </span>        <span class="k">else</span><span class="p">:</span>
+<span class="c">65. </span>            <span class="n">word</span> <span class="o">+=</span> <span class="s1">'yay'</span>
+<span class="c">66. </span>
+<span class="c">67. </span>        <span class="c1"># Set the word back to uppercase or titlecase:</span>
+<span class="c">68. </span>        <span class="k">if</span> <span class="n">wasUpper</span><span class="p">:</span>
+<span class="c">69. </span>            <span class="n">word</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="c">70. </span>        <span class="k">if</span> <span class="n">wasTitle</span><span class="p">:</span>
+<span class="c">71. </span>            <span class="n">word</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+<span class="c">72. </span>
+<span class="c">73. </span>        <span class="c1"># Add the non-letters back to the start or end of the word.</span>
+<span class="c">74. </span>        <span class="n">pigLatin</span> <span class="o">+=</span> <span class="n">prefixNonLetters</span> <span class="o">+</span> <span class="n">word</span> <span class="o">+</span> <span class="n">suffixNonLetters</span> <span class="o">+</span> <span class="s1">' '</span>
+<span class="c">75. </span>    <span class="k">return</span> <span class="n">pigLatin</span>
+<span class="c">76. </span>
+<span class="c">77. </span>
+<span class="c">78. </span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<span class="c">79. </span>    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+<h2 id="calibre_link-233" class="calibre5">Exploring the Program</h2>
+<p class="bodyfirst">Try to find the answers to the following questions.
+ Experiment with some modifications to the code and rerun the program to
+ see what effect the changes have.</p>
+<ol class="decimal">
+<li class="calibre8" value="1">What happens if you change <code class="calibre22">message.split()</code> on line 33 to <code class="calibre22">message</code>?</li>
+<li class="calibre8" value="2">What happens if you change <code class="calibre22">('a', 'e', 'i', 'o', 'u', 'y')</code> on line 11 to <code class="calibre22">()</code>?</li>
+<li class="calibre8" value="3">What happens if you change <code class="calibre22">('a', 'e', 'i', 'o', 'u', 'y')</code> on line 11 to <code class="calibre22">('A', 'E', 'I', 'O', 'U', 'Y')</code>?</li>
+</ol>
+</section>
+</div>
+
+
+
+
+
+
+
+
+<a href="https://inventwithpython.com/bigbookpython/project53.html">Prev: Periodic Table of the Elements</a> | <a href="https://inventwithpython.com/bigbookpython/project55.html">Next: Powerball Lottery</a>
+</body></html>

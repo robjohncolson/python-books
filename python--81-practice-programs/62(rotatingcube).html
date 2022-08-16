@@ -1,0 +1,315 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="62(rotatingcube)_files/style.css" rel="stylesheet" type="text/css"><link rel="stylesheet" type="text/css" href="62(rotatingcube)_files/pygments.css"><title>Rotating Cube</title></head><body style="background-color: #fffeee;">
+
+<script type="text/javascript" async="" src="62(rotatingcube)_files/ga.js"></script><script type="text/javascript">
+//<![CDATA[
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-5459430-3']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+//]]>
+</script>
+
+
+<div style="background-color: #eeeddd; float: right; height: 310px; font-family: sans-serif;" id="otherbooks">
+  <a href="#" onclick="document.getElementById('otherbooks').outerHTML='';" style="vertical-align: top;">(close)</a><br>
+
+  <a target="_blank" href="https://nostarch.com/automatestuff2" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_automate.link');"><img src="62(rotatingcube)_files/cover_automate2_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/big-book-small-python-projects" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_bigbookpython.link');"><img src="62(rotatingcube)_files/cover_bigbookpython_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/beyond-basic-stuff-python" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_beyond.link');"><img src="62(rotatingcube)_files/cover_beyond_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/inventwithpython" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_invent.link');"><img src="62(rotatingcube)_files/cover_invent4th_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://www.amazon.com/Making-Games-Python-Pygame-Sweigart/dp/1469901730?ie=UTF8&amp;tag=playwithpyth-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1469901730" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_pygame.link');"><img src="62(rotatingcube)_files/cover_makinggames_thumb.webp" style="height: 200px; border: solid black 1px; /"></a>
+  <a target="_blank" href="https://nostarch.com/crackingcodes" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_hacking.link');"><img src="62(rotatingcube)_files/cover_crackingcodes_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/scratchplayground"><img src="62(rotatingcube)_files/cover_scratchprogrammingplayground_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/codingwithminecraft"><img src="62(rotatingcube)_files/cover_codingwithminecraft_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <br>
+  <a href="https://inventwithpython.com/automateudemy">Use this link to get 70% off the Automate the Boring Stuff online video course.</a><br>
+  <a href="https://www.patreon.com/AlSweigart">Support me on Patreon</a>
+</div>
+
+<a href="https://inventwithpython.com/bigbookpython/project61.html">Prev: ROT 13 Cipher</a> | <a href="https://inventwithpython.com/bigbookpython/project63.html">Next: Royal Game of Ur</a>
+
+
+
+
+
+<div type="bodymatter chapter" class="calibre1" id="calibre_link-259">
+<section class="toclist">
+<header class="calibre10">
+<h1 class="chapter">
+<span class="chapternumber">#62</span><br class="calibre14">
+<span class="chaptertitle">Rotating Cube</span></h1>
+</header>
+<figure class="opener">
+<img src="62(rotatingcube)_files/000002.webp" alt="" class="calibre12">
+</figure>
+<p class="chapterintro">This project features an animation of a 3D cube 
+rotating using trigonometric functions. You can adapt the 3D point 
+rotation math and the <code class="calibre17">line()</code> function in your own animation programs.</p>
+<p class="calibre18">Although the block text characters we’ll use to 
+draw the cube don’t look like thin, straight lines, this kind of drawing
+ is called a <em class="calibre9">wireframe model</em> because it renders only the edges of an object’s surfaces. <a href="#calibre_link-347" id="calibre_link-809" class="linkurl">Figure 62-1</a> shows the wireframe model for a cube and an icosphere, a rough sphere made of triangles.</p>
+<figure class="calibre28">
+<img src="62(rotatingcube)_files/000012.webp" alt="f62001" class="calibre12">
+<figcaption class="calibre29"><p class="calibre30"><a id="calibre_link-347" class="linkurl">Figure 62-1</a>: The wireframe models for a cube (left) and an icosphere (right)</p></figcaption>
+</figure>
+<h2 id="calibre_link-260" class="calibre5">The Program in Action</h2>
+<p class="bodyfirst"><a href="#calibre_link-348" id="calibre_link-810" class="linkurl">Figure 62-2</a> shows what the output will look like when you run <em class="calibre9">rotatingcube.py</em>.</p>
+<figure class="calibre28">
+<img src="62(rotatingcube)_files/000010.webp" alt="f62002" class="calibre12">
+<figcaption class="calibre29"><p class="calibre30"><a id="calibre_link-348" class="linkurl">Figure 62-2</a>: The wireframe cube that the program draws to the screen</p></figcaption>
+</figure>
+<h2 id="calibre_link-261" class="calibre5">How It Works</h2>
+<p class="bodyfirst">This algorithm has two main parts: the <code class="calibre22">line()</code> function and the <code class="calibre22">rotatePoint()</code> function. The cube has eight points, one for each corner. The program stores these corners as <code class="calibre22">(</code><var class="calibre26">x</var><code class="calibre22">, </code><var class="calibre26">y</var><code class="calibre22">, </code><var class="calibre26">z</var><code class="calibre22">)</code> tuples in the <code class="calibre22">CUBE_CORNERS</code>
+ list. These points also define the connections for the cube’s edge 
+lines. When all the points rotate in the same direction by the same 
+amount, they give the illusion of a cube rotating.</p>
+<div class="highlight"><pre><span></span>
+<span class="c">  1. </span><span class="sd">"""Rotating Cube, by Al Sweigart al@inventwithpython.com</span>
+<span class="c">  2. </span><span class="sd">A rotating cube animation. Press Ctrl-C to stop.</span>
+<span class="c">  3. </span><span class="sd">This code is available at https://nostarch.com/big-book-small-python-programming</span>
+<span class="c">  4. </span><span class="sd">Tags: large, artistic, math"""</span>
+<span class="c">  5. </span>
+<span class="c">  6. </span><span class="c1"># This program MUST be run in a Terminal/Command Prompt window.</span>
+<span class="c">  7. </span>
+<span class="c">  8. </span><span class="kn">import</span> <span class="nn">math</span><span class="o">,</span> <span class="nn">time</span><span class="o">,</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
+<span class="c">  9. </span>
+<span class="c"> 10. </span><span class="c1"># Set up the constants:</span>
+<span class="c"> 11. </span><span class="n">PAUSE_AMOUNT</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># Pause length of one-tenth of a second.</span>
+<span class="c"> 12. </span><span class="n">WIDTH</span><span class="p">,</span> <span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">24</span>
+<span class="c"> 13. </span><span class="n">SCALEX</span> <span class="o">=</span> <span class="p">(</span><span class="n">WIDTH</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span> <span class="o">//</span> <span class="mi">8</span>
+<span class="c"> 14. </span><span class="n">SCALEY</span> <span class="o">=</span> <span class="p">(</span><span class="n">HEIGHT</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span> <span class="o">//</span> <span class="mi">8</span>
+<span class="c"> 15. </span><span class="c1"># Text cells are twice as tall as they are wide, so set scaley:</span>
+<span class="c"> 16. </span><span class="n">SCALEY</span> <span class="o">*=</span> <span class="mi">2</span>
+<span class="c"> 17. </span><span class="n">TRANSLATEX</span> <span class="o">=</span> <span class="p">(</span><span class="n">WIDTH</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="c"> 18. </span><span class="n">TRANSLATEY</span> <span class="o">=</span> <span class="p">(</span><span class="n">HEIGHT</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="c"> 19. </span>
+<span class="c"> 20. </span><span class="c1"># (!) Try changing this to '#' or '*' or some other character:</span>
+<span class="c"> 21. </span><span class="n">LINE_CHAR</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="mi">9608</span><span class="p">)</span>  <span class="c1"># Character 9608 is a solid block.</span>
+<span class="c"> 22. </span>
+<span class="c"> 23. </span><span class="c1"># (!) Try setting two of these values to zero to rotate the cube only</span>
+<span class="c"> 24. </span><span class="c1"># along a single axis:</span>
+<span class="c"> 25. </span><span class="n">X_ROTATE_SPEED</span> <span class="o">=</span> <span class="mf">0.03</span>
+<span class="c"> 26. </span><span class="n">Y_ROTATE_SPEED</span> <span class="o">=</span> <span class="mf">0.08</span>
+<span class="c"> 27. </span><span class="n">Z_ROTATE_SPEED</span> <span class="o">=</span> <span class="mf">0.13</span>
+<span class="c"> 28. </span>
+<span class="c"> 29. </span><span class="c1"># This program stores XYZ coordinates in lists, with the X coordinate</span>
+<span class="c"> 30. </span><span class="c1"># at index 0, Y at 1, and Z at 2. These constants make our code more</span>
+<span class="c"> 31. </span><span class="c1"># readable when accessing the coordinates in these lists.</span>
+<span class="c"> 32. </span><span class="n">X</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c"> 33. </span><span class="n">Y</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c"> 34. </span><span class="n">Z</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="c"> 35. </span>
+<span class="c"> 36. </span>
+<span class="c"> 37. </span><span class="k">def</span> <span class="nf">line</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">):</span>
+<span class="c"> 38. </span>    <span class="sd">"""Returns a list of points in a line between the given points.</span>
+<span class="c"> 39. </span>
+<span class="c"> 40. </span><span class="sd">    Uses the Bresenham line algorithm. More info at:</span>
+<span class="c"> 41. </span><span class="sd">    https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm"""</span>
+<span class="c"> 42. </span>    <span class="n">points</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># Contains the points of the line.</span>
+<span class="c"> 43. </span>    <span class="c1"># "Steep" means the slope of the line is greater than 45 degrees or</span>
+<span class="c"> 44. </span>    <span class="c1"># less than -45 degrees:</span>
+<span class="c"> 45. </span>
+<span class="c"> 46. </span>    <span class="c1"># Check for the special case where the start and end points are</span>
+<span class="c"> 47. </span>    <span class="c1"># certain neighbors, which this function doesn't handle correctly,</span>
+<span class="c"> 48. </span>    <span class="c1"># and return a hard coded list instead:</span>
+<span class="c"> 49. </span>    <span class="k">if</span> <span class="p">(</span><span class="n">x1</span> <span class="o">==</span> <span class="n">x2</span> <span class="ow">and</span> <span class="n">y1</span> <span class="o">==</span> <span class="n">y2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">y1</span> <span class="o">==</span> <span class="n">y2</span> <span class="ow">and</span> <span class="n">x1</span> <span class="o">==</span> <span class="n">x2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+<span class="c"> 50. </span>        <span class="k">return</span> <span class="p">[(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">),</span> <span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">)]</span>
+<span class="c"> 51. </span>
+<span class="c"> 52. </span>    <span class="n">isSteep</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span>
+<span class="c"> 53. </span>    <span class="k">if</span> <span class="n">isSteep</span><span class="p">:</span>
+<span class="c"> 54. </span>        <span class="c1"># This algorithm only handles non-steep lines, so let's change</span>
+<span class="c"> 55. </span>        <span class="c1"># the slope to non-steep and change it back later.</span>
+<span class="c"> 56. </span>        <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x1</span>  <span class="c1"># Swap x1 and y1</span>
+<span class="c"> 57. </span>        <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">y2</span><span class="p">,</span> <span class="n">x2</span>  <span class="c1"># Swap x2 and y2</span>
+<span class="c"> 58. </span>    <span class="n">isReversed</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">&gt;</span> <span class="n">x2</span>  <span class="c1"># True if the line goes right-to-left.</span>
+<span class="c"> 59. </span>
+<span class="c"> 60. </span>    <span class="k">if</span> <span class="n">isReversed</span><span class="p">:</span>  <span class="c1"># Get the points on the line going right-to-left.</span>
+<span class="c"> 61. </span>        <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span> <span class="o">=</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x1</span>  <span class="c1"># Swap x1 and x2</span>
+<span class="c"> 62. </span>        <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">y2</span><span class="p">,</span> <span class="n">y1</span>  <span class="c1"># Swap y1 and y2</span>
+<span class="c"> 63. </span>
+<span class="c"> 64. </span>        <span class="n">deltax</span> <span class="o">=</span> <span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span>
+<span class="c"> 65. </span>        <span class="n">deltay</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span>
+<span class="c"> 66. </span>        <span class="n">extray</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">deltax</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c"> 67. </span>        <span class="n">currenty</span> <span class="o">=</span> <span class="n">y2</span>
+<span class="c"> 68. </span>        <span class="k">if</span> <span class="n">y1</span> <span class="o">&lt;</span> <span class="n">y2</span><span class="p">:</span>
+<span class="c"> 69. </span>            <span class="n">ydirection</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c"> 70. </span>        <span class="k">else</span><span class="p">:</span>
+<span class="c"> 71. </span>            <span class="n">ydirection</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="c"> 72. </span>        <span class="c1"># Calculate the y for every x in this line:</span>
+<span class="c"> 73. </span>        <span class="k">for</span> <span class="n">currentx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">x1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+<span class="c"> 74. </span>            <span class="k">if</span> <span class="n">isSteep</span><span class="p">:</span>
+<span class="c"> 75. </span>                <span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">currenty</span><span class="p">,</span> <span class="n">currentx</span><span class="p">))</span>
+<span class="c"> 76. </span>            <span class="k">else</span><span class="p">:</span>
+<span class="c"> 77. </span>                <span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">currentx</span><span class="p">,</span> <span class="n">currenty</span><span class="p">))</span>
+<span class="c"> 78. </span>            <span class="n">extray</span> <span class="o">-=</span> <span class="n">deltay</span>
+<span class="c"> 79. </span>            <span class="k">if</span> <span class="n">extray</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># Only change y once extray &lt;= 0.</span>
+<span class="c"> 80. </span>                <span class="n">currenty</span> <span class="o">-=</span> <span class="n">ydirection</span>
+<span class="c"> 81. </span>                <span class="n">extray</span> <span class="o">+=</span> <span class="n">deltax</span>
+<span class="c"> 82. </span>    <span class="k">else</span><span class="p">:</span>  <span class="c1"># Get the points on the line going left to right.</span>
+<span class="c"> 83. </span>        <span class="n">deltax</span> <span class="o">=</span> <span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span>
+<span class="c"> 84. </span>        <span class="n">deltay</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span>
+<span class="c"> 85. </span>        <span class="n">extray</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">deltax</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c"> 86. </span>        <span class="n">currenty</span> <span class="o">=</span> <span class="n">y1</span>
+<span class="c"> 87. </span>        <span class="k">if</span> <span class="n">y1</span> <span class="o">&lt;</span> <span class="n">y2</span><span class="p">:</span>
+<span class="c"> 88. </span>            <span class="n">ydirection</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c"> 89. </span>        <span class="k">else</span><span class="p">:</span>
+<span class="c"> 90. </span>            <span class="n">ydirection</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="c"> 91. </span>        <span class="c1"># Calculate the y for every x in this line:</span>
+<span class="c"> 92. </span>        <span class="k">for</span> <span class="n">currentx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+<span class="c"> 93. </span>            <span class="k">if</span> <span class="n">isSteep</span><span class="p">:</span>
+<span class="c"> 94. </span>                <span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">currenty</span><span class="p">,</span> <span class="n">currentx</span><span class="p">))</span>
+<span class="c"> 95. </span>            <span class="k">else</span><span class="p">:</span>
+<span class="c"> 96. </span>                <span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">currentx</span><span class="p">,</span> <span class="n">currenty</span><span class="p">))</span>
+<span class="c"> 97. </span>            <span class="n">extray</span> <span class="o">-=</span> <span class="n">deltay</span>
+<span class="c"> 98. </span>            <span class="k">if</span> <span class="n">extray</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># Only change y once extray &lt; 0.</span>
+<span class="c"> 99. </span>                <span class="n">currenty</span> <span class="o">+=</span> <span class="n">ydirection</span>
+<span class="c">100. </span>                <span class="n">extray</span> <span class="o">+=</span> <span class="n">deltax</span>
+<span class="c">101. </span>    <span class="k">return</span> <span class="n">points</span>
+<span class="c">102. </span>
+<span class="c">103. </span>
+<span class="c">104. </span><span class="k">def</span> <span class="nf">rotatePoint</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">ay</span><span class="p">,</span> <span class="n">az</span><span class="p">):</span>
+<span class="c">105. </span>    <span class="sd">"""Returns an (x, y, z) tuple of the x, y, z arguments rotated.</span>
+<span class="c">106. </span>
+<span class="c">107. </span><span class="sd">    The rotation happens around the 0, 0, 0 origin by angles</span>
+<span class="c">108. </span><span class="sd">    ax, ay, az (in radians).</span>
+<span class="c">109. </span><span class="sd">        Directions of each axis:</span>
+<span class="c">110. </span><span class="sd">         -y</span>
+<span class="c">111. </span><span class="sd">          |</span>
+<span class="c">112. </span><span class="sd">          +-- +x</span>
+<span class="c">113. </span><span class="sd">         /</span>
+<span class="c">114. </span><span class="sd">        +z</span>
+<span class="c">115. </span><span class="sd">    """</span>
+<span class="c">116. </span>
+<span class="c">117. </span>    <span class="c1"># Rotate around x axis:</span>
+<span class="c">118. </span>    <span class="n">rotatedX</span> <span class="o">=</span> <span class="n">x</span>
+<span class="c">119. </span>    <span class="n">rotatedY</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ax</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="n">z</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ax</span><span class="p">))</span>
+<span class="c">120. </span>    <span class="n">rotatedZ</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ax</span><span class="p">))</span> <span class="o">+</span> <span class="p">(</span><span class="n">z</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ax</span><span class="p">))</span>
+<span class="c">121. </span>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">rotatedX</span><span class="p">,</span> <span class="n">rotatedY</span><span class="p">,</span> <span class="n">rotatedZ</span>
+<span class="c">122. </span>
+<span class="c">123. </span>    <span class="c1"># Rotate around y axis:</span>
+<span class="c">124. </span>    <span class="n">rotatedX</span> <span class="o">=</span> <span class="p">(</span><span class="n">z</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ay</span><span class="p">))</span> <span class="o">+</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ay</span><span class="p">))</span>
+<span class="c">125. </span>    <span class="n">rotatedY</span> <span class="o">=</span> <span class="n">y</span>
+<span class="c">126. </span>    <span class="n">rotatedZ</span> <span class="o">=</span> <span class="p">(</span><span class="n">z</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ay</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ay</span><span class="p">))</span>
+<span class="c">127. </span>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">rotatedX</span><span class="p">,</span> <span class="n">rotatedY</span><span class="p">,</span> <span class="n">rotatedZ</span>
+<span class="c">128. </span>
+<span class="c">129. </span>    <span class="c1"># Rotate around z axis:</span>
+<span class="c">130. </span>    <span class="n">rotatedX</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">az</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="n">y</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">az</span><span class="p">))</span>
+<span class="c">131. </span>    <span class="n">rotatedY</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">az</span><span class="p">))</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">az</span><span class="p">))</span>
+<span class="c">132. </span>    <span class="n">rotatedZ</span> <span class="o">=</span> <span class="n">z</span>
+<span class="c">133. </span>
+<span class="c">134. </span>    <span class="k">return</span> <span class="p">(</span><span class="n">rotatedX</span><span class="p">,</span> <span class="n">rotatedY</span><span class="p">,</span> <span class="n">rotatedZ</span><span class="p">)</span>
+<span class="c">135. </span>
+<span class="c">136. </span>
+<span class="c">137. </span><span class="k">def</span> <span class="nf">adjustPoint</span><span class="p">(</span><span class="n">point</span><span class="p">):</span>
+<span class="c">138. </span>    <span class="sd">"""Adjusts the 3D XYZ point to a 2D XY point fit for displaying on</span>
+<span class="c">139. </span><span class="sd">    the screen. This resizes this 2D point by a scale of SCALEX and</span>
+<span class="c">140. </span><span class="sd">    SCALEY, then moves the point by TRANSLATEX and TRANSLATEY."""</span>
+<span class="c">141. </span>    <span class="k">return</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">point</span><span class="p">[</span><span class="n">X</span><span class="p">]</span> <span class="o">*</span> <span class="n">SCALEX</span> <span class="o">+</span> <span class="n">TRANSLATEX</span><span class="p">),</span>
+<span class="c">142. </span>            <span class="nb">int</span><span class="p">(</span><span class="n">point</span><span class="p">[</span><span class="n">Y</span><span class="p">]</span> <span class="o">*</span> <span class="n">SCALEY</span> <span class="o">+</span> <span class="n">TRANSLATEY</span><span class="p">))</span>
+<span class="c">143. </span>
+<span class="c">144. </span>
+<span class="c">145. </span><span class="sd">"""CUBE_CORNERS stores the XYZ coordinates of the corners of a cube.</span>
+<span class="c">146. </span><span class="sd">The indexes for each corner in CUBE_CORNERS are marked in this diagram:</span>
+<span class="c">147. </span><span class="sd">      0---1</span>
+<span class="c">148. </span><span class="sd">     /|  /|</span>
+<span class="c">149. </span><span class="sd">    2---3 |</span>
+<span class="c">150. </span><span class="sd">    | 4-|-5</span>
+<span class="c">151. </span><span class="sd">    |/  |/</span>
+<span class="c">152. </span><span class="sd">    6---7"""</span>
+<span class="c">153. </span><span class="n">CUBE_CORNERS</span> <span class="o">=</span> <span class="p">[[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="c1"># Point 0</span>
+<span class="c">154. </span>                <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="c1"># Point 1</span>
+<span class="c">155. </span>                <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span><span class="p">],</span> <span class="c1"># Point 2</span>
+<span class="c">156. </span>                <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span><span class="p">],</span> <span class="c1"># Point 3</span>
+<span class="c">157. </span>                <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="c1"># Point 4</span>
+<span class="c">158. </span>                <span class="p">[</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="c1"># Point 5</span>
+<span class="c">159. </span>                <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span><span class="p">],</span> <span class="c1"># Point 6</span>
+<span class="c">160. </span>                <span class="p">[</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span><span class="p">]]</span> <span class="c1"># Point 7</span>
+<span class="c">161. </span><span class="c1"># rotatedCorners stores the XYZ coordinates from CUBE_CORNERS after</span>
+<span class="c">162. </span><span class="c1"># they've been rotated by rx, ry, and rz amounts:</span>
+<span class="c">163. </span><span class="n">rotatedCorners</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
+<span class="c">164. </span><span class="c1"># Rotation amounts for each axis:</span>
+<span class="c">165. </span><span class="n">xRotation</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="c">166. </span><span class="n">yRotation</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="c">167. </span><span class="n">zRotation</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="c">168. </span>
+<span class="c">169. </span><span class="k">try</span><span class="p">:</span>
+<span class="c">170. </span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>  <span class="c1"># Main program loop.</span>
+<span class="c">171. </span>        <span class="c1"># Rotate the cube along different axes by different amounts:</span>
+<span class="c">172. </span>        <span class="n">xRotation</span> <span class="o">+=</span> <span class="n">X_ROTATE_SPEED</span>
+<span class="c">173. </span>        <span class="n">yRotation</span> <span class="o">+=</span> <span class="n">Y_ROTATE_SPEED</span>
+<span class="c">174. </span>        <span class="n">zRotation</span> <span class="o">+=</span> <span class="n">Z_ROTATE_SPEED</span>
+<span class="c">175. </span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">CUBE_CORNERS</span><span class="p">)):</span>
+<span class="c">176. </span>            <span class="n">x</span> <span class="o">=</span> <span class="n">CUBE_CORNERS</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">X</span><span class="p">]</span>
+<span class="c">177. </span>            <span class="n">y</span> <span class="o">=</span> <span class="n">CUBE_CORNERS</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">Y</span><span class="p">]</span>
+<span class="c">178. </span>            <span class="n">z</span> <span class="o">=</span> <span class="n">CUBE_CORNERS</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">Z</span><span class="p">]</span>
+<span class="c">179. </span>            <span class="n">rotatedCorners</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">rotatePoint</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">xRotation</span><span class="p">,</span>
+<span class="c">180. </span>                <span class="n">yRotation</span><span class="p">,</span> <span class="n">zRotation</span><span class="p">)</span>
+<span class="c">181. </span>
+<span class="c">182. </span>        <span class="c1"># Get the points of the cube lines:</span>
+<span class="c">183. </span>        <span class="n">cubePoints</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c">184. </span>        <span class="k">for</span> <span class="n">fromCornerIndex</span><span class="p">,</span> <span class="n">toCornerIndex</span> <span class="ow">in</span> <span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">)):</span>
+<span class="c">185. </span>            <span class="n">fromX</span><span class="p">,</span> <span class="n">fromY</span> <span class="o">=</span> <span class="n">adjustPoint</span><span class="p">(</span><span class="n">rotatedCorners</span><span class="p">[</span><span class="n">fromCornerIndex</span><span class="p">])</span>
+<span class="c">186. </span>            <span class="n">toX</span><span class="p">,</span> <span class="n">toY</span> <span class="o">=</span> <span class="n">adjustPoint</span><span class="p">(</span><span class="n">rotatedCorners</span><span class="p">[</span><span class="n">toCornerIndex</span><span class="p">])</span>
+<span class="c">187. </span>            <span class="n">pointsOnLine</span> <span class="o">=</span> <span class="n">line</span><span class="p">(</span><span class="n">fromX</span><span class="p">,</span> <span class="n">fromY</span><span class="p">,</span> <span class="n">toX</span><span class="p">,</span> <span class="n">toY</span><span class="p">)</span>
+<span class="c">188. </span>            <span class="n">cubePoints</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">pointsOnLine</span><span class="p">)</span>
+<span class="c">189. </span>
+<span class="c">190. </span>        <span class="c1"># Get rid of duplicate points:</span>
+<span class="c">191. </span>        <span class="n">cubePoints</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">frozenset</span><span class="p">(</span><span class="n">cubePoints</span><span class="p">))</span>
+<span class="c">192. </span>
+<span class="c">193. </span>        <span class="c1"># Display the cube on the screen:</span>
+<span class="c">194. </span>        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">HEIGHT</span><span class="p">):</span>
+<span class="c">195. </span>            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">WIDTH</span><span class="p">):</span>
+<span class="c">196. </span>                <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="n">cubePoints</span><span class="p">:</span>
+<span class="c">197. </span>                    <span class="c1"># Display full block:</span>
+<span class="c">198. </span>                    <span class="nb">print</span><span class="p">(</span><span class="n">LINE_CHAR</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c">199. </span>                <span class="k">else</span><span class="p">:</span>
+<span class="c">200. </span>                    <span class="c1"># Display empty space:</span>
+<span class="c">201. </span>                    <span class="nb">print</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c">202. </span>            <span class="nb">print</span><span class="p">(</span><span class="n">flush</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c">203. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'Press Ctrl-C to quit.'</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c">204. </span>
+<span class="c">205. </span>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">PAUSE_AMOUNT</span><span class="p">)</span>  <span class="c1"># Pause for a bit.</span>
+<span class="c">206. </span>
+<span class="c">207. </span>        <span class="c1"># Clear the screen:</span>
+<span class="c">208. </span>        <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">==</span> <span class="s1">'win32'</span><span class="p">:</span>
+<span class="c">209. </span>            <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">'cls'</span><span class="p">)</span>  <span class="c1"># Windows uses the cls command.</span>
+<span class="c">210. </span>        <span class="k">else</span><span class="p">:</span>
+<span class="c">211. </span>            <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">'clear'</span><span class="p">)</span>  <span class="c1"># macOS and Linux use the clear command.</span>
+<span class="c">212. </span>
+<span class="c">213. </span><span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+<span class="c">214. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'Rotating Cube, by Al Sweigart al@inventwithpython.com'</span><span class="p">)</span>
+<span class="c">215. </span>    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>  <span class="c1"># When Ctrl-C is pressed, end the program.</span>
+</pre></div>
+
+<p class="calibre19">After entering the source code and running it a few times, try making experimental changes to it. The comments marked with <code class="calibre22">(!)</code> have suggestions for small changes you can make. On your own, you can also try to figure out how to do the following:</p>
+<ul class="calibre25">
+<li class="calibre8">Modify <code class="calibre22">CUBE_CORNERS</code> and the tuple on line 184 to create different wireframe models such as a pyramid and a flat hexagon.</li>
+<li class="calibre8">Increase the coordinates of <code class="calibre22">CUBE_CORNERS</code> by <code class="calibre22">1.5</code> so that the cube revolves around the center of the screen, rather than rotating around its own center.</li>
+</ul>
+<h2 id="calibre_link-262" class="calibre5">Exploring the Program</h2>
+<p class="bodyfirst">Try to find the answers to the following questions.
+ Experiment with some modifications to the code and rerun the program to
+ see what effect the changes have.</p>
+<ol class="decimal">
+<li class="calibre8" value="1">What happens if you delete or comment out lines 208 to 211?</li>
+<li class="calibre8" value="2">What happens if you change the tuples on line 184 to <code class="calibre22">&lt;((0, 1), (1, 3), (3, 2), (2, 0), (0,4), (4, 5), (5, 1))&gt;</code>?</li>
+</ol>
+</section>
+</div>
+
+
+
+
+
+
+
+
+<a href="https://inventwithpython.com/bigbookpython/project61.html">Prev: ROT 13 Cipher</a> | <a href="https://inventwithpython.com/bigbookpython/project63.html">Next: Royal Game of Ur</a>
+</body></html>

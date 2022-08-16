@@ -1,0 +1,294 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="68(tilepuzzle)_files/style.css" rel="stylesheet" type="text/css"><link rel="stylesheet" type="text/css" href="68(tilepuzzle)_files/pygments.css"><title>Sliding Tile Puzzle</title></head><body style="background-color: #fffeee;">
+
+<script type="text/javascript" async="" src="68(tilepuzzle)_files/ga.js"></script><script type="text/javascript">
+//<![CDATA[
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-5459430-3']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+//]]>
+</script>
+
+
+<div style="background-color: #eeeddd; float: right; height: 310px; font-family: sans-serif;" id="otherbooks">
+  <a href="#" onclick="document.getElementById('otherbooks').outerHTML='';" style="vertical-align: top;">(close)</a><br>
+
+  <a target="_blank" href="https://nostarch.com/automatestuff2" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_automate.link');"><img src="68(tilepuzzle)_files/cover_automate2_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/big-book-small-python-projects" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_bigbookpython.link');"><img src="68(tilepuzzle)_files/cover_bigbookpython_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/beyond-basic-stuff-python" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_beyond.link');"><img src="68(tilepuzzle)_files/cover_beyond_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/inventwithpython" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_invent.link');"><img src="68(tilepuzzle)_files/cover_invent4th_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://www.amazon.com/Making-Games-Python-Pygame-Sweigart/dp/1469901730?ie=UTF8&amp;tag=playwithpyth-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1469901730" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_pygame.link');"><img src="68(tilepuzzle)_files/cover_makinggames_thumb.webp" style="height: 200px; border: solid black 1px; /"></a>
+  <a target="_blank" href="https://nostarch.com/crackingcodes" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_hacking.link');"><img src="68(tilepuzzle)_files/cover_crackingcodes_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/scratchplayground"><img src="68(tilepuzzle)_files/cover_scratchprogrammingplayground_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/codingwithminecraft"><img src="68(tilepuzzle)_files/cover_codingwithminecraft_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <br>
+  <a href="https://inventwithpython.com/automateudemy">Use this link to get 70% off the Automate the Boring Stuff online video course.</a><br>
+  <a href="https://www.patreon.com/AlSweigart">Support me on Patreon</a>
+</div>
+
+<a href="https://inventwithpython.com/bigbookpython/project67.html">Prev: Sine Message</a> | <a href="https://inventwithpython.com/bigbookpython/project69.html">Next: Snail Race</a>
+
+
+
+
+
+<div type="bodymatter chapter" class="calibre1" id="calibre_link-283">
+<section class="toclist">
+<header class="calibre10">
+<h1 class="chapter">
+<span class="chapternumber">#68</span><br class="calibre14">
+<span class="chaptertitle">Sliding Tile Puzzle</span></h1>
+</header>
+<figure class="opener">
+<img src="68(tilepuzzle)_files/000002.webp" alt="" class="calibre12">
+</figure>
+<p class="chapterintro">This classic puzzle relies on a 4 × 4 board with
+ 15 numbered tiles and one free space. The objective is to slide the 
+tiles until the numbers are in the correct order, going left to right 
+and top to bottom. Tiles can only slide; you’re not allowed to directly 
+pick them up and rearrange them. Some versions of this puzzle toy 
+feature scrambled images that form a complete picture once solved.</p>
+<p class="calibre18">More information about sliding tile puzzles can be found at <a href="https://en.wikipedia.org/wiki/Sliding_puzzle" class="linkurl">https://en.wikipedia.org/wiki/Sliding_puzzle</a>.</p>
+<h2 id="calibre_link-284" class="calibre5">The Program in Action</h2>
+<p class="bodyfirst">When you run <em class="calibre9">slidingtilepuzzle.py</em>, the output will look like this:</p>
+<pre class="calibre24"><code class="calibre22">Sliding Tile Puzzle, by Al Sweigart al@inventwithpython.com
+
+    Use the WASD keys to move the tiles
+    back into their original order:
+           1  2  3  4
+           5  6  7  8
+           9 10 11 12
+          13 14 15
+Press Enter to begin...
+
++------+------+------+------+
+|      |      |      |      |
+|  5   |  10  |      |  11  |
+|      |      |      |      |
++------+------+------+------+
+|      |      |      |      |
+|  6   |  3   |  7   |  2   |
+|      |      |      |      |
++------+------+------+------+
+|      |      |      |      |
+|  14  |  1   |  15  |  8   |
+|      |      |      |      |
++------+------+------+------+
+|      |      |      |      |
+|  9   |  13  |  4   |  12  |
+|      |      |      |      |
++------+------+------+------+
+
+                          (W)
+Enter WASD (or QUIT): (A) ( ) (D)
+&gt; <b class="calibre6">w</b>
+
++------+------+------+------+
+|      |      |      |      |
+|  5   |  10  |  7   |  11  |
+|      |      |      |      |
++------+------+------+------+
+|      |      |      |      |
+|  6   |  3   |      |  2   |
+|      |      |      |      |
++------+------+------+------+
+|      |      |      |      |
+|  14  |  1   |  15  |  8   |
+|      |      |      |      |
++------+------+------+------+
+|      |      |      |      |
+|  9   |  13  |  4   |  12  |
+|      |      |      |      |
++------+------+------+------+
+
+                          (W)
+Enter WASD (or QUIT): (A) (S) (D)
+<var class="calibre27">--snip--</var></code></pre>
+<h2 id="calibre_link-285" class="calibre5">How It Works</h2>
+<p class="bodyfirst">The data structure that represents the sliding tile
+ game board is a list of lists. The inner lists each represent one 
+column of the 4 × 4 board and contain strings for the numbered tiles (or
+ the <code class="calibre22">BLANK</code> string to represent the blank space). The <code class="calibre22">getNewBoard()</code> function returns this list of lists with all tiles in their starting positions and the blank space in the lower-right corner.</p>
+<p class="calibre19">Python can swap the values in two variables with a statement like <code class="calibre22">a, b = b, a</code>.
+ The program uses this technique on lines 101 to 108 to swap the blank 
+space and a neighboring tile and simulate sliding a numbered tile into 
+the blank space. The <code class="calibre22">getNewPuzzle()</code> function generates new puzzles by performing 200 of these swaps randomly.</p>
+<div class="highlight"><pre><span></span>
+<span class="c">  1. </span><span class="sd">"""Sliding Tile Puzzle, by Al Sweigart al@inventwithpython.com</span>
+<span class="c">  2. </span><span class="sd">Slide the numbered tiles into the correct order.</span>
+<span class="c">  3. </span><span class="sd">This code is available at https://nostarch.com/big-book-small-python-programming</span>
+<span class="c">  4. </span><span class="sd">Tags: large, game, puzzle"""</span>
+<span class="c">  5. </span>
+<span class="c">  6. </span><span class="kn">import</span> <span class="nn">random</span><span class="o">,</span> <span class="nn">sys</span>
+<span class="c">  7. </span>
+<span class="c">  8. </span><span class="n">BLANK</span> <span class="o">=</span> <span class="s1">'  '</span>  <span class="c1"># Note: This string is two spaces, not one.</span>
+<span class="c">  9. </span>
+<span class="c"> 10. </span>
+<span class="c"> 11. </span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="c"> 12. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'''Sliding Tile Puzzle, by Al Sweigart al@inventwithpython.com</span>
+<span class="c"> 13. </span>
+<span class="c"> 14. </span><span class="s1">    Use the WASD keys to move the tiles</span>
+<span class="c"> 15. </span><span class="s1">    back into their original order:</span>
+<span class="c"> 16. </span><span class="s1">           1  2  3  4</span>
+<span class="c"> 17. </span><span class="s1">           5  6  7  8</span>
+<span class="c"> 18. </span><span class="s1">           9 10 11 12</span>
+<span class="c"> 19. </span><span class="s1">          13 14 15   '''</span><span class="p">)</span>
+<span class="c"> 20. </span>    <span class="nb">input</span><span class="p">(</span><span class="s1">'Press Enter to begin...'</span><span class="p">)</span>
+<span class="c"> 21. </span>
+<span class="c"> 22. </span>    <span class="n">gameBoard</span> <span class="o">=</span> <span class="n">getNewPuzzle</span><span class="p">()</span>
+<span class="c"> 23. </span>
+<span class="c"> 24. </span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="c"> 25. </span>        <span class="n">displayBoard</span><span class="p">(</span><span class="n">gameBoard</span><span class="p">)</span>
+<span class="c"> 26. </span>        <span class="n">playerMove</span> <span class="o">=</span> <span class="n">askForPlayerMove</span><span class="p">(</span><span class="n">gameBoard</span><span class="p">)</span>
+<span class="c"> 27. </span>        <span class="n">makeMove</span><span class="p">(</span><span class="n">gameBoard</span><span class="p">,</span> <span class="n">playerMove</span><span class="p">)</span>
+<span class="c"> 28. </span>
+<span class="c"> 29. </span>        <span class="k">if</span> <span class="n">gameBoard</span> <span class="o">==</span> <span class="n">getNewBoard</span><span class="p">():</span>
+<span class="c"> 30. </span>            <span class="nb">print</span><span class="p">(</span><span class="s1">'You won!'</span><span class="p">)</span>
+<span class="c"> 31. </span>            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+<span class="c"> 32. </span>
+<span class="c"> 33. </span>
+<span class="c"> 34. </span><span class="k">def</span> <span class="nf">getNewBoard</span><span class="p">():</span>
+<span class="c"> 35. </span>    <span class="sd">"""Return a list of lists that represents a new tile puzzle."""</span>
+<span class="c"> 36. </span>    <span class="k">return</span> <span class="p">[[</span><span class="s1">'1 '</span><span class="p">,</span> <span class="s1">'5 '</span><span class="p">,</span> <span class="s1">'9 '</span><span class="p">,</span> <span class="s1">'13'</span><span class="p">],</span> <span class="p">[</span><span class="s1">'2 '</span><span class="p">,</span> <span class="s1">'6 '</span><span class="p">,</span> <span class="s1">'10'</span><span class="p">,</span> <span class="s1">'14'</span><span class="p">],</span>
+<span class="c"> 37. </span>            <span class="p">[</span><span class="s1">'3 '</span><span class="p">,</span> <span class="s1">'7 '</span><span class="p">,</span> <span class="s1">'11'</span><span class="p">,</span> <span class="s1">'15'</span><span class="p">],</span> <span class="p">[</span><span class="s1">'4 '</span><span class="p">,</span> <span class="s1">'8 '</span><span class="p">,</span> <span class="s1">'12'</span><span class="p">,</span> <span class="n">BLANK</span><span class="p">]]</span>
+<span class="c"> 38. </span>
+<span class="c"> 39. </span>
+<span class="c"> 40. </span><span class="k">def</span> <span class="nf">displayBoard</span><span class="p">(</span><span class="n">board</span><span class="p">):</span>
+<span class="c"> 41. </span>    <span class="sd">"""Display the given board on the screen."""</span>
+<span class="c"> 42. </span>    <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">board</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">board</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">board</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">board</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+<span class="c"> 43. </span>              <span class="n">board</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">board</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">board</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">board</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
+<span class="c"> 44. </span>              <span class="n">board</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">board</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">board</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">board</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span>
+<span class="c"> 45. </span>              <span class="n">board</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">3</span><span class="p">],</span> <span class="n">board</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">],</span> <span class="n">board</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">],</span> <span class="n">board</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">3</span><span class="p">]]</span>
+<span class="c"> 46. </span>    <span class="n">boardToDraw</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="c"> 47. </span><span class="s2">+------+------+------+------+</span>
+<span class="c"> 48. </span><span class="s2">|      |      |      |      |</span>
+<span class="c"> 49. </span><span class="s2">|  </span><span class="si">{}</span><span class="s2">  |  </span><span class="si">{}</span><span class="s2">  |  </span><span class="si">{}</span><span class="s2">  |  </span><span class="si">{}</span><span class="s2">  |</span>
+<span class="c"> 50. </span><span class="s2">|      |      |      |      |</span>
+<span class="c"> 51. </span><span class="s2">+------+------+------+------+</span>
+<span class="c"> 52. </span><span class="s2">|      |      |      |      |</span>
+<span class="c"> 53. </span><span class="s2">|  </span><span class="si">{}</span><span class="s2">  |  </span><span class="si">{}</span><span class="s2">  |  </span><span class="si">{}</span><span class="s2">  |  </span><span class="si">{}</span><span class="s2">  |</span>
+<span class="c"> 54. </span><span class="s2">|      |      |      |      |</span>
+<span class="c"> 55. </span><span class="s2">+------+------+------+------+</span>
+<span class="c"> 56. </span><span class="s2">|      |      |      |      |</span>
+<span class="c"> 57. </span><span class="s2">|  </span><span class="si">{}</span><span class="s2">  |  </span><span class="si">{}</span><span class="s2">  |  </span><span class="si">{}</span><span class="s2">  |  </span><span class="si">{}</span><span class="s2">  |</span>
+<span class="c"> 58. </span><span class="s2">|      |      |      |      |</span>
+<span class="c"> 59. </span><span class="s2">+------+------+------+------+</span>
+<span class="c"> 60. </span><span class="s2">|      |      |      |      |</span>
+<span class="c"> 61. </span><span class="s2">|  </span><span class="si">{}</span><span class="s2">  |  </span><span class="si">{}</span><span class="s2">  |  </span><span class="si">{}</span><span class="s2">  |  </span><span class="si">{}</span><span class="s2">  |</span>
+<span class="c"> 62. </span><span class="s2">|      |      |      |      |</span>
+<span class="c"> 63. </span><span class="s2">+------+------+------+------+</span>
+<span class="c"> 64. </span><span class="s2">"""</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">labels</span><span class="p">)</span>
+<span class="c"> 65. </span>    <span class="nb">print</span><span class="p">(</span><span class="n">boardToDraw</span><span class="p">)</span>
+<span class="c"> 66. </span>
+<span class="c"> 67. </span>
+<span class="c"> 68. </span><span class="k">def</span> <span class="nf">findBlankSpace</span><span class="p">(</span><span class="n">board</span><span class="p">):</span>
+<span class="c"> 69. </span>    <span class="sd">"""Return an (x, y) tuple of the blank space's location."""</span>
+<span class="c"> 70. </span>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<span class="c"> 71. </span>        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<span class="c"> 72. </span>            <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'  '</span><span class="p">:</span>
+<span class="c"> 73. </span>                <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="c"> 74. </span>
+<span class="c"> 75. </span>
+<span class="c"> 76. </span><span class="k">def</span> <span class="nf">askForPlayerMove</span><span class="p">(</span><span class="n">board</span><span class="p">):</span>
+<span class="c"> 77. </span>    <span class="sd">"""Let the player select a tile to slide."""</span>
+<span class="c"> 78. </span>    <span class="n">blankx</span><span class="p">,</span> <span class="n">blanky</span> <span class="o">=</span> <span class="n">findBlankSpace</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
+<span class="c"> 79. </span>
+<span class="c"> 80. </span>    <span class="n">w</span> <span class="o">=</span> <span class="s1">'W'</span> <span class="k">if</span> <span class="n">blanky</span> <span class="o">!=</span> <span class="mi">3</span> <span class="k">else</span> <span class="s1">' '</span>
+<span class="c"> 81. </span>    <span class="n">a</span> <span class="o">=</span> <span class="s1">'A'</span> <span class="k">if</span> <span class="n">blankx</span> <span class="o">!=</span> <span class="mi">3</span> <span class="k">else</span> <span class="s1">' '</span>
+<span class="c"> 82. </span>    <span class="n">s</span> <span class="o">=</span> <span class="s1">'S'</span> <span class="k">if</span> <span class="n">blanky</span> <span class="o">!=</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">' '</span>
+<span class="c"> 83. </span>    <span class="n">d</span> <span class="o">=</span> <span class="s1">'D'</span> <span class="k">if</span> <span class="n">blankx</span> <span class="o">!=</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">' '</span>
+<span class="c"> 84. </span>
+<span class="c"> 85. </span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="c"> 86. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'                          (</span><span class="si">{}</span><span class="s1">)'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
+<span class="c"> 87. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'Enter WASD (or QUIT): (</span><span class="si">{}</span><span class="s1">) (</span><span class="si">{}</span><span class="s1">) (</span><span class="si">{}</span><span class="s1">)'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">d</span><span class="p">))</span>
+<span class="c"> 88. </span>
+<span class="c"> 89. </span>        <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'&gt; '</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="c"> 90. </span>        <span class="k">if</span> <span class="n">response</span> <span class="o">==</span> <span class="s1">'QUIT'</span><span class="p">:</span>
+<span class="c"> 91. </span>            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+<span class="c"> 92. </span>        <span class="k">if</span> <span class="n">response</span> <span class="ow">in</span> <span class="p">(</span><span class="n">w</span> <span class="o">+</span> <span class="n">a</span> <span class="o">+</span> <span class="n">s</span> <span class="o">+</span> <span class="n">d</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span> <span class="s1">''</span><span class="p">):</span>
+<span class="c"> 93. </span>            <span class="k">return</span> <span class="n">response</span>
+<span class="c"> 94. </span>
+<span class="c"> 95. </span>
+<span class="c"> 96. </span><span class="k">def</span> <span class="nf">makeMove</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">move</span><span class="p">):</span>
+<span class="c"> 97. </span>    <span class="sd">"""Carry out the given move on the given board."""</span>
+<span class="c"> 98. </span>    <span class="c1"># Note: This function assumes that the move is valid.</span>
+<span class="c"> 99. </span>    <span class="n">bx</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="n">findBlankSpace</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
+<span class="c">100. </span>
+<span class="c">101. </span>    <span class="k">if</span> <span class="n">move</span> <span class="o">==</span> <span class="s1">'W'</span><span class="p">:</span>
+<span class="c">102. </span>        <span class="n">board</span><span class="p">[</span><span class="n">bx</span><span class="p">][</span><span class="n">by</span><span class="p">],</span> <span class="n">board</span><span class="p">[</span><span class="n">bx</span><span class="p">][</span><span class="n">by</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">board</span><span class="p">[</span><span class="n">bx</span><span class="p">][</span><span class="n">by</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">board</span><span class="p">[</span><span class="n">bx</span><span class="p">][</span><span class="n">by</span><span class="p">]</span>
+<span class="c">103. </span>    <span class="k">elif</span> <span class="n">move</span> <span class="o">==</span> <span class="s1">'A'</span><span class="p">:</span>
+<span class="c">104. </span>        <span class="n">board</span><span class="p">[</span><span class="n">bx</span><span class="p">][</span><span class="n">by</span><span class="p">],</span> <span class="n">board</span><span class="p">[</span><span class="n">bx</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">by</span><span class="p">]</span> <span class="o">=</span> <span class="n">board</span><span class="p">[</span><span class="n">bx</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">by</span><span class="p">],</span> <span class="n">board</span><span class="p">[</span><span class="n">bx</span><span class="p">][</span><span class="n">by</span><span class="p">]</span>
+<span class="c">105. </span>    <span class="k">elif</span> <span class="n">move</span> <span class="o">==</span> <span class="s1">'S'</span><span class="p">:</span>
+<span class="c">106. </span>        <span class="n">board</span><span class="p">[</span><span class="n">bx</span><span class="p">][</span><span class="n">by</span><span class="p">],</span> <span class="n">board</span><span class="p">[</span><span class="n">bx</span><span class="p">][</span><span class="n">by</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">board</span><span class="p">[</span><span class="n">bx</span><span class="p">][</span><span class="n">by</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">board</span><span class="p">[</span><span class="n">bx</span><span class="p">][</span><span class="n">by</span><span class="p">]</span>
+<span class="c">107. </span>    <span class="k">elif</span> <span class="n">move</span> <span class="o">==</span> <span class="s1">'D'</span><span class="p">:</span>
+<span class="c">108. </span>        <span class="n">board</span><span class="p">[</span><span class="n">bx</span><span class="p">][</span><span class="n">by</span><span class="p">],</span> <span class="n">board</span><span class="p">[</span><span class="n">bx</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">by</span><span class="p">]</span> <span class="o">=</span> <span class="n">board</span><span class="p">[</span><span class="n">bx</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">by</span><span class="p">],</span> <span class="n">board</span><span class="p">[</span><span class="n">bx</span><span class="p">][</span><span class="n">by</span><span class="p">]</span>
+<span class="c">109. </span>
+<span class="c">110. </span>
+<span class="c">111. </span><span class="k">def</span> <span class="nf">makeRandomMove</span><span class="p">(</span><span class="n">board</span><span class="p">):</span>
+<span class="c">112. </span>    <span class="sd">"""Perform a slide in a random direction."""</span>
+<span class="c">113. </span>    <span class="n">blankx</span><span class="p">,</span> <span class="n">blanky</span> <span class="o">=</span> <span class="n">findBlankSpace</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
+<span class="c">114. </span>    <span class="n">validMoves</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c">115. </span>    <span class="k">if</span> <span class="n">blanky</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+<span class="c">116. </span>        <span class="n">validMoves</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'W'</span><span class="p">)</span>
+<span class="c">117. </span>    <span class="k">if</span> <span class="n">blankx</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+<span class="c">118. </span>        <span class="n">validMoves</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'A'</span><span class="p">)</span>
+<span class="c">119. </span>    <span class="k">if</span> <span class="n">blanky</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="c">120. </span>        <span class="n">validMoves</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'S'</span><span class="p">)</span>
+<span class="c">121. </span>    <span class="k">if</span> <span class="n">blankx</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="c">122. </span>        <span class="n">validMoves</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'D'</span><span class="p">)</span>
+<span class="c">123. </span>
+<span class="c">124. </span>    <span class="n">makeMove</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">validMoves</span><span class="p">))</span>
+<span class="c">125. </span>
+<span class="c">126. </span>
+<span class="c">127. </span><span class="k">def</span> <span class="nf">getNewPuzzle</span><span class="p">(</span><span class="n">moves</span><span class="o">=</span><span class="mi">200</span><span class="p">):</span>
+<span class="c">128. </span>    <span class="sd">"""Get a new puzzle by making random slides from a solved state."""</span>
+<span class="c">129. </span>    <span class="n">board</span> <span class="o">=</span> <span class="n">getNewBoard</span><span class="p">()</span>
+<span class="c">130. </span>
+<span class="c">131. </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">moves</span><span class="p">):</span>
+<span class="c">132. </span>        <span class="n">makeRandomMove</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
+<span class="c">133. </span>    <span class="k">return</span> <span class="n">board</span>
+<span class="c">134. </span>
+<span class="c">135. </span>
+<span class="c">136. </span><span class="c1"># If this program was run (instead of imported), run the game:</span>
+<span class="c">137. </span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<span class="c">138. </span>    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+<p class="calibre19">After entering the source code and running it a few
+ times, try making experimental changes to it. On your own, you can also
+ try to figure out how to do the following:</p>
+<ul class="calibre25">
+<li class="calibre8">Create a more difficult 5 × 5 variant of the sliding tile puzzle.</li>
+<li class="calibre8">Create a “solve automatically” mode, which saves 
+the current arrangement of the tiles and then attempts up to 40 random 
+moves and stops if they have solved the puzzle. Otherwise, the puzzle 
+loads the saved state and attempts another 40 random moves.</li>
+</ul>
+<h2 id="calibre_link-286" class="calibre5">Exploring the Program</h2>
+<p class="bodyfirst">Try to find the answers to the following questions.
+ Experiment with some modifications to the code and rerun the program to
+ see what effect the changes have.</p>
+<ol class="decimal">
+<li class="calibre8" value="1">What happens if you change <code class="calibre22">getNewPuzzle()</code> on line 22 to <code class="calibre22">getNewPuzzle(1)</code>?</li>
+<li class="calibre8" value="2">What happens if you change <code class="calibre22">getNewPuzzle()</code> on line 22 to <code class="calibre22">getNewPuzzle(0)</code>?</li>
+<li class="calibre8" value="3">What happens if you delete or comment out <code class="calibre22">sys.exit()</code> on line 31?</li>
+</ol>
+</section>
+</div>
+
+
+
+
+
+
+
+
+<a href="https://inventwithpython.com/bigbookpython/project67.html">Prev: Sine Message</a> | <a href="https://inventwithpython.com/bigbookpython/project69.html">Next: Snail Race</a>
+</body></html>

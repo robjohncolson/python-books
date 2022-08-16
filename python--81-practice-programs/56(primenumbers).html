@@ -1,0 +1,157 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="56(primenumbers)_files/style.css" rel="stylesheet" type="text/css"><link rel="stylesheet" type="text/css" href="56(primenumbers)_files/pygments.css"><title>Prime Numbers</title></head><body style="background-color: #fffeee;">
+
+<script type="text/javascript" async="" src="56(primenumbers)_files/ga.js"></script><script type="text/javascript">
+//<![CDATA[
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-5459430-3']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+//]]>
+</script>
+
+
+<div style="background-color: #eeeddd; float: right; height: 310px; font-family: sans-serif;" id="otherbooks">
+  <a href="#" onclick="document.getElementById('otherbooks').outerHTML='';" style="vertical-align: top;">(close)</a><br>
+
+  <a target="_blank" href="https://nostarch.com/automatestuff2" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_automate.link');"><img src="56(primenumbers)_files/cover_automate2_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/big-book-small-python-projects" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_bigbookpython.link');"><img src="56(primenumbers)_files/cover_bigbookpython_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/beyond-basic-stuff-python" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_beyond.link');"><img src="56(primenumbers)_files/cover_beyond_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/inventwithpython" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_invent.link');"><img src="56(primenumbers)_files/cover_invent4th_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://www.amazon.com/Making-Games-Python-Pygame-Sweigart/dp/1469901730?ie=UTF8&amp;tag=playwithpyth-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1469901730" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_pygame.link');"><img src="56(primenumbers)_files/cover_makinggames_thumb.webp" style="height: 200px; border: solid black 1px; /"></a>
+  <a target="_blank" href="https://nostarch.com/crackingcodes" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_hacking.link');"><img src="56(primenumbers)_files/cover_crackingcodes_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/scratchplayground"><img src="56(primenumbers)_files/cover_scratchprogrammingplayground_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/codingwithminecraft"><img src="56(primenumbers)_files/cover_codingwithminecraft_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <br>
+  <a href="https://inventwithpython.com/automateudemy">Use this link to get 70% off the Automate the Boring Stuff online video course.</a><br>
+  <a href="https://www.patreon.com/AlSweigart">Support me on Patreon</a>
+</div>
+
+<a href="https://inventwithpython.com/bigbookpython/project55.html">Prev: Powerball Lottery</a> | <a href="https://inventwithpython.com/bigbookpython/project57.html">Next: Progress Bar</a>
+
+
+
+
+
+<div type="bodymatter chapter" class="calibre1" id="calibre_link-29">
+<section class="toclist">
+<header class="calibre10">
+<h1 class="chapter">
+<span class="chapternumber">#56</span><br class="calibre14">
+<span class="chaptertitle">Prime Numbers</span></h1>
+</header>
+<figure class="opener">
+<img src="56(primenumbers)_files/000002.webp" alt="" class="calibre12">
+</figure>
+<p class="chapterintro">A <em class="calibre9">prime number</em> is a 
+number that is evenly divisible only by one and itself. Prime numbers 
+have a variety of practical applications, but no algorithm can predict 
+them; we must calculate them one at a time. However, we do know that 
+there is an infinite number of prime numbers to be discovered.</p>
+<p class="calibre18">This program finds prime numbers through 
+brute-force calculation. Its code is similar to Project 24, “Factor 
+Finder.” (Another way to describe a prime number is that one and the 
+number itself are its only factors.) You can find out more about prime 
+numbers from <a href="https://en.wikipedia.org/wiki/Prime_number" class="linkurl">https://en.wikipedia.org/wiki/Prime_number</a>.</p>
+<h2 id="calibre_link-237" class="calibre5">The Program in Action</h2>
+<p class="bodyfirst">When you run <em class="calibre9">primenumbers.py</em>, the output will look like this:</p>
+<pre class="calibre24"><code class="calibre22">Prime Numbers, by Al Sweigart al@inventwithpython.com
+<var class="calibre27">--snip--</var>
+Enter a number to start searching for primes from:
+(Try 0 or 1000000000000 (12 zeros) or another number.)
+&gt; <b class="calibre6">0</b>
+Press Ctrl-C at any time to quit. Press Enter to begin...
+2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 443, 449, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509, 521, 523, 541, 547, 557, 563, 569, 571, 577, 587, 593, 599, 601, 607, 613, 617, 619, 631, 641, 643, 647, <var class="calibre27">--snip--</var></code></pre>
+<h2 id="calibre_link-238" class="calibre5">How It Works</h2>
+<p class="bodyfirst">The <code class="calibre22">isPrime()</code> function accepts an integer and returns <code class="calibre22">True</code> if it is a prime number. Otherwise, it returns <code class="calibre22">False</code>. Project 24 is worth studying if you’re trying to understand this program. The <code class="calibre22">isPrime()</code> function essentially looks for any factors in the given number and returns <code class="calibre22">False</code> if it finds any.</p>
+<p class="calibre19">The algorithm in this program can quickly find 
+large prime numbers. The number one trillion has a mere 10 digits. But 
+to find prime numbers that are as big as a googol (a one followed by 100
+ zeros), you need to use an advanced algorithm such as the Rabin-Miller 
+primality test. Chapter 22 of my book <em class="calibre9">Cracking Codes with Python</em> (No Starch Press, 2018) has a Python implementation of this algorithm.</p>
+<div class="highlight"><pre><span></span>
+<span class="c"> 1. </span><span class="sd">"""Prime Numbers, by Al Sweigart al@inventwithpython.com</span>
+<span class="c"> 2. </span><span class="sd">Calculates prime numbers, which are numbers that are only evenly</span>
+<span class="c"> 3. </span><span class="sd">divisible by one and themselves. They are used in a variety of practical</span>
+<span class="c"> 4. </span><span class="sd">applications.</span>
+<span class="c"> 5. </span><span class="sd">More info at: https://en.wikipedia.org/wiki/Prime_number</span>
+<span class="c"> 6. </span><span class="sd">This code is available at https://nostarch.com/big-book-small-python-programming</span>
+<span class="c"> 7. </span><span class="sd">Tags: tiny, math, scrolling"""</span>
+<span class="c"> 8. </span>
+<span class="c"> 9. </span><span class="kn">import</span> <span class="nn">math</span><span class="o">,</span> <span class="nn">sys</span>
+<span class="c">10. </span>
+<span class="c">11. </span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="c">12. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'Prime Numbers, by Al Sweigart al@inventwithpython.com'</span><span class="p">)</span>
+<span class="c">13. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'Prime numbers are numbers that are only evenly divisible by'</span><span class="p">)</span>
+<span class="c">14. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'one and themselves. They are used in a variety of practical'</span><span class="p">)</span>
+<span class="c">15. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'applications, but cannot be predicted. They must be'</span><span class="p">)</span>
+<span class="c">16. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'calculated one at a time.'</span><span class="p">)</span>
+<span class="c">17. </span>    <span class="nb">print</span><span class="p">()</span>
+<span class="c">18. </span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="c">19. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'Enter a number to start searching for primes from:'</span><span class="p">)</span>
+<span class="c">20. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'(Try 0 or 1000000000000 (12 zeros) or another number.)'</span><span class="p">)</span>
+<span class="c">21. </span>        <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'&gt; '</span><span class="p">)</span>
+<span class="c">22. </span>        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">isdecimal</span><span class="p">():</span>
+<span class="c">23. </span>            <span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<span class="c">24. </span>            <span class="k">break</span>
+<span class="c">25. </span>
+<span class="c">26. </span>    <span class="nb">input</span><span class="p">(</span><span class="s1">'Press Ctrl-C at any time to quit. Press Enter to begin...'</span><span class="p">)</span>
+<span class="c">27. </span>
+<span class="c">28. </span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="c">29. </span>        <span class="c1"># Print out any prime numbers:</span>
+<span class="c">30. </span>        <span class="k">if</span> <span class="n">isPrime</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+<span class="c">31. </span>            <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="o">+</span> <span class="s1">', '</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c">32. </span>        <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># Go to the next number.</span>
+<span class="c">33. </span>
+<span class="c">34. </span>
+<span class="c">35. </span><span class="k">def</span> <span class="nf">isPrime</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+<span class="c">36. </span>    <span class="sd">"""Returns True if number is prime, otherwise returns False."""</span>
+<span class="c">37. </span>    <span class="c1"># Handle special cases:</span>
+<span class="c">38. </span>    <span class="k">if</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+<span class="c">39. </span>        <span class="k">return</span> <span class="kc">False</span>
+<span class="c">40. </span>    <span class="k">elif</span> <span class="n">number</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+<span class="c">41. </span>        <span class="k">return</span> <span class="kc">True</span>
+<span class="c">42. </span>
+<span class="c">43. </span>    <span class="c1"># Try to evenly divide number by all numbers from 2 up to number's</span>
+<span class="c">44. </span>    <span class="c1"># square root.</span>
+<span class="c">45. </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">number</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+<span class="c">46. </span>        <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="c">47. </span>            <span class="k">return</span> <span class="kc">False</span>
+<span class="c">48. </span>    <span class="k">return</span> <span class="kc">True</span>
+<span class="c">49. </span>
+<span class="c">50. </span>
+<span class="c">51. </span><span class="c1"># If this program was run (instead of imported), run the game:</span>
+<span class="c">52. </span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<span class="c">53. </span>    <span class="k">try</span><span class="p">:</span>
+<span class="c">54. </span>        <span class="n">main</span><span class="p">()</span>
+<span class="c">55. </span>    <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+<span class="c">56. </span>        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>  <span class="c1"># When Ctrl-C is pressed, end the program.</span>
+</pre></div>
+
+<h2 id="calibre_link-239" class="calibre5">Exploring the Program</h2>
+<p class="bodyfirst">Try to find the answers to the following questions.
+ Experiment with some modifications to the code and rerun the program to
+ see what effect the changes have.</p>
+<ol class="decimal">
+<li class="calibre8" value="1">What error do you get if you change <code class="calibre22">response.isdecimal()</code> on line 22 to <code class="calibre22">response</code> and enter a non-number for the number from which to start searching for primes?</li>
+<li class="calibre8" value="2">What happens if you change <code class="calibre22">number &lt; 2</code> on line 38 to <code class="calibre22">number &gt; 2</code>?</li>
+<li class="calibre8" value="3">What happens if you change <code class="calibre22">number % 1 == 0</code> on line 46 to <code class="calibre22">number % i != 0</code>?</li>
+</ol>
+</section>
+</div>
+
+
+
+
+
+
+
+
+<a href="https://inventwithpython.com/bigbookpython/project55.html">Prev: Powerball Lottery</a> | <a href="https://inventwithpython.com/bigbookpython/project57.html">Next: Progress Bar</a>
+</body></html>

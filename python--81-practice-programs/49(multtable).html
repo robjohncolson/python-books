@@ -1,0 +1,130 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="49(multtable)_files/style.css" rel="stylesheet" type="text/css"><link rel="stylesheet" type="text/css" href="49(multtable)_files/pygments.css"><title>Multiplication Table</title></head><body style="background-color: #fffeee;">
+
+<script type="text/javascript" async="" src="49(multtable)_files/ga.js"></script><script type="text/javascript">
+//<![CDATA[
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-5459430-3']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+//]]>
+</script>
+
+
+<div style="background-color: #eeeddd; float: right; height: 310px; font-family: sans-serif;" id="otherbooks">
+  <a href="#" onclick="document.getElementById('otherbooks').outerHTML='';" style="vertical-align: top;">(close)</a><br>
+
+  <a target="_blank" href="https://nostarch.com/automatestuff2" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_automate.link');"><img src="49(multtable)_files/cover_automate2_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/big-book-small-python-projects" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_bigbookpython.link');"><img src="49(multtable)_files/cover_bigbookpython_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/beyond-basic-stuff-python" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_beyond.link');"><img src="49(multtable)_files/cover_beyond_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/inventwithpython" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_invent.link');"><img src="49(multtable)_files/cover_invent4th_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://www.amazon.com/Making-Games-Python-Pygame-Sweigart/dp/1469901730?ie=UTF8&amp;tag=playwithpyth-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1469901730" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_pygame.link');"><img src="49(multtable)_files/cover_makinggames_thumb.webp" style="height: 200px; border: solid black 1px; /"></a>
+  <a target="_blank" href="https://nostarch.com/crackingcodes" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_hacking.link');"><img src="49(multtable)_files/cover_crackingcodes_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/scratchplayground"><img src="49(multtable)_files/cover_scratchprogrammingplayground_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/codingwithminecraft"><img src="49(multtable)_files/cover_codingwithminecraft_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <br>
+  <a href="https://inventwithpython.com/automateudemy">Use this link to get 70% off the Automate the Boring Stuff online video course.</a><br>
+  <a href="https://www.patreon.com/AlSweigart">Support me on Patreon</a>
+</div>
+
+<a href="https://inventwithpython.com/bigbookpython/project48.html">Prev: Monty Hall</a> | <a href="https://inventwithpython.com/bigbookpython/project50.html">Next: Ninety Nine Bottles</a>
+
+
+
+
+
+<div type="bodymatter chapter" class="calibre1" id="calibre_link-214">
+<section class="toclist">
+<header class="calibre10">
+<h1 class="chapter">
+<span class="chapternumber">#49</span><br class="calibre14">
+<span class="chaptertitle">Multiplication Table</span></h1>
+</header>
+<figure class="opener">
+<img src="49(multtable)_files/000002.webp" alt="" class="calibre12">
+</figure>
+<p class="chapterintro">This program generates a multiplication table 
+from 0 × 0 to 12 × 12. While simple, it provides a useful demonstration 
+of nested loops.</p>
+<h2 id="calibre_link-215" class="calibre5">The Program in Action</h2>
+<p class="bodyfirst">When you run <em class="calibre9">multiplicationtable.py</em>, the output will look like this:</p>
+<pre class="calibre24"><code class="calibre22">Multiplication Table, by Al Sweigart al@inventwithpython.com
+  |  0   1   2   3   4   5   6   7   8   9  10  11  12
+--+---------------------------------------------------
+ 0|  0   0   0   0   0   0   0   0   0   0   0   0   0
+ 1|  0   1   2   3   4   5   6   7   8   9  10  11  12
+ 2|  0   2   4   6   8  10  12  14  16  18  20  22  24
+ 3|  0   3   6   9  12  15  18  21  24  27  30  33  36
+ 4|  0   4   8  12  16  20  24  28  32  36  40  44  48
+ 5|  0   5  10  15  20  25  30  35  40  45  50  55  60
+ 6|  0   6  12  18  24  30  36  42  48  54  60  66  72
+ 7|  0   7  14  21  28  35  42  49  56  63  70  77  84
+ 8|  0   8  16  24  32  40  48  56  64  72  80  88  96
+ 9|  0   9  18  27  36  45  54  63  72  81  90  99 108
+10|  0  10  20  30  40  50  60  70  80  90 100 110 120
+11|  0  11  22  33  44  55  66  77  88  99 110 121 132
+12|  0  12  24  36  48  60  72  84  96 108 120 132 144</code></pre>
+<h2 id="calibre_link-216" class="calibre5">How It Works</h2>
+<p class="bodyfirst">Line 9 prints the top row of the table. Notice that
+ it sets a large enough distance between the numbers to accommodate 
+products that are a maximum of three digits long. Since this is a 12 × 
+12 multiplication table, this spacing can fit the largest product, 144. 
+If you want to create a larger table, you may need to increase the 
+spacing for the columns as well. Keep in mind that the standard terminal
+ window is 80 columns wide and 24 rows tall, so you cannot create much 
+larger multiplication tables without having the rows wrap around the 
+right edge of the window.</p>
+<div class="highlight"><pre><span></span>
+<span class="c"> 1. </span><span class="sd">"""Multiplication Table, by Al Sweigart al@inventwithpython.com</span>
+<span class="c"> 2. </span><span class="sd">Print a multiplication table.</span>
+<span class="c"> 3. </span><span class="sd">This code is available at https://nostarch.com/big-book-small-python-programming</span>
+<span class="c"> 4. </span><span class="sd">Tags: tiny, beginner, math"""</span>
+<span class="c"> 5. </span>
+<span class="c"> 6. </span><span class="nb">print</span><span class="p">(</span><span class="s1">'Multiplication Table, by Al Sweigart al@inventwithpython.com'</span><span class="p">)</span>
+<span class="c"> 7. </span>
+<span class="c"> 8. </span><span class="c1"># Print the horizontal number labels:</span>
+<span class="c"> 9. </span><span class="nb">print</span><span class="p">(</span><span class="s1">'  |  0   1   2   3   4   5   6   7   8   9  10  11  12'</span><span class="p">)</span>
+<span class="c">10. </span><span class="nb">print</span><span class="p">(</span><span class="s1">'--+---------------------------------------------------'</span><span class="p">)</span>
+<span class="c">11. </span>
+<span class="c">12. </span><span class="c1"># Display each row of products:</span>
+<span class="c">13. </span><span class="k">for</span> <span class="n">number1</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
+<span class="c">14. </span>
+<span class="c">15. </span>    <span class="c1"># Print the vertical numbers labels:</span>
+<span class="c">16. </span>    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">number1</span><span class="p">)</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+<span class="c">17. </span>
+<span class="c">18. </span>    <span class="c1"># Print a separating bar:</span>
+<span class="c">19. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'|'</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+<span class="c">20. </span>
+<span class="c">21. </span>    <span class="k">for</span> <span class="n">number2</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
+<span class="c">22. </span>        <span class="c1"># Print the product followed by a space:</span>
+<span class="c">23. </span>        <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">number1</span> <span class="o">*</span> <span class="n">number2</span><span class="p">)</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">' '</span><span class="p">)</span>
+<span class="c">24. </span>
+<span class="c">25. </span>    <span class="nb">print</span><span class="p">()</span>  <span class="c1"># Finish the row by printing a newline.</span>
+</pre></div>
+
+<h2 id="calibre_link-217" class="calibre5">Exploring the Program</h2>
+<p class="bodyfirst">Try to find the answers to the following questions.
+ Experiment with some modifications to the code and rerun the program to
+ see what effect the changes have.</p>
+<ol class="decimal">
+<li class="calibre8" value="1">What happens if you change <code class="calibre22">range(0, 13)</code> on line 13 to <code class="calibre22">range(0, 80)</code>?</li>
+<li class="calibre8" value="2">What happens if you change <code class="calibre22">range(0, 13)</code> on line 13 to <code class="calibre22">range(0, 100)</code>?</li>
+</ol>
+</section>
+</div>
+
+
+
+
+
+
+
+
+<a href="https://inventwithpython.com/bigbookpython/project48.html">Prev: Monty Hall</a> | <a href="https://inventwithpython.com/bigbookpython/project50.html">Next: Ninety Nine Bottles</a>
+</body></html>

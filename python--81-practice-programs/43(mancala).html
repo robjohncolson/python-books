@@ -1,0 +1,351 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="43(mancala)_files/style.css" rel="stylesheet" type="text/css"><link rel="stylesheet" type="text/css" href="43(mancala)_files/pygments.css"><title>Mancala</title></head><body style="background-color: #fffeee;">
+
+<script type="text/javascript" async="" src="43(mancala)_files/ga.js"></script><script type="text/javascript">
+//<![CDATA[
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-5459430-3']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+//]]>
+</script>
+
+
+<div style="background-color: #eeeddd; float: right; height: 310px; font-family: sans-serif;" id="otherbooks">
+  <a href="#" onclick="document.getElementById('otherbooks').outerHTML='';" style="vertical-align: top;">(close)</a><br>
+
+  <a target="_blank" href="https://nostarch.com/automatestuff2" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_automate.link');"><img src="43(mancala)_files/cover_automate2_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/big-book-small-python-projects" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_bigbookpython.link');"><img src="43(mancala)_files/cover_bigbookpython_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/beyond-basic-stuff-python" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_beyond.link');"><img src="43(mancala)_files/cover_beyond_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/inventwithpython" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_invent.link');"><img src="43(mancala)_files/cover_invent4th_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://www.amazon.com/Making-Games-Python-Pygame-Sweigart/dp/1469901730?ie=UTF8&amp;tag=playwithpyth-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1469901730" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_pygame.link');"><img src="43(mancala)_files/cover_makinggames_thumb.webp" style="height: 200px; border: solid black 1px; /"></a>
+  <a target="_blank" href="https://nostarch.com/crackingcodes" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_hacking.link');"><img src="43(mancala)_files/cover_crackingcodes_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/scratchplayground"><img src="43(mancala)_files/cover_scratchprogrammingplayground_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/codingwithminecraft"><img src="43(mancala)_files/cover_codingwithminecraft_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <br>
+  <a href="https://inventwithpython.com/automateudemy">Use this link to get 70% off the Automate the Boring Stuff online video course.</a><br>
+  <a href="https://www.patreon.com/AlSweigart">Support me on Patreon</a>
+</div>
+
+<a href="https://inventwithpython.com/bigbookpython/project42.html">Prev: Magic Fortune Ball</a> | <a href="https://inventwithpython.com/bigbookpython/project44.html">Next: Maze Runner 2D</a>
+
+
+
+
+
+<div type="bodymatter chapter" class="calibre1" id="calibre_link-190">
+<section class="toclist">
+<header class="calibre10">
+<h1 class="chapter">
+<span class="chapternumber">#43</span><br class="calibre14">
+<span class="chaptertitle">Mancala</span></h1>
+</header>
+<figure class="opener">
+<img src="43(mancala)_files/000002.webp" alt="" class="calibre12">
+</figure>
+<p class="chapterintro">The board game Mancala is at least 2,000 years 
+old, making it almost as old as Project 63, “Royal Game of Ur.” It is a 
+“seed-sowing” game in which two players select pockets of seeds to 
+spread across the other pockets on the board while trying to collect as 
+many in their store as possible. There are several variants of this game
+ across different cultures. The name comes from the Arab word <em class="calibre9">naqala</em>, meaning “to move.”</p>
+<p class="calibre18">To play, grab the seeds from a pit on your side of 
+the board and place one in each subsequent pit, going counterclockwise 
+and skipping your opponent’s store. If your last seed lands in an empty 
+pit of yours, move the opposite pit’s seeds into that pit. If the last 
+placed seed is in your store, you get a free turn.</p>
+<p class="calibre19">The game ends when all of one player’s pits are 
+empty. The other player claims the remaining seeds for their store, and 
+the winner is the one with the most seeds. More information about 
+Mancala and its variants can be found at <a href="https://en.wikipedia.org/wiki/Mancala" class="linkurl">https://en.wikipedia.org/wiki/Mancala</a>.</p>
+<h2 id="calibre_link-191" class="calibre5">The Program in Action</h2>
+<p class="bodyfirst">When you run <em class="calibre9">mancala.py</em>, the output will look like this:</p>
+<pre class="calibre24"><code class="calibre22">Mancala, by Al Sweigart al@inventwithpython.com
+<var class="calibre27">--snip--</var>
+
++------+------+--&lt;&lt;&lt;&lt;&lt;-Player 2----+------+------+------+
+2      |G     |H     |I     |J     |K     |L     |      1
+       |   4  |   4  |   4  |   4  |   4  |   4  |
+S      |      |      |      |      |      |      |      S
+T   0  +------+------+------+------+------+------+   0  T
+O      |A     |B     |C     |D     |E     |F     |      O
+R      |   4  |   4  |   4  |   4  |   4  |   4  |      R
+E      |      |      |      |      |      |      |      E
++------+------+------+-Player 1-&gt;&gt;&gt;&gt;&gt;-----+------+------+
+
+
+Player 1, choose move: A-F (or QUIT)
+&gt; <b class="calibre6">f</b>
+
++------+------+--&lt;&lt;&lt;&lt;&lt;-Player 2----+------+------+------+
+2      |G     |H     |I     |J     |K     |L     |      1
+       |   4  |   4  |   4  |   5  |   5  |   5  |
+S      |      |      |      |      |      |      |      S
+T   0  +------+------+------+------+------+------+   1  T
+O      |A     |B     |C     |D     |E     |F     |      O
+R      |   4  |   4  |   4  |   4  |   4  |   0  |      R
+E      |      |      |      |      |      |      |      E
++------+------+------+-Player 1-&gt;&gt;&gt;&gt;&gt;-----+------+------+
+Player 2, choose move: G-L (or QUIT)
+<var class="calibre27">--snip--</var></code></pre>
+<h2 id="calibre_link-192" class="calibre5">How It Works</h2>
+<p class="bodyfirst">Mancala uses ASCII art to display the board. Notice
+ that each pocket needs to have not only the number of seeds in it but a
+ label as well. To avoid confusion, the labels use the letters <var class="calibre26">A</var> through <var class="calibre26">L</var> so they won’t be mistaken for the number of seeds in each pocket. The dictionaries <code class="calibre22">NEXT_PIT</code> and <code class="calibre22">OPPOSITE_PIT</code> map the letter of one pocket to the letter of the pit next to or opposite it, respectively. This lets the expression <code class="calibre22">NEXT_PIT['A']</code> evaluate to <code class="calibre22">'B'</code> and the expression <code class="calibre22">OPPOSITE_PIT['A']</code> evaluate to <code class="calibre22">'G'</code>. Pay attention to how the code uses these dictionaries. Without them, our Mancala program would require long series of <code class="calibre22">if</code> and <code class="calibre22">elif</code> statements to carry out the same game steps.</p>
+<div class="highlight"><pre><span></span>
+<span class="c">  1. </span><span class="sd">"""Mancala, by Al Sweigart al@inventwithpython.com</span>
+<span class="c">  2. </span><span class="sd">The ancient seed-sowing game.</span>
+<span class="c">  3. </span><span class="sd">This code is available at https://nostarch.com/big-book-small-python-programming</span>
+<span class="c">  4. </span><span class="sd">Tags: large, board game, game, two-player"""</span>
+<span class="c">  5. </span>
+<span class="c">  6. </span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="c">  7. </span>
+<span class="c">  8. </span><span class="c1"># A tuple of the player's pits:</span>
+<span class="c">  9. </span><span class="n">PLAYER_1_PITS</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'A'</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">,</span> <span class="s1">'C'</span><span class="p">,</span> <span class="s1">'D'</span><span class="p">,</span> <span class="s1">'E'</span><span class="p">,</span> <span class="s1">'F'</span><span class="p">)</span>
+<span class="c"> 10. </span><span class="n">PLAYER_2_PITS</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'G'</span><span class="p">,</span> <span class="s1">'H'</span><span class="p">,</span> <span class="s1">'I'</span><span class="p">,</span> <span class="s1">'J'</span><span class="p">,</span> <span class="s1">'K'</span><span class="p">,</span> <span class="s1">'L'</span><span class="p">)</span>
+<span class="c"> 11. </span>
+<span class="c"> 12. </span><span class="c1"># A dictionary whose keys are pits and values are opposite pit:</span>
+<span class="c"> 13. </span><span class="n">OPPOSITE_PIT</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'A'</span><span class="p">:</span> <span class="s1">'G'</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">:</span> <span class="s1">'H'</span><span class="p">,</span> <span class="s1">'C'</span><span class="p">:</span> <span class="s1">'I'</span><span class="p">,</span> <span class="s1">'D'</span><span class="p">:</span> <span class="s1">'J'</span><span class="p">,</span> <span class="s1">'E'</span><span class="p">:</span> <span class="s1">'K'</span><span class="p">,</span>
+<span class="c"> 14. </span>                   <span class="s1">'F'</span><span class="p">:</span> <span class="s1">'L'</span><span class="p">,</span> <span class="s1">'G'</span><span class="p">:</span> <span class="s1">'A'</span><span class="p">,</span> <span class="s1">'H'</span><span class="p">:</span> <span class="s1">'B'</span><span class="p">,</span> <span class="s1">'I'</span><span class="p">:</span> <span class="s1">'C'</span><span class="p">,</span> <span class="s1">'J'</span><span class="p">:</span> <span class="s1">'D'</span><span class="p">,</span>
+<span class="c"> 15. </span>                   <span class="s1">'K'</span><span class="p">:</span> <span class="s1">'E'</span><span class="p">,</span> <span class="s1">'L'</span><span class="p">:</span> <span class="s1">'F'</span><span class="p">}</span>
+<span class="c"> 16. </span>
+<span class="c"> 17. </span><span class="c1"># A dictionary whose keys are pits and values are the next pit in order:</span>
+<span class="c"> 18. </span><span class="n">NEXT_PIT</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'A'</span><span class="p">:</span> <span class="s1">'B'</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">:</span> <span class="s1">'C'</span><span class="p">,</span> <span class="s1">'C'</span><span class="p">:</span> <span class="s1">'D'</span><span class="p">,</span> <span class="s1">'D'</span><span class="p">:</span> <span class="s1">'E'</span><span class="p">,</span> <span class="s1">'E'</span><span class="p">:</span> <span class="s1">'F'</span><span class="p">,</span> <span class="s1">'F'</span><span class="p">:</span> <span class="s1">'1'</span><span class="p">,</span>
+<span class="c"> 19. </span>            <span class="s1">'1'</span><span class="p">:</span> <span class="s1">'L'</span><span class="p">,</span> <span class="s1">'L'</span><span class="p">:</span> <span class="s1">'K'</span><span class="p">,</span> <span class="s1">'K'</span><span class="p">:</span> <span class="s1">'J'</span><span class="p">,</span> <span class="s1">'J'</span><span class="p">:</span> <span class="s1">'I'</span><span class="p">,</span> <span class="s1">'I'</span><span class="p">:</span> <span class="s1">'H'</span><span class="p">,</span> <span class="s1">'H'</span><span class="p">:</span> <span class="s1">'G'</span><span class="p">,</span>
+<span class="c"> 20. </span>            <span class="s1">'G'</span><span class="p">:</span> <span class="s1">'2'</span><span class="p">,</span> <span class="s1">'2'</span><span class="p">:</span> <span class="s1">'A'</span><span class="p">}</span>
+<span class="c"> 21. </span>
+<span class="c"> 22. </span><span class="c1"># Every pit label, in counterclockwise order starting with A:</span>
+<span class="c"> 23. </span><span class="n">PIT_LABELS</span> <span class="o">=</span> <span class="s1">'ABCDEF1LKJIHG2'</span>
+<span class="c"> 24. </span>
+<span class="c"> 25. </span><span class="c1"># How many seeds are in each pit at the start of a new game:</span>
+<span class="c"> 26. </span><span class="n">STARTING_NUMBER_OF_SEEDS</span> <span class="o">=</span> <span class="mi">4</span>  <span class="c1"># (!) Try changing this to 1 or 10.</span>
+<span class="c"> 27. </span>
+<span class="c"> 28. </span>
+<span class="c"> 29. </span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="c"> 30. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'''Mancala, by Al Sweigart al@inventwithpython.com</span>
+<span class="c"> 31. </span>
+<span class="c"> 32. </span><span class="s1">The ancient two-player, seed-sowing game. Grab the seeds from a pit on</span>
+<span class="c"> 33. </span><span class="s1">your side and place one in each following pit, going counterclockwise</span>
+<span class="c"> 34. </span><span class="s1">and skipping your opponent's store. If your last seed lands in an empty</span>
+<span class="c"> 35. </span><span class="s1">pit of yours, move the opposite pit's seeds into your store. The</span>
+<span class="c"> 36. </span><span class="s1">goal is to get the most seeds in your store on the side of the board.</span>
+<span class="c"> 37. </span><span class="s1">If the last placed seed is in your store, you get a free turn.</span>
+<span class="c"> 38. </span>
+<span class="c"> 39. </span><span class="s1">The game ends when all of one player's pits are empty. The other player</span>
+<span class="c"> 40. </span><span class="s1">claims the remaining seeds for their store, and the winner is the one</span>
+<span class="c"> 41. </span><span class="s1">with the most seeds.</span>
+<span class="c"> 42. </span>
+<span class="c"> 43. </span><span class="s1">More info at https://en.wikipedia.org/wiki/Mancala</span>
+<span class="c"> 44. </span><span class="s1">'''</span><span class="p">)</span>
+<span class="c"> 45. </span>    <span class="nb">input</span><span class="p">(</span><span class="s1">'Press Enter to begin...'</span><span class="p">)</span>
+<span class="c"> 46. </span>
+<span class="c"> 47. </span>    <span class="n">gameBoard</span> <span class="o">=</span> <span class="n">getNewBoard</span><span class="p">()</span>
+<span class="c"> 48. </span>    <span class="n">playerTurn</span> <span class="o">=</span> <span class="s1">'1'</span>  <span class="c1"># Player 1 goes first.</span>
+<span class="c"> 49. </span>
+<span class="c"> 50. </span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>  <span class="c1"># Run a player's turn.</span>
+<span class="c"> 51. </span>        <span class="c1"># "Clear" the screen by printing many newlines, so the old</span>
+<span class="c"> 52. </span>        <span class="c1"># board isn't visible anymore.</span>
+<span class="c"> 53. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+<span class="c"> 54. </span>        <span class="c1"># Display board and get the player's move:</span>
+<span class="c"> 55. </span>        <span class="n">displayBoard</span><span class="p">(</span><span class="n">gameBoard</span><span class="p">)</span>
+<span class="c"> 56. </span>        <span class="n">playerMove</span> <span class="o">=</span> <span class="n">askForPlayerMove</span><span class="p">(</span><span class="n">playerTurn</span><span class="p">,</span> <span class="n">gameBoard</span><span class="p">)</span>
+<span class="c"> 57. </span>
+<span class="c"> 58. </span>        <span class="c1"># Carry out the player's move:</span>
+<span class="c"> 59. </span>        <span class="n">playerTurn</span> <span class="o">=</span> <span class="n">makeMove</span><span class="p">(</span><span class="n">gameBoard</span><span class="p">,</span> <span class="n">playerTurn</span><span class="p">,</span> <span class="n">playerMove</span><span class="p">)</span>
+<span class="c"> 60. </span>
+<span class="c"> 61. </span>        <span class="c1"># Check if the game ended and a player has won:</span>
+<span class="c"> 62. </span>        <span class="n">winner</span> <span class="o">=</span> <span class="n">checkForWinner</span><span class="p">(</span><span class="n">gameBoard</span><span class="p">)</span>
+<span class="c"> 63. </span>        <span class="k">if</span> <span class="n">winner</span> <span class="o">==</span> <span class="s1">'1'</span> <span class="ow">or</span> <span class="n">winner</span> <span class="o">==</span> <span class="s1">'2'</span><span class="p">:</span>
+<span class="c"> 64. </span>            <span class="n">displayBoard</span><span class="p">(</span><span class="n">gameBoard</span><span class="p">)</span>  <span class="c1"># Display the board one last time.</span>
+<span class="c"> 65. </span>            <span class="nb">print</span><span class="p">(</span><span class="s1">'Player '</span> <span class="o">+</span> <span class="n">winner</span> <span class="o">+</span> <span class="s1">' has won!'</span><span class="p">)</span>
+<span class="c"> 66. </span>            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+<span class="c"> 67. </span>        <span class="k">elif</span> <span class="n">winner</span> <span class="o">==</span> <span class="s1">'tie'</span><span class="p">:</span>
+<span class="c"> 68. </span>            <span class="n">displayBoard</span><span class="p">(</span><span class="n">gameBoard</span><span class="p">)</span>  <span class="c1"># Display the board one last time.</span>
+<span class="c"> 69. </span>            <span class="nb">print</span><span class="p">(</span><span class="s1">'There is a tie!'</span><span class="p">)</span>
+<span class="c"> 70. </span>            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+<span class="c"> 71. </span>
+<span class="c"> 72. </span>
+<span class="c"> 73. </span><span class="k">def</span> <span class="nf">getNewBoard</span><span class="p">():</span>
+<span class="c"> 74. </span>    <span class="sd">"""Return a dictionary representing a Mancala board in the starting</span>
+<span class="c"> 75. </span><span class="sd">    state: 4 seeds in each pit and 0 in the stores."""</span>
+<span class="c"> 76. </span>
+<span class="c"> 77. </span>    <span class="c1"># Syntactic sugar - Use a shorter variable name:</span>
+<span class="c"> 78. </span>    <span class="n">s</span> <span class="o">=</span> <span class="n">STARTING_NUMBER_OF_SEEDS</span>
+<span class="c"> 79. </span>
+<span class="c"> 80. </span>    <span class="c1"># Create the data structure for the board, with 0 seeds in the</span>
+<span class="c"> 81. </span>    <span class="c1"># stores and the starting number of seeds in the pits:</span>
+<span class="c"> 82. </span>    <span class="k">return</span> <span class="p">{</span><span class="s1">'1'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'2'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'A'</span><span class="p">:</span> <span class="n">s</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">:</span> <span class="n">s</span><span class="p">,</span> <span class="s1">'C'</span><span class="p">:</span> <span class="n">s</span><span class="p">,</span> <span class="s1">'D'</span><span class="p">:</span> <span class="n">s</span><span class="p">,</span> <span class="s1">'E'</span><span class="p">:</span> <span class="n">s</span><span class="p">,</span>
+<span class="c"> 83. </span>            <span class="s1">'F'</span><span class="p">:</span> <span class="n">s</span><span class="p">,</span> <span class="s1">'G'</span><span class="p">:</span> <span class="n">s</span><span class="p">,</span> <span class="s1">'H'</span><span class="p">:</span> <span class="n">s</span><span class="p">,</span> <span class="s1">'I'</span><span class="p">:</span> <span class="n">s</span><span class="p">,</span> <span class="s1">'J'</span><span class="p">:</span> <span class="n">s</span><span class="p">,</span> <span class="s1">'K'</span><span class="p">:</span> <span class="n">s</span><span class="p">,</span> <span class="s1">'L'</span><span class="p">:</span> <span class="n">s</span><span class="p">}</span>
+<span class="c"> 84. </span>
+<span class="c"> 85. </span>
+<span class="c"> 86. </span><span class="k">def</span> <span class="nf">displayBoard</span><span class="p">(</span><span class="n">board</span><span class="p">):</span>
+<span class="c"> 87. </span>    <span class="sd">"""Displays the game board as ASCII-art based on the board</span>
+<span class="c"> 88. </span><span class="sd">    dictionary."""</span>
+<span class="c"> 89. </span>
+<span class="c"> 90. </span>    <span class="n">seedAmounts</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c"> 91. </span>    <span class="c1"># This 'GHIJKL21ABCDEF' string is the order of the pits left to</span>
+<span class="c"> 92. </span>    <span class="c1"># right and top to bottom:</span>
+<span class="c"> 93. </span>    <span class="k">for</span> <span class="n">pit</span> <span class="ow">in</span> <span class="s1">'GHIJKL21ABCDEF'</span><span class="p">:</span>
+<span class="c"> 94. </span>        <span class="n">numSeedsInThisPit</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">pit</span><span class="p">])</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="c"> 95. </span>        <span class="n">seedAmounts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">numSeedsInThisPit</span><span class="p">)</span>
+<span class="c"> 96. </span>
+<span class="c"> 97. </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">"""</span>
+<span class="c"> 98. </span><span class="s2">+------+------+--&lt;&lt;&lt;&lt;&lt;-Player 2----+------+------+------+</span>
+<span class="c"> 99. </span><span class="s2">2      |G     |H     |I     |J     |K     |L     |      1</span>
+<span class="c">100. </span><span class="s2">       |  </span><span class="si">{}</span><span class="s2">  |  </span><span class="si">{}</span><span class="s2">  |  </span><span class="si">{}</span><span class="s2">  |  </span><span class="si">{}</span><span class="s2">  |  </span><span class="si">{}</span><span class="s2">  |  </span><span class="si">{}</span><span class="s2">  |</span>
+<span class="c">101. </span><span class="s2">S      |      |      |      |      |      |      |      S</span>
+<span class="c">102. </span><span class="s2">T  </span><span class="si">{}</span><span class="s2">  +------+------+------+------+------+------+  </span><span class="si">{}</span><span class="s2">  T</span>
+<span class="c">103. </span><span class="s2">O      |A     |B     |C     |D     |E     |F     |      O</span>
+<span class="c">104. </span><span class="s2">R      |  </span><span class="si">{}</span><span class="s2">  |  </span><span class="si">{}</span><span class="s2">  |  </span><span class="si">{}</span><span class="s2">  |  </span><span class="si">{}</span><span class="s2">  |  </span><span class="si">{}</span><span class="s2">  |  </span><span class="si">{}</span><span class="s2">  |      R</span>
+<span class="c">105. </span><span class="s2">E      |      |      |      |      |      |      |      E</span>
+<span class="c">106. </span><span class="s2">+------+------+------+-Player 1-&gt;&gt;&gt;&gt;&gt;-----+------+------+</span>
+<span class="c">107. </span>
+<span class="c">108. </span><span class="s2">"""</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">seedAmounts</span><span class="p">))</span>
+<span class="c">109. </span>
+<span class="c">110. </span>
+<span class="c">111. </span><span class="k">def</span> <span class="nf">askForPlayerMove</span><span class="p">(</span><span class="n">playerTurn</span><span class="p">,</span> <span class="n">board</span><span class="p">):</span>
+<span class="c">112. </span>    <span class="sd">"""Asks the player which pit on their side of the board they</span>
+<span class="c">113. </span><span class="sd">    select to sow seeds from. Returns the uppercase letter label of the</span>
+<span class="c">114. </span><span class="sd">    selected pit as a string."""</span>
+<span class="c">115. </span>
+<span class="c">116. </span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>  <span class="c1"># Keep asking the player until they enter a valid move.</span>
+<span class="c">117. </span>        <span class="c1"># Ask the player to select a pit on their side:</span>
+<span class="c">118. </span>        <span class="k">if</span> <span class="n">playerTurn</span> <span class="o">==</span> <span class="s1">'1'</span><span class="p">:</span>
+<span class="c">119. </span>            <span class="nb">print</span><span class="p">(</span><span class="s1">'Player 1, choose move: A-F (or QUIT)'</span><span class="p">)</span>
+<span class="c">120. </span>        <span class="k">elif</span> <span class="n">playerTurn</span> <span class="o">==</span> <span class="s1">'2'</span><span class="p">:</span>
+<span class="c">121. </span>            <span class="nb">print</span><span class="p">(</span><span class="s1">'Player 2, choose move: G-L (or QUIT)'</span><span class="p">)</span>
+<span class="c">122. </span>        <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'&gt; '</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="c">123. </span>
+<span class="c">124. </span>        <span class="c1"># Check if the player wants to quit:</span>
+<span class="c">125. </span>        <span class="k">if</span> <span class="n">response</span> <span class="o">==</span> <span class="s1">'QUIT'</span><span class="p">:</span>
+<span class="c">126. </span>            <span class="nb">print</span><span class="p">(</span><span class="s1">'Thanks for playing!'</span><span class="p">)</span>
+<span class="c">127. </span>            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+<span class="c">128. </span>
+<span class="c">129. </span>        <span class="c1"># Make sure it is a valid pit to select:</span>
+<span class="c">130. </span>        <span class="k">if</span> <span class="p">(</span><span class="n">playerTurn</span> <span class="o">==</span> <span class="s1">'1'</span> <span class="ow">and</span> <span class="n">response</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">PLAYER_1_PITS</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
+<span class="c">131. </span>            <span class="n">playerTurn</span> <span class="o">==</span> <span class="s1">'2'</span> <span class="ow">and</span> <span class="n">response</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">PLAYER_2_PITS</span>
+<span class="c">132. </span>        <span class="p">):</span>
+<span class="c">133. </span>            <span class="nb">print</span><span class="p">(</span><span class="s1">'Please pick a letter on your side of the board.'</span><span class="p">)</span>
+<span class="c">134. </span>            <span class="k">continue</span>  <span class="c1"># Ask player again for their move.</span>
+<span class="c">135. </span>        <span class="k">if</span> <span class="n">board</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="c">136. </span>            <span class="nb">print</span><span class="p">(</span><span class="s1">'Please pick a non-empty pit.'</span><span class="p">)</span>
+<span class="c">137. </span>            <span class="k">continue</span>  <span class="c1"># Ask player again for their move.</span>
+<span class="c">138. </span>        <span class="k">return</span> <span class="n">response</span>
+<span class="c">139. </span>
+<span class="c">140. </span>
+<span class="c">141. </span><span class="k">def</span> <span class="nf">makeMove</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">playerTurn</span><span class="p">,</span> <span class="n">pit</span><span class="p">):</span>
+<span class="c">142. </span>    <span class="sd">"""Modify the board data structure so that the player 1 or 2 in</span>
+<span class="c">143. </span><span class="sd">    turn selected pit as their pit to sow seeds from. Returns either</span>
+<span class="c">144. </span><span class="sd">    '1' or '2' for whose turn it is next."""</span>
+<span class="c">145. </span>
+<span class="c">146. </span>    <span class="n">seedsToSow</span> <span class="o">=</span> <span class="n">board</span><span class="p">[</span><span class="n">pit</span><span class="p">]</span>  <span class="c1"># Get number of seeds from selected pit.</span>
+<span class="c">147. </span>    <span class="n">board</span><span class="p">[</span><span class="n">pit</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Empty out the selected pit.</span>
+<span class="c">148. </span>
+<span class="c">149. </span>    <span class="k">while</span> <span class="n">seedsToSow</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># Continue sowing until we have no more seeds.</span>
+<span class="c">150. </span>        <span class="n">pit</span> <span class="o">=</span> <span class="n">NEXT_PIT</span><span class="p">[</span><span class="n">pit</span><span class="p">]</span>  <span class="c1"># Move on to the next pit.</span>
+<span class="c">151. </span>        <span class="k">if</span> <span class="p">(</span><span class="n">playerTurn</span> <span class="o">==</span> <span class="s1">'1'</span> <span class="ow">and</span> <span class="n">pit</span> <span class="o">==</span> <span class="s1">'2'</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
+<span class="c">152. </span>            <span class="n">playerTurn</span> <span class="o">==</span> <span class="s1">'2'</span> <span class="ow">and</span> <span class="n">pit</span> <span class="o">==</span> <span class="s1">'1'</span>
+<span class="c">153. </span>        <span class="p">):</span>
+<span class="c">154. </span>            <span class="k">continue</span>  <span class="c1"># Skip opponent's store.</span>
+<span class="c">155. </span>        <span class="n">board</span><span class="p">[</span><span class="n">pit</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="c">156. </span>        <span class="n">seedsToSow</span> <span class="o">-=</span> <span class="mi">1</span>
+<span class="c">157. </span>
+<span class="c">158. </span>    <span class="c1"># If the last seed went into the player's store, they go again.</span>
+<span class="c">159. </span>    <span class="k">if</span> <span class="p">(</span><span class="n">pit</span> <span class="o">==</span> <span class="n">playerTurn</span> <span class="o">==</span> <span class="s1">'1'</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">pit</span> <span class="o">==</span> <span class="n">playerTurn</span> <span class="o">==</span> <span class="s1">'2'</span><span class="p">):</span>
+<span class="c">160. </span>        <span class="c1"># The last seed landed in the player's store; take another turn.</span>
+<span class="c">161. </span>        <span class="k">return</span> <span class="n">playerTurn</span>
+<span class="c">162. </span>
+<span class="c">163. </span>    <span class="c1"># Check if last seed was in an empty pit; take opposite pit's seeds.</span>
+<span class="c">164. </span>    <span class="k">if</span> <span class="n">playerTurn</span> <span class="o">==</span> <span class="s1">'1'</span> <span class="ow">and</span> <span class="n">pit</span> <span class="ow">in</span> <span class="n">PLAYER_1_PITS</span> <span class="ow">and</span> <span class="n">board</span><span class="p">[</span><span class="n">pit</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="c">165. </span>        <span class="n">oppositePit</span> <span class="o">=</span> <span class="n">OPPOSITE_PIT</span><span class="p">[</span><span class="n">pit</span><span class="p">]</span>
+<span class="c">166. </span>        <span class="n">board</span><span class="p">[</span><span class="s1">'1'</span><span class="p">]</span> <span class="o">+=</span> <span class="n">board</span><span class="p">[</span><span class="n">oppositePit</span><span class="p">]</span>
+<span class="c">167. </span>        <span class="n">board</span><span class="p">[</span><span class="n">oppositePit</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c">168. </span>    <span class="k">elif</span> <span class="n">playerTurn</span> <span class="o">==</span> <span class="s1">'2'</span> <span class="ow">and</span> <span class="n">pit</span> <span class="ow">in</span> <span class="n">PLAYER_2_PITS</span> <span class="ow">and</span> <span class="n">board</span><span class="p">[</span><span class="n">pit</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="c">169. </span>        <span class="n">oppositePit</span> <span class="o">=</span> <span class="n">OPPOSITE_PIT</span><span class="p">[</span><span class="n">pit</span><span class="p">]</span>
+<span class="c">170. </span>        <span class="n">board</span><span class="p">[</span><span class="s1">'2'</span><span class="p">]</span> <span class="o">+=</span> <span class="n">board</span><span class="p">[</span><span class="n">oppositePit</span><span class="p">]</span>
+<span class="c">171. </span>        <span class="n">board</span><span class="p">[</span><span class="n">oppositePit</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c">172. </span>
+<span class="c">173. </span>    <span class="c1"># Return the other player as the next player:</span>
+<span class="c">174. </span>    <span class="k">if</span> <span class="n">playerTurn</span> <span class="o">==</span> <span class="s1">'1'</span><span class="p">:</span>
+<span class="c">175. </span>        <span class="k">return</span> <span class="s1">'2'</span>
+<span class="c">176. </span>    <span class="k">elif</span> <span class="n">playerTurn</span> <span class="o">==</span> <span class="s1">'2'</span><span class="p">:</span>
+<span class="c">177. </span>        <span class="k">return</span> <span class="s1">'1'</span>
+<span class="c">178. </span>
+<span class="c">179. </span>
+<span class="c">180. </span><span class="k">def</span> <span class="nf">checkForWinner</span><span class="p">(</span><span class="n">board</span><span class="p">):</span>
+<span class="c">181. </span>    <span class="sd">"""Looks at board and returns either '1' or '2' if there is a</span>
+<span class="c">182. </span><span class="sd">    winner or 'tie' or 'no winner' if there isn't. The game ends when a</span>
+<span class="c">183. </span><span class="sd">    player's pits are all empty; the other player claims the remaining</span>
+<span class="c">184. </span><span class="sd">    seeds for their store. The winner is whoever has the most seeds."""</span>
+<span class="c">185. </span>
+<span class="c">186. </span>    <span class="n">player1Total</span> <span class="o">=</span> <span class="n">board</span><span class="p">[</span><span class="s1">'A'</span><span class="p">]</span> <span class="o">+</span> <span class="n">board</span><span class="p">[</span><span class="s1">'B'</span><span class="p">]</span> <span class="o">+</span> <span class="n">board</span><span class="p">[</span><span class="s1">'C'</span><span class="p">]</span>
+<span class="c">187. </span>    <span class="n">player1Total</span> <span class="o">+=</span> <span class="n">board</span><span class="p">[</span><span class="s1">'D'</span><span class="p">]</span> <span class="o">+</span> <span class="n">board</span><span class="p">[</span><span class="s1">'E'</span><span class="p">]</span> <span class="o">+</span> <span class="n">board</span><span class="p">[</span><span class="s1">'F'</span><span class="p">]</span>
+<span class="c">188. </span>    <span class="n">player2Total</span> <span class="o">=</span> <span class="n">board</span><span class="p">[</span><span class="s1">'G'</span><span class="p">]</span> <span class="o">+</span> <span class="n">board</span><span class="p">[</span><span class="s1">'H'</span><span class="p">]</span> <span class="o">+</span> <span class="n">board</span><span class="p">[</span><span class="s1">'I'</span><span class="p">]</span>
+<span class="c">189. </span>    <span class="n">player2Total</span> <span class="o">+=</span> <span class="n">board</span><span class="p">[</span><span class="s1">'J'</span><span class="p">]</span> <span class="o">+</span> <span class="n">board</span><span class="p">[</span><span class="s1">'K'</span><span class="p">]</span> <span class="o">+</span> <span class="n">board</span><span class="p">[</span><span class="s1">'L'</span><span class="p">]</span>
+<span class="c">190. </span>
+<span class="c">191. </span>    <span class="k">if</span> <span class="n">player1Total</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="c">192. </span>        <span class="c1"># Player 2 gets all the remaining seeds on their side:</span>
+<span class="c">193. </span>        <span class="n">board</span><span class="p">[</span><span class="s1">'2'</span><span class="p">]</span> <span class="o">+=</span> <span class="n">player2Total</span>
+<span class="c">194. </span>        <span class="k">for</span> <span class="n">pit</span> <span class="ow">in</span> <span class="n">PLAYER_2_PITS</span><span class="p">:</span>
+<span class="c">195. </span>            <span class="n">board</span><span class="p">[</span><span class="n">pit</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Set all pits to 0.</span>
+<span class="c">196. </span>    <span class="k">elif</span> <span class="n">player2Total</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="c">197. </span>        <span class="c1"># Player 1 gets all the remaining seeds on their side:</span>
+<span class="c">198. </span>        <span class="n">board</span><span class="p">[</span><span class="s1">'1'</span><span class="p">]</span> <span class="o">+=</span> <span class="n">player1Total</span>
+<span class="c">199. </span>        <span class="k">for</span> <span class="n">pit</span> <span class="ow">in</span> <span class="n">PLAYER_1_PITS</span><span class="p">:</span>
+<span class="c">200. </span>            <span class="n">board</span><span class="p">[</span><span class="n">pit</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Set all pits to 0.</span>
+<span class="c">201. </span>    <span class="k">else</span><span class="p">:</span>
+<span class="c">202. </span>        <span class="k">return</span> <span class="s1">'no winner'</span>  <span class="c1"># No one has won yet.</span>
+<span class="c">203. </span>
+<span class="c">204. </span>    <span class="c1"># Game is over, find player with largest score.</span>
+<span class="c">205. </span>    <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="s1">'1'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">board</span><span class="p">[</span><span class="s1">'2'</span><span class="p">]:</span>
+<span class="c">206. </span>        <span class="k">return</span> <span class="s1">'1'</span>
+<span class="c">207. </span>    <span class="k">elif</span> <span class="n">board</span><span class="p">[</span><span class="s1">'2'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">board</span><span class="p">[</span><span class="s1">'1'</span><span class="p">]:</span>
+<span class="c">208. </span>        <span class="k">return</span> <span class="s1">'2'</span>
+<span class="c">209. </span>    <span class="k">else</span><span class="p">:</span>
+<span class="c">210. </span>        <span class="k">return</span> <span class="s1">'tie'</span>
+<span class="c">211. </span>
+<span class="c">212. </span>
+<span class="c">213. </span><span class="c1"># If the program is run (instead of imported), run the game:</span>
+<span class="c">214. </span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<span class="c">215. </span>    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+<p class="calibre19">After entering the source code and running it a few
+ times, try making experimental changes to it. On your own, you can also
+ try to figure out how to do the following:</p>
+<ul class="calibre25">
+<li class="calibre8">Change the board to have more pits.</li>
+<li class="calibre8">Randomly select a bonus pit that, when the last seed lands in it, lets the player take another turn.</li>
+<li class="calibre8">Create a square-shaped board for four players instead of two.</li>
+</ul>
+<h2 id="calibre_link-193" class="calibre5">Exploring the Program</h2>
+<p class="bodyfirst">Try to find the answers to the following questions.
+ Experiment with some modifications to the code and rerun the program to
+ see what effect the changes have.</p>
+<ol class="decimal">
+<li class="calibre8" value="1">What happens if you change <code class="calibre22">return '2'</code> on line 175 to <code class="calibre22">return '1'</code>?</li>
+<li class="calibre8" value="2">What happens if you change <code class="calibre22">return '2'</code> on line 208 to <code class="calibre22">return '1'</code>?</li>
+<li class="calibre8" value="3">What happens if you change <code class="calibre22">response == 'QUIT'</code> on line 125 to <code class="calibre22">response == 'quit'</code>?</li>
+<li class="calibre8" value="4">What happens if you change <code class="calibre22">board[pit] = 0</code> on line 147 to <code class="calibre22">board[pit] = 1</code>?</li>
+<li class="calibre8" value="5">What happens if you change <code class="calibre22">print('\n' * 60)</code> on line 53 to <code class="calibre22">print('\n' * 0)</code>?</li>
+<li class="calibre8" value="6">What happens if you change <code class="calibre22">playerTurn = '1'</code> on line 48 to <code class="calibre22">playerTurn = '2'</code>?</li>
+<li class="calibre8" value="7">What happens if you change <code class="calibre22">board.get(response) == 0</code> on line 135 to <code class="calibre22">board.get(response) == -1</code>?</li>
+</ol>
+</section>
+</div>
+
+
+
+
+
+
+
+
+<a href="https://inventwithpython.com/bigbookpython/project42.html">Prev: Magic Fortune Ball</a> | <a href="https://inventwithpython.com/bigbookpython/project44.html">Next: Maze Runner 2D</a>
+</body></html>

@@ -1,0 +1,227 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="80(vignenecipher)_files/style.css" rel="stylesheet" type="text/css"><link rel="stylesheet" type="text/css" href="80(vignenecipher)_files/pygments.css"><title>Vigenère Cipher</title></head><body style="background-color: #fffeee;">
+
+<script type="text/javascript" async="" src="80(vignenecipher)_files/ga.js"></script><script type="text/javascript">
+//<![CDATA[
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-5459430-3']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+//]]>
+</script>
+
+
+<div style="background-color: #eeeddd; float: right; height: 310px; font-family: sans-serif;" id="otherbooks">
+  <a href="#" onclick="document.getElementById('otherbooks').outerHTML='';" style="vertical-align: top;">(close)</a><br>
+
+  <a target="_blank" href="https://nostarch.com/automatestuff2" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_automate.link');"><img src="80(vignenecipher)_files/cover_automate2_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/big-book-small-python-projects" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_bigbookpython.link');"><img src="80(vignenecipher)_files/cover_bigbookpython_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/beyond-basic-stuff-python" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_beyond.link');"><img src="80(vignenecipher)_files/cover_beyond_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/inventwithpython" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_invent.link');"><img src="80(vignenecipher)_files/cover_invent4th_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://www.amazon.com/Making-Games-Python-Pygame-Sweigart/dp/1469901730?ie=UTF8&amp;tag=playwithpyth-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1469901730" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_pygame.link');"><img src="80(vignenecipher)_files/cover_makinggames_thumb.webp" style="height: 200px; border: solid black 1px; /"></a>
+  <a target="_blank" href="https://nostarch.com/crackingcodes" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_hacking.link');"><img src="80(vignenecipher)_files/cover_crackingcodes_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/scratchplayground"><img src="80(vignenecipher)_files/cover_scratchprogrammingplayground_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/codingwithminecraft"><img src="80(vignenecipher)_files/cover_codingwithminecraft_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <br>
+  <a href="https://inventwithpython.com/automateudemy">Use this link to get 70% off the Automate the Boring Stuff online video course.</a><br>
+  <a href="https://www.patreon.com/AlSweigart">Support me on Patreon</a>
+</div>
+
+<a href="https://inventwithpython.com/bigbookpython/project79.html">Prev: Twenty Forty Eight</a> | <a href="https://inventwithpython.com/bigbookpython/project81.html">Next: Water Bucket Puzzle</a>
+
+
+
+
+
+<div type="bodymatter chapter" class="calibre1" id="calibre_link-30">
+<section class="toclist">
+<header class="calibre10">
+<h1 class="chapter">
+<span class="chapternumber">#80</span><br class="calibre14">
+<span class="chaptertitle">Vigenère Cipher</span></h1>
+</header>
+<figure class="opener">
+<img src="80(vignenecipher)_files/000002.webp" alt="" class="calibre12">
+</figure>
+<p class="chapterintro">The Vigenère cipher, misattributed to 
+19th-century cryptographer Blaise de Vigenère (others had independently 
+invented it earlier), was impossible to crack for hundreds of years. It 
+is essentially the Caesar cipher, except it makes use of a multipart 
+key. The so-called <em class="calibre9">Vigenère key</em> is a word, or even a random series of letters. Each letter represents a number by which to shift the letter in the message: <em class="calibre9">A</em> represents shifting a letter in the message by 0, <em class="calibre9">B</em> represents 1, <em class="calibre9">C</em> represents 2, and so on.</p>
+<p class="calibre18">For example, if a Vigenère key is the word “CAT,” the <em class="calibre9">C</em> represents a shift of 2, the <em class="calibre9">A</em> represents 0, and the <em class="calibre9">T</em>
+ represents 19. The first letter of the message gets shifted by 2, the 
+second letter by 0, and the third letter by 19. For the fourth letter, 
+we repeat the key of 2.</p>
+<p class="calibre19">This use of multiple Caesar cipher keys is what 
+gives the Vigenère cipher its strength. The possible number of 
+combinations is too big to brute force. At the same time, the Vigenère 
+cipher doesn’t suffer from the frequency analysis weakness that can 
+crack the simple substitution cipher. For centuries, the Vigenère cipher
+ represented the state of the art in cryptography.</p>
+<p class="calibre19">You’ll notice many similarities between the code 
+for the Vigenère and Caesar cipher programs. More info about the 
+Vigenère cipher can be found at <a href="https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher" class="linkurl">https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher</a>. If you’d like to learn more about ciphers and code breaking, you can read my book <em class="calibre9">Cracking Codes with Python</em> (No Starch Press, 2018; <a href="https://nostarch.com/crackingcodes/" class="linkurl">https://nostarch.com/crackingcodes/</a>).</p>
+<h2 id="calibre_link-328" class="calibre5">The Program in Action</h2>
+<p class="bodyfirst">When you run <em class="calibre9">vigenere.py</em>, the output will look like this:</p>
+<pre class="calibre24"><code class="calibre22">Vigenère Cipher, by Al Sweigart al@inventwithpython.com
+The Vigenère cipher is a polyalphabetic substitution cipher that was
+powerful enough to remain unbroken for centuries.
+Do you want to (e)ncrypt or (d)ecrypt?
+&gt; <b class="calibre6">e</b>
+Please specify the key to use.
+It can be a word or any combination of letters:
+&gt; <b class="calibre6">PIZZA</b>
+Enter the message to encrypt.
+&gt; <b class="calibre6">Meet me by the rose bushes tonight.</b>
+Encrypted message:
+Bmds mt jx sht znre qcrgeh bnmivps.
+Full encrypted text copied to clipboard.</code></pre>
+<h2 id="calibre_link-329" class="calibre5">How It Works</h2>
+<p class="bodyfirst">Because the encryption and decryption processes are fairly similar, the <code class="calibre22">translateMessage()</code> function handles both of them. The <code class="calibre22">encryptMessage()</code> and <code class="calibre22">decryptMessage()</code> functions are merely <em class="calibre9">wrapper functions</em> for <code class="calibre22">translateMessage()</code>.
+ In other words, they are functions that adjust their arguments, forward
+ these to another function, and then return that function’s return 
+value. This program uses these wrapper functions so that they can be 
+called in a manner similar to <code class="calibre22">encryptMessage()</code> and <code class="calibre22">decryptMessage()</code>
+ in Project 66, “Simple Substitution Cipher.” You can import these 
+projects as modules in other programs to make use of their encryption 
+code without having to copy and paste the code directly into your new 
+program.</p>
+<div class="highlight"><pre><span></span>
+<span class="c">  1. </span><span class="sd">"""Vigenère Cipher, by Al Sweigart al@inventwithpython.com</span>
+<span class="c">  2. </span><span class="sd">The Vigenère cipher is a polyalphabetic substitution cipher that was</span>
+<span class="c">  3. </span><span class="sd">powerful enough to remain unbroken for centuries.</span>
+<span class="c">  4. </span><span class="sd">More info at: https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher</span>
+<span class="c">  5. </span><span class="sd">This code is available at https://nostarch.com/big-book-small-python-programming</span>
+<span class="c">  6. </span><span class="sd">Tags: short, cryptography, math"""</span>
+<span class="c">  7. </span>
+<span class="c">  8. </span><span class="k">try</span><span class="p">:</span>
+<span class="c">  9. </span>    <span class="kn">import</span> <span class="nn">pyperclip</span>  <span class="c1"># pyperclip copies text to the clipboard.</span>
+<span class="c"> 10. </span><span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+<span class="c"> 11. </span>    <span class="k">pass</span>  <span class="c1"># If pyperclip is not installed, do nothing. It's no big deal.</span>
+<span class="c"> 12. </span>
+<span class="c"> 13. </span><span class="c1"># Every possible symbol that can be encrypted/decrypted:</span>
+<span class="c"> 14. </span><span class="n">LETTERS</span> <span class="o">=</span> <span class="s1">'ABCDEFGHIJKLMNOPQRSTUVWXYZ'</span>
+<span class="c"> 15. </span>
+<span class="c"> 16. </span>
+<span class="c"> 17. </span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="c"> 18. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'''Vigenère Cipher, by Al Sweigart al@inventwithpython.com</span>
+<span class="c"> 19. </span><span class="s1">The Viegenère cipher is a polyalphabetic substitution cipher that was</span>
+<span class="c"> 20. </span><span class="s1">powerful enough to remain unbroken for centuries.'''</span><span class="p">)</span>
+<span class="c"> 21. </span>
+<span class="c"> 22. </span>    <span class="c1"># Let the user specify if they are encrypting or decrypting:</span>
+<span class="c"> 23. </span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>  <span class="c1"># Keep asking until the user enters e or d.</span>
+<span class="c"> 24. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'Do you want to (e)ncrypt or (d)ecrypt?'</span><span class="p">)</span>
+<span class="c"> 25. </span>        <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'&gt; '</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="c"> 26. </span>        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'e'</span><span class="p">):</span>
+<span class="c"> 27. </span>            <span class="n">myMode</span> <span class="o">=</span> <span class="s1">'encrypt'</span>
+<span class="c"> 28. </span>            <span class="k">break</span>
+<span class="c"> 29. </span>        <span class="k">elif</span> <span class="n">response</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'d'</span><span class="p">):</span>
+<span class="c"> 30. </span>            <span class="n">myMode</span> <span class="o">=</span> <span class="s1">'decrypt'</span>
+<span class="c"> 31. </span>            <span class="k">break</span>
+<span class="c"> 32. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'Please enter the letter e or d.'</span><span class="p">)</span>
+<span class="c"> 33. </span>
+<span class="c"> 34. </span>    <span class="c1"># Let the user specify the key to use:</span>
+<span class="c"> 35. </span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>  <span class="c1"># Keep asking until the user enters a valid key.</span>
+<span class="c"> 36. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'Please specify the key to use.'</span><span class="p">)</span>
+<span class="c"> 37. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'It can be a word or any combination of letters:'</span><span class="p">)</span>
+<span class="c"> 38. </span>        <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'&gt; '</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="c"> 39. </span>        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
+<span class="c"> 40. </span>            <span class="n">myKey</span> <span class="o">=</span> <span class="n">response</span>
+<span class="c"> 41. </span>            <span class="k">break</span>
+<span class="c"> 42. </span>
+<span class="c"> 43. </span>    <span class="c1"># Let the user specify the message to encrypt/decrypt:</span>
+<span class="c"> 44. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'Enter the message to </span><span class="si">{}</span><span class="s1">.'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">myMode</span><span class="p">))</span>
+<span class="c"> 45. </span>    <span class="n">myMessage</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'&gt; '</span><span class="p">)</span>
+<span class="c"> 46. </span>
+<span class="c"> 47. </span>    <span class="c1"># Perform the encryption/decryption:</span>
+<span class="c"> 48. </span>    <span class="k">if</span> <span class="n">myMode</span> <span class="o">==</span> <span class="s1">'encrypt'</span><span class="p">:</span>
+<span class="c"> 49. </span>        <span class="n">translated</span> <span class="o">=</span> <span class="n">encryptMessage</span><span class="p">(</span><span class="n">myMessage</span><span class="p">,</span> <span class="n">myKey</span><span class="p">)</span>
+<span class="c"> 50. </span>    <span class="k">elif</span> <span class="n">myMode</span> <span class="o">==</span> <span class="s1">'decrypt'</span><span class="p">:</span>
+<span class="c"> 51. </span>        <span class="n">translated</span> <span class="o">=</span> <span class="n">decryptMessage</span><span class="p">(</span><span class="n">myMessage</span><span class="p">,</span> <span class="n">myKey</span><span class="p">)</span>
+<span class="c"> 52. </span>
+<span class="c"> 53. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="si">%s</span><span class="s1">ed message:'</span> <span class="o">%</span> <span class="p">(</span><span class="n">myMode</span><span class="o">.</span><span class="n">title</span><span class="p">()))</span>
+<span class="c"> 54. </span>    <span class="nb">print</span><span class="p">(</span><span class="n">translated</span><span class="p">)</span>
+<span class="c"> 55. </span>
+<span class="c"> 56. </span>    <span class="k">try</span><span class="p">:</span>
+<span class="c"> 57. </span>        <span class="n">pyperclip</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">translated</span><span class="p">)</span>
+<span class="c"> 58. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'Full </span><span class="si">%s</span><span class="s1">ed text copied to clipboard.'</span> <span class="o">%</span> <span class="p">(</span><span class="n">myMode</span><span class="p">))</span>
+<span class="c"> 59. </span>    <span class="k">except</span><span class="p">:</span>
+<span class="c"> 60. </span>        <span class="k">pass</span>  <span class="c1"># Do nothing if pyperclip wasn't installed.</span>
+<span class="c"> 61. </span>
+<span class="c"> 62. </span>
+<span class="c"> 63. </span><span class="k">def</span> <span class="nf">encryptMessage</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+<span class="c"> 64. </span>    <span class="sd">"""Encrypt the message using the key."""</span>
+<span class="c"> 65. </span>    <span class="k">return</span> <span class="n">translateMessage</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="s1">'encrypt'</span><span class="p">)</span>
+<span class="c"> 66. </span>
+<span class="c"> 67. </span>
+<span class="c"> 68. </span><span class="k">def</span> <span class="nf">decryptMessage</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+<span class="c"> 69. </span>    <span class="sd">"""Decrypt the message using the key."""</span>
+<span class="c"> 70. </span>    <span class="k">return</span> <span class="n">translateMessage</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="s1">'decrypt'</span><span class="p">)</span>
+<span class="c"> 71. </span>
+<span class="c"> 72. </span>
+<span class="c"> 73. </span><span class="k">def</span> <span class="nf">translateMessage</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
+<span class="c"> 74. </span>    <span class="sd">"""Encrypt or decrypt the message using the key."""</span>
+<span class="c"> 75. </span>    <span class="n">translated</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># Stores the encrypted/decrypted message string.</span>
+<span class="c"> 76. </span>
+<span class="c"> 77. </span>    <span class="n">keyIndex</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c"> 78. </span>    <span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="c"> 79. </span>
+<span class="c"> 80. </span>    <span class="k">for</span> <span class="n">symbol</span> <span class="ow">in</span> <span class="n">message</span><span class="p">:</span>  <span class="c1"># Loop through each character in message.</span>
+<span class="c"> 81. </span>        <span class="n">num</span> <span class="o">=</span> <span class="n">LETTERS</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">symbol</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+<span class="c"> 82. </span>        <span class="k">if</span> <span class="n">num</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>  <span class="c1"># -1 means symbol.upper() was not in LETTERS.</span>
+<span class="c"> 83. </span>            <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">'encrypt'</span><span class="p">:</span>
+<span class="c"> 84. </span>                <span class="c1"># Add if encrypting:</span>
+<span class="c"> 85. </span>                <span class="n">num</span> <span class="o">+=</span> <span class="n">LETTERS</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="n">keyIndex</span><span class="p">])</span>
+<span class="c"> 86. </span>            <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">'decrypt'</span><span class="p">:</span>
+<span class="c"> 87. </span>                <span class="c1"># Subtract if decrypting:</span>
+<span class="c"> 88. </span>                <span class="n">num</span> <span class="o">-=</span> <span class="n">LETTERS</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="n">keyIndex</span><span class="p">])</span>
+<span class="c"> 89. </span>
+<span class="c"> 90. </span>            <span class="n">num</span> <span class="o">%=</span> <span class="nb">len</span><span class="p">(</span><span class="n">LETTERS</span><span class="p">)</span>  <span class="c1"># Handle the potential wrap-around.</span>
+<span class="c"> 91. </span>
+<span class="c"> 92. </span>            <span class="c1"># Add the encrypted/decrypted symbol to translated.</span>
+<span class="c"> 93. </span>            <span class="k">if</span> <span class="n">symbol</span><span class="o">.</span><span class="n">isupper</span><span class="p">():</span>
+<span class="c"> 94. </span>                <span class="n">translated</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">LETTERS</span><span class="p">[</span><span class="n">num</span><span class="p">])</span>
+<span class="c"> 95. </span>            <span class="k">elif</span> <span class="n">symbol</span><span class="o">.</span><span class="n">islower</span><span class="p">():</span>
+<span class="c"> 96. </span>                <span class="n">translated</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">LETTERS</span><span class="p">[</span><span class="n">num</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+<span class="c"> 97. </span>
+<span class="c"> 98. </span>            <span class="n">keyIndex</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># Move to the next letter in the key.</span>
+<span class="c"> 99. </span>            <span class="k">if</span> <span class="n">keyIndex</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+<span class="c">100. </span>                <span class="n">keyIndex</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c">101. </span>        <span class="k">else</span><span class="p">:</span>
+<span class="c">102. </span>            <span class="c1"># Just add the symbol without encrypting/decrypting:</span>
+<span class="c">103. </span>            <span class="n">translated</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">symbol</span><span class="p">)</span>
+<span class="c">104. </span>
+<span class="c">105. </span>    <span class="k">return</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">translated</span><span class="p">)</span>
+<span class="c">106. </span>
+<span class="c">107. </span>
+<span class="c">108. </span><span class="c1"># If this program was run (instead of imported), run the program:</span>
+<span class="c">109. </span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<span class="c">110. </span>    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+<h2 id="calibre_link-330" class="calibre5">Exploring the Program</h2>
+<p class="bodyfirst">Try to find the answers to the following questions.
+ Experiment with some modifications to the code and rerun the program to
+ see what effect the changes have.</p>
+<ol class="decimal">
+<li class="calibre8" value="1">What happens when you encrypt with the key <code class="calibre22">'A'</code>?</li>
+<li class="calibre8" value="2">What error do you cause when you delete or comment out <code class="calibre22">myKey = response</code> on line 40?</li>
+</ol>
+</section>
+</div>
+
+
+
+
+
+
+
+
+<a href="https://inventwithpython.com/bigbookpython/project79.html">Prev: Twenty Forty Eight</a> | <a href="https://inventwithpython.com/bigbookpython/project81.html">Next: Water Bucket Puzzle</a>
+</body></html>

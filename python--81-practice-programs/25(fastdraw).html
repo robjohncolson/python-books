@@ -1,0 +1,147 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="25(fastdraw)_files/style.css" rel="stylesheet" type="text/css"><link rel="stylesheet" type="text/css" href="25(fastdraw)_files/pygments.css"><title>Fast Draw</title></head><body style="background-color: #fffeee;">
+
+<script type="text/javascript" async="" src="25(fastdraw)_files/ga.js"></script><script type="text/javascript">
+//<![CDATA[
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-5459430-3']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+//]]>
+</script>
+
+
+<div style="background-color: #eeeddd; float: right; height: 310px; font-family: sans-serif;" id="otherbooks">
+  <a href="#" onclick="document.getElementById('otherbooks').outerHTML='';" style="vertical-align: top;">(close)</a><br>
+
+  <a target="_blank" href="https://nostarch.com/automatestuff2" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_automate.link');"><img src="25(fastdraw)_files/cover_automate2_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/big-book-small-python-projects" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_bigbookpython.link');"><img src="25(fastdraw)_files/cover_bigbookpython_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/beyond-basic-stuff-python" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_beyond.link');"><img src="25(fastdraw)_files/cover_beyond_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/inventwithpython" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_invent.link');"><img src="25(fastdraw)_files/cover_invent4th_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://www.amazon.com/Making-Games-Python-Pygame-Sweigart/dp/1469901730?ie=UTF8&amp;tag=playwithpyth-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1469901730" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_pygame.link');"><img src="25(fastdraw)_files/cover_makinggames_thumb.webp" style="height: 200px; border: solid black 1px; /"></a>
+  <a target="_blank" href="https://nostarch.com/crackingcodes" onclick="javascript: pageTracker._trackPageview('/affiliate_chapters_hacking.link');"><img src="25(fastdraw)_files/cover_crackingcodes_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/scratchplayground"><img src="25(fastdraw)_files/cover_scratchprogrammingplayground_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <a target="_blank" href="https://nostarch.com/codingwithminecraft"><img src="25(fastdraw)_files/cover_codingwithminecraft_thumb.webp" style="height: 200px; border: solid black 1px;"></a>
+  <br>
+  <a href="https://inventwithpython.com/automateudemy">Use this link to get 70% off the Automate the Boring Stuff online video course.</a><br>
+  <a href="https://www.patreon.com/AlSweigart">Support me on Patreon</a>
+</div>
+
+<a href="https://inventwithpython.com/bigbookpython/project24.html">Prev: Factor Finder</a> | <a href="https://inventwithpython.com/bigbookpython/project26.html">Next: Fibonacci</a>
+
+
+
+
+
+<div type="bodymatter chapter" class="calibre1" id="calibre_link-125">
+<section class="toclist">
+<header class="calibre10">
+<h1 class="chapter">
+<span class="chapternumber">#25</span><br class="calibre14">
+<span class="chaptertitle">Fast Draw</span></h1>
+</header>
+<figure class="opener">
+<img src="25(fastdraw)_files/000002.webp" alt="" class="calibre12">
+</figure>
+<p class="chapterintro">This program tests your reaction speed: press <span class="keycaps">Enter</span>
+ as soon as you see the word DRAW. But careful, though. Press it before 
+DRAW appears, and you lose. Are you the fastest keyboard in the west?</p>
+<h2 id="calibre_link-126" class="calibre5">The Program in Action</h2>
+<p class="bodyfirst">When you run <em class="calibre9">fastdraw.py</em>, the output will look like this:</p>
+<pre class="calibre24"><code class="calibre22">Fast Draw, by Al Sweigart al@inventwithpython.com
+
+Time to test your reflexes and see if you are the fastest
+draw in the west!
+When you see "DRAW", you have 0.3 seconds to press Enter.
+But you lose if you press Enter before "DRAW" appears.
+
+Press Enter to begin...
+
+It is high noon...
+DRAW!
+
+You took 0.3485 seconds to draw. Too slow!
+Enter QUIT to stop, or press Enter to play again.
+&gt; <b class="calibre6">quit</b>
+Thanks for playing!</code></pre>
+<h2 id="calibre_link-127" class="calibre5">How It Works</h2>
+<p class="bodyfirst">The <code class="calibre22">input()</code> function
+ pauses the program while waiting for the user to enter a string. This 
+simple behavior means that we can’t create real-time games with just <code class="calibre22">input()</code>. However, your programs will <em class="calibre9">buffer</em> keyboard input, meaning that if you pressed the C, A, and T keys before <code class="calibre22">input()</code> is called, those characters will be saved, and they’ll appear immediately once <code class="calibre22">input()</code> executes.</p>
+<p class="calibre19">By recording the time just before the <code class="calibre22">input()</code> call on line 22 and the time just after the <code class="calibre22">input()</code> call on line 24, we can determine how long the player took to press <span class="keycaps">ENTER</span>. However, if they pressed <span class="keycaps">enter</span> before <code class="calibre22">input()</code> was called, the buffered <span class="keycaps">enter</span> press causes <code class="calibre22">input()</code>
+ to return immediately (usually in about 3 milliseconds). This is why 
+line 26 checks if the time was less than 0.01 seconds, or 10 
+milliseconds, to determine that the player pressed <span class="keycaps">enter</span> too soon.</p>
+<div class="highlight"><pre><span></span>
+<span class="c"> 1. </span><span class="sd">"""Fast Draw, by Al Sweigart al@inventwithpython.com</span>
+<span class="c"> 2. </span><span class="sd">Test your reflexes to see if you're the fastest draw in the west.</span>
+<span class="c"> 3. </span><span class="sd">This code is available at https://nostarch.com/big-book-small-python-programming</span>
+<span class="c"> 4. </span><span class="sd">Tags: tiny, beginner, game"""</span>
+<span class="c"> 5. </span>
+<span class="c"> 6. </span><span class="kn">import</span> <span class="nn">random</span><span class="o">,</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">time</span>
+<span class="c"> 7. </span>
+<span class="c"> 8. </span><span class="nb">print</span><span class="p">(</span><span class="s1">'Fast Draw, by Al Sweigart al@inventwithpython.com'</span><span class="p">)</span>
+<span class="c"> 9. </span><span class="nb">print</span><span class="p">()</span>
+<span class="c">10. </span><span class="nb">print</span><span class="p">(</span><span class="s1">'Time to test your reflexes and see if you are the fastest'</span><span class="p">)</span>
+<span class="c">11. </span><span class="nb">print</span><span class="p">(</span><span class="s1">'draw in the west!'</span><span class="p">)</span>
+<span class="c">12. </span><span class="nb">print</span><span class="p">(</span><span class="s1">'When you see "DRAW", you have 0.3 seconds to press Enter.'</span><span class="p">)</span>
+<span class="c">13. </span><span class="nb">print</span><span class="p">(</span><span class="s1">'But you lose if you press Enter before "DRAW" appears.'</span><span class="p">)</span>
+<span class="c">14. </span><span class="nb">print</span><span class="p">()</span>
+<span class="c">15. </span><span class="nb">input</span><span class="p">(</span><span class="s1">'Press Enter to begin...'</span><span class="p">)</span>
+<span class="c">16. </span>
+<span class="c">17. </span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="c">18. </span>    <span class="nb">print</span><span class="p">()</span>
+<span class="c">19. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'It is high noon...'</span><span class="p">)</span>
+<span class="c">20. </span>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span> <span class="o">/</span> <span class="mf">10.0</span><span class="p">)</span>
+<span class="c">21. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'DRAW!'</span><span class="p">)</span>
+<span class="c">22. </span>    <span class="n">drawTime</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="c">23. </span>    <span class="nb">input</span><span class="p">()</span>  <span class="c1"># This function call doesn't return until Enter is pressed.</span>
+<span class="c">24. </span>    <span class="n">timeElapsed</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">drawTime</span>
+<span class="c">25. </span>
+<span class="c">26. </span>    <span class="k">if</span> <span class="n">timeElapsed</span> <span class="o">&lt;</span> <span class="mf">0.01</span><span class="p">:</span>
+<span class="c">27. </span>        <span class="c1"># If the player pressed Enter before DRAW! appeared, the input()</span>
+<span class="c">28. </span>        <span class="c1"># call returns almost instantly.</span>
+<span class="c">29. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'You drew before "DRAW" appeared! You lose.'</span><span class="p">)</span>
+<span class="c">30. </span>    <span class="k">elif</span> <span class="n">timeElapsed</span> <span class="o">&gt;</span> <span class="mf">0.3</span><span class="p">:</span>
+<span class="c">31. </span>        <span class="n">timeElapsed</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">timeElapsed</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="c">32. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'You took'</span><span class="p">,</span> <span class="n">timeElapsed</span><span class="p">,</span> <span class="s1">'seconds to draw. Too slow!'</span><span class="p">)</span>
+<span class="c">33. </span>    <span class="k">else</span><span class="p">:</span>
+<span class="c">34. </span>        <span class="n">timeElapsed</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">timeElapsed</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="c">35. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'You took'</span><span class="p">,</span> <span class="n">timeElapsed</span><span class="p">,</span> <span class="s1">'seconds to draw.'</span><span class="p">)</span>
+<span class="c">36. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'You are the fastest draw in the west! You win!'</span><span class="p">)</span>
+<span class="c">37. </span>
+<span class="c">38. </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'Enter QUIT to stop, or press Enter to play again.'</span><span class="p">)</span>
+<span class="c">39. </span>    <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'&gt; '</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="c">40. </span>    <span class="k">if</span> <span class="n">response</span> <span class="o">==</span> <span class="s1">'QUIT'</span><span class="p">:</span>
+<span class="c">41. </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">'Thanks for playing!'</span><span class="p">)</span>
+<span class="c">42. </span>        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+</pre></div>
+
+<h2 id="calibre_link-128" class="calibre5">Exploring the Program</h2>
+<p class="bodyfirst">Try to find the answers to the following questions.
+ Experiment with some modifications to the code and rerun the program to
+ see what effect the changes have.</p>
+<ol class="decimal">
+<li class="calibre8" value="1">What happens if you change <code class="calibre22">drawTime = time.time()</code> on line 22 to <code class="calibre22">drawTime = 0</code>?</li>
+<li class="calibre8" value="2">What happens if you change <code class="calibre22">timeElapsed &gt; 0.3</code> on line 30 to <code class="calibre22">timeElapsed &lt; 0.3</code>?</li>
+<li class="calibre8" value="3">What happens if you change <code class="calibre22">time.time() - drawTime</code> on line 24 to <code class="calibre22">time.time() + drawTime</code>?</li>
+<li class="calibre8" value="4">What happens if you delete or comment out <code class="calibre22">input('Press Enter to begin...')</code> on line 15?</li>
+</ol>
+</section>
+</div>
+
+
+
+
+
+
+
+
+<a href="https://inventwithpython.com/bigbookpython/project24.html">Prev: Factor Finder</a> | <a href="https://inventwithpython.com/bigbookpython/project26.html">Next: Fibonacci</a>
+</body></html>
